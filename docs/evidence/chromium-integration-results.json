@@ -1,0 +1,290 @@
+{
+  "measuredAt": "2026-11-11T19:25:02.945Z",
+  "source": "test-results/results.json",
+  "stats": {
+    "startTime": "2026-11-11T19:23:10.395Z",
+    "duration": 88561.65699999999,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6178,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-002 R-PROMO promotion adjustment SQL matches API and expected discount",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 999,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-003 R-INVENTORY rejected stock overflow writes no cart line",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 338,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2802,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-005 R-ORDER repeat completion preserves one order for the cart",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2508,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-006 R-ORDER failed completion has no order link and leaves cart incomplete",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 558,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6517,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4630,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9654,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6334,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5337,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5486,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5540,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5650,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7283,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4990,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8721,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12082,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4680,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13229,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8967,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7104,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22511,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "CG-D01",
+    "title": "Cart total displayed one euro too high",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-004",
+    "file": "apps/storefront/src/modules/common/components/cart-totals/index.tsx",
+    "find": "{convertToLocale({ amount: total ?? 0, currency_code })}",
+    "replace": "{convertToLocale({ amount: (total ?? 0) + 1, currency_code })}",
+    "expected": "Three EUR 10 items display EUR 30.00.",
+    "actual": "The API and data attribute remain 30, but the customer sees EUR 31.00."
+  },
+  {
+    "id": "CG-D02",
+    "title": "Promotion discount displayed twice",
+    "requirement": "R-PROMO",
+    "severity": "S2",
+    "test": "UI-007",
+    "file": "apps/storefront/src/modules/common/components/cart-totals/index.tsx",
+    "find": "amount: discount_subtotal ?? 0,",
+    "replace": "amount: (discount_subtotal ?? 0) * 2,",
+    "expected": "CG10 on EUR 30 shows a EUR 3.00 discount and EUR 27.00 total.",
+    "actual": "The discount shown is EUR 6.00 while the backend still charges EUR 27.00."
+  },
+  {
+    "id": "CG-D03",
+    "title": "Product action silently adds two units",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-003",
+    "file": "apps/storefront/src/modules/products/components/product-actions/index.tsx",
+    "find": "variantId: selectedVariant.id,\n      quantity: 1,",
+    "replace": "variantId: selectedVariant.id,\n      quantity: 2,",
+    "expected": "One add action creates one cart unit.",
+    "actual": "One action sends quantity 2 to the real backend."
+  },
+  {
+    "id": "CG-D04",
+    "title": "Quantity update submits one more than selected",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-004",
+    "file": "apps/storefront/src/modules/cart/components/item/index.tsx",
+    "find": "lineId: item.id,\n      quantity,",
+    "replace": "lineId: item.id,\n      quantity: quantity + 1,",
+    "expected": "Selecting quantity 3 persists three units and EUR 30 total.",
+    "actual": "The real cart is updated to four units and EUR 40 total."
+  },
+  {
+    "id": "CG-D05",
+    "title": "Invalid login error is suppressed",
+    "requirement": "R-ERROR",
+    "severity": "S3",
+    "test": "UI-013",
+    "file": "apps/storefront/src/modules/account/components/login/index.tsx",
+    "find": "error={message?.state === \"error\" ? message.error : null}",
+    "replace": "error={null}",
+    "expected": "Rejected credentials leave the form visible with an authentication error.",
+    "actual": "The backend rejects login, but the error component receives null."
+  }
+]

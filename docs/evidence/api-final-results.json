@@ -1,0 +1,395 @@
+{
+  "measuredAt": "2026-11-11T20:07:47.089Z",
+  "source": ".runtime/api-final-results.json",
+  "stats": {
+    "startTime": "2026-11-11T20:02:56.025Z",
+    "duration": 10921.216,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-007 R-CART an empty cart starts at zero @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 311,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 886,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-009 R-CART updating quantity recalculates totals",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1087,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-010 R-CART removing the final item returns the cart to zero",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 804,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-Q0 R-INVENTORY rejects invalid add quantity 0",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 245,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-Q-1 R-INVENTORY rejects invalid add quantity -1",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 236,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-013 R-INVENTORY fractional input must be rejected or preserved without silent coercion @product-bug",
+      "project": "api",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 535,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\cart.spec.ts",
+                "column": 7,
+                "line": 81
+              },
+              "message": "Error: CG-B001: accepted buyer quantity must not be silently rounded\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1.5\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  79 |       cart.items[0].quantity,\n  80 |       \"CG-B001: accepted buyer quantity must not be silently rounded\",\n> 81 |     ).toBe(1.5)\n     |       ^\n  82 |     expect(cart.total).toBe(seed.unitPrice * 1.5)\n  83 |   }\n  84 | })\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\cart.spec.ts:81:7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "API-014 R-INVENTORY stock overflow is rejected without cart changes",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 303,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-015 R-ERROR missing variant is a validation error",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 178,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-016 R-CART repeated add requests merge quantity rather than duplicate lines",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 683,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 456,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-018 R-PROMO applying the same promotion twice does not stack discounts",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 617,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-019 R-PROMO unknown promotion grants no discount",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 431,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-001 R-CATALOG published catalog has the required contract @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 70,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 107,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-003 R-CATALOG text query excludes unrelated products",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 59,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-004 R-CATALOG pagination returns distinct records and stable count",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 106,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-005 R-ERROR unknown product returns a structured 404",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 28,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-006 R-ACCESS store catalog rejects requests without a publishable key",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2411,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-029 R-ORDER completing the same cart twice returns the same order",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2459,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-030 R-ORDER incomplete checkout returns an error without order data",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 748,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-031 R-ACCOUNT authenticated order history includes only the owner order",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2476,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 366,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-021 R-AUTH wrong password returns 401",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 485,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-022 R-AUTH duplicate registration cannot create another identity",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 356,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-024 R-ACCESS forged token cannot read customer data",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 30,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-025 R-ACCOUNT profile updates persist for that customer only",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 749,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-026 R-ACCESS another customer cannot delete an owned address",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 714,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-027 R-ACCESS customer token cannot use admin product endpoints",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 338,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

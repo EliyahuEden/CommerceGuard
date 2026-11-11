@@ -1,0 +1,554 @@
+{
+  "measuredAt": "2026-11-11T19:59:57.264Z",
+  "source": ".runtime/stability-verified-results.json",
+  "stats": {
+    "startTime": "2026-11-11T19:57:13.482Z",
+    "duration": 116220.045,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-007 R-CART an empty cart starts at zero @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 365,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-007 R-CART an empty cart starts at zero @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 247,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-007 R-CART an empty cart starts at zero @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 191,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 973,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 689,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 494,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 959,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 694,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 502,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-001 R-CATALOG published catalog has the required contract @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 116,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-001 R-CATALOG published catalog has the required contract @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 97,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-001 R-CATALOG published catalog has the required contract @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 89,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 157,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 110,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 98,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2333,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2031,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1652,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 526,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 437,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 474,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 27,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 26,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 23,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4344,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7140,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9792,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2244,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3060,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2856,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8836,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9520,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7561,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10464,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11049,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12863,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6139,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6300,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6594,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3899,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4503,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4308,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21247,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22461,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13610,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

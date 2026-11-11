@@ -1,0 +1,33 @@
+name: Local performance budget
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Workload profile
+        type: choice
+        default: baseline
+        options: [baseline, ramp]
+permissions:
+  contents: read
+jobs:
+  performance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/prepare
+      - uses: grafana/setup-k6-action@v1
+        with:
+          k6-version: "2.3.0"
+      - run: npm run test:perf
+        env:
+          PERF_PROFILE: ${{ inputs.profile }}
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: performance-evidence
+          path: test-results/performance.json
+      - run: npm run aut:stop
+        if: always()
+      - run: docker compose down --volumes
+        if: always()

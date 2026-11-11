@@ -1,0 +1,354 @@
+{
+  "measuredAt": "2026-11-11T19:19:29.896Z",
+  "source": "test-results/results.json",
+  "stats": {
+    "startTime": "2026-11-11T19:14:06.484Z",
+    "duration": 223566.15,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 65557,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+                "column": 34,
+                "line": 26
+              },
+              "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8000/dk/cart\", waiting until \"load\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:26\n\n  24 | export class CartPage {\n  25 |   constructor(readonly page: Page) {}\n> 26 |   async open() { await this.page.goto('/dk/cart'); }\n     |                                  ^\n  27 |   row() { return this.page.getByTestId('product-row'); }\n  28 |   async expectTotal(total: number) {\n  29 |     await expect(this.page.getByTestId('cart-total')).toHaveAttribute('data-value', String(total));\n    at CartPage.open (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:26:34)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\integration\\consistency.spec.ts:9:14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "INT-002 R-PROMO promotion adjustment SQL matches API and expected discount",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1546,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-003 R-INVENTORY rejected stock overflow writes no cart line",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 639,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2208,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-005 R-ORDER repeat completion preserves one order for the cart",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2028,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-006 R-ORDER failed completion has no order link and leaves cart incomplete",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 493,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 60505,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 35,
+                "line": 11
+              },
+              "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('product-wrapper').filter({ hasText: 'Medusa T-Shirt' }).getByRole('link')\u001b[22m\n\n\n   9 |   const product = page.getByTestId('product-wrapper').filter({ hasText: 'Medusa T-Shirt' });\n  10 |   await expect(product).toHaveCount(1);\n> 11 |   await product.getByRole('link').click();\n     |                                   ^\n  12 |   await expect(page.getByTestId('product-container').getByTestId('product-title')).toHaveText('Medusa T-Shirt');\n  13 |   await expect(page.getByTestId('product-description')).not.toBeEmpty();\n  14 |   expect(new URL(page.url()).pathname).toBe(`/dk/products/${seed.handle}`);\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:11:35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY unselected variant prevents add to cart",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 23458,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 56,
+                "line": 18
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('add-product-button')\nExpected: disabled\nReceived: enabled\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" getByTestId('add-product-button') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-product-button')\u001b[22m\n\u001b[2m    33 × locator resolved to <button type=\"submit\" data-testid=\"add-product-button\" class=\"inline-flex gap-2 items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 w-full h-10\">Add to cart</button>\u001b[22m\n\u001b[2m       - unexpected value \"enabled\"\u001b[22m\n\n\n  16 | test('UI-002 R-INVENTORY unselected variant prevents add to cart', async ({ page, seed }) => {\n  17 |   await new ProductPage(page, seed).open(false);\n> 18 |   await expect(page.getByTestId('add-product-button')).toBeDisabled();\n     |                                                        ^\n  19 | });\n  20 | test('UI-003 R-CART product action adds exactly one unit @smoke', async ({ page, seed }) => {\n  21 |   const product = new ProductPage(page, seed);\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:18:56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18984,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5883,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 5372,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 31,
+                "line": 44
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  42 |   await view.open();\n  43 |   const values = await page.getByTestId('product-select-button').locator('option').evaluateAll(options => options.map(option => Number((option as HTMLOptionElement).value)));\n> 44 |   expect(Math.min(...values)).toBe(1);\n     |                               ^\n  45 |   expect(Math.max(...values)).toBe(10);\n  46 |   await view.quantity(10);\n  47 |   await view.expectTotal(10 * seed.unitPrice);\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:44:31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 20157,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 51,
+                "line": 52
+              },
+              "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('product-delete-button')\u001b[22m\n\n\n  50 |   await setCart(context, (await store.cartWithItem()).id);\n  51 |   await new CartPage(page).open();\n> 52 |   await page.getByTestId('product-delete-button').click();\n     |                                                   ^\n  53 |   await expect(page.getByTestId('empty-cart-message')).toBeVisible();\n  54 |   await expect(page.getByTestId('product-row')).toHaveCount(0);\n  55 | });\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:52:51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 18974,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+                "column": 58,
+                "line": 41
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('discount-code')\nExpected: \u001b[32m\"CG10\"\u001b[39m\nReceived: \u001b[31m\"CG10\u001b[7m (10%)\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('discount-code') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('discount-code')\u001b[22m\n\u001b[2m    28 × locator resolved to <span class=\"truncate\" data-testid=\"discount-code\">…</span>\u001b[22m\n\u001b[2m       - unexpected value \"CG10 (10%)\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:41\n\n  39 |     await this.page.getByTestId('discount-input').fill(code);\n  40 |     await this.page.getByTestId('discount-apply-button').click();\n> 41 |     await expect(this.page.getByTestId('discount-code')).toHaveText(code);\n     |                                                          ^\n  42 |   }\n  43 | }\n  44 | export class AccountPage {\n    at CartPage.apply (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:41:58)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:60:3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3722,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5046,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4147,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7204,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13473,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5736,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11678,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14818,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17288,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 66519,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

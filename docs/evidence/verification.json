@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-11-11T20:10:46.277Z",
+  "node": "v22.23.4",
+  "regression": {
+    "passed": 104,
+    "failed": 1
+  },
+  "stability": {
+    "passed": 45,
+    "failed": 0
+  },
+  "defectsRestoredAndHashVerified": 5,
+  "k6ProfilesAllThresholdsPassed": [
+    "baseline",
+    "ramp"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "CG-B001",
+  "measuredAt": "2026-11-11T19:36:10.196Z",
+  "commit": "0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55",
+  "request": {
+    "method": "POST",
+    "path": "/store/carts/cart_01M761RKBDFZMJEER458AG7XCY/line-items",
+    "body": {
+      "variant_id": "variant_01M760AJTZN4MP2REA339Q8KBD",
+      "quantity": 1.5
+    }
+  },
+  "response": {
+    "status": 200,
+    "quantity": 2,
+    "unit_price": 10,
+    "total": 20
+  },
+  "database": [
+    {
+      "quantity": 2,
+      "unit_price": "10"
+    }
+  ],
+  "quantityColumnType": "integer",
+  "expected": "Reject fractional input or preserve it. Never silently change the requested units."
+}

@@ -1,0 +1,29 @@
+name: Prepare local Medusa
+description: Install the pinned AUT and prepare a disposable database
+inputs:
+  browsers:
+    description: Playwright browsers to install
+    default: chromium
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v6
+      with:
+        node-version: "22.23.4"
+        cache: npm
+    - run: npm ci
+      shell: bash
+    - run: npx playwright install --with-deps ${{ inputs.browsers }}
+      shell: bash
+    - run: docker compose up -d --wait postgres
+      shell: bash
+    - run: npm run aut:prepare
+      shell: bash
+    - run: npm run aut:init
+      shell: bash
+    - run: npm run aut:seed
+      shell: bash
+    - run: npm run aut:start
+      shell: bash
+      env:
+        MEDUSA_DISABLE_TELEMETRY: "true"

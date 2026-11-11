@@ -1,0 +1,31 @@
+name: Cross-browser regression
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3 * * 1"
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/prepare
+        with:
+          browsers: chromium firefox webkit
+      - run: npm run test:regression
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: regression-evidence
+          path: |
+            playwright-report/
+            test-results/
+            .runtime/backend.log
+            .runtime/storefront.log
+          retention-days: 14
+      - run: npm run aut:stop
+        if: always()
+      - run: docker compose down --volumes
+        if: always()

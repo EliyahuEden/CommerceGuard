@@ -1,0 +1,304 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.tools\\node_modules\\node\\bin\\node.exe",
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=chromium",
+      "--workers=1",
+      "--grep",
+      "UI-004"
+    ],
+    "configFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\playwright.config.ts",
+    "rootDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "integration",
+        "name": "integration",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "snapshotDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\docs\\evidence\\defects\\CG-D01\\injected\\results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-004 R-CART quantity update recalculates displayed total",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18714,
+                  "error": {
+                    "message": "TimeoutError: page.waitForFunction: Timeout 15000ms exceeded.",
+                    "stack": "TimeoutError: page.waitForFunction: Timeout 15000ms exceeded.\n    at openPage (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:8:14)\n    at CartPage.open (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:58:5)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:69:3",
+                    "location": {
+                      "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+                      "column": 14,
+                      "line": 8
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\storefront.ts:8\n\n \u001b[90m  6 |\u001b[39m   \u001b[90m// Explicit AUT test hook emitted by a React effect after hydration starts.\u001b[39m\n \u001b[90m  7 |\u001b[39m   \u001b[90m// Avoid lost interactions with SSR controls and dependence on remote image load.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForFunction(\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     () \u001b[33m=>\u001b[39m document\u001b[33m.\u001b[39mdocumentElement\u001b[33m.\u001b[39mdataset\u001b[33m.\u001b[39mcommerceguardHydrated \u001b[33m===\u001b[39m \u001b[32m\"true\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 10 |\u001b[39m   )\n \u001b[90m 11 |\u001b[39m }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+                        "column": 14,
+                        "line": 8
+                      },
+                      "message": "TimeoutError: page.waitForFunction: Timeout 15000ms exceeded.\n\n   at ..\\src\\pages\\storefront.ts:8\n\n   6 |   // Explicit AUT test hook emitted by a React effect after hydration starts.\n   7 |   // Avoid lost interactions with SSR controls and dependence on remote image load.\n>  8 |   await page.waitForFunction(\n     |              ^\n   9 |     () => document.documentElement.dataset.commerceguardHydrated === \"true\",\n  10 |   )\n  11 | }\n    at openPage (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:8:14)\n    at CartPage.open (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:58:5)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:69:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T19:30:56.785Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defect-artifacts\\ui-storefront-UI-004-R-CAR-22421-ecalculates-displayed-total-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+                    "column": 14,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-c8d5da6c129725259c21",
+          "file": "ui/storefront.spec.ts",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T19:30:55.826Z",
+    "duration": 20151.064000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+.aut/
+.tools/
+.runtime/
+.env
+playwright-report/
+test-results/
+blob-report/
+allure-results/
+*.tsbuildinfo
+*.log
