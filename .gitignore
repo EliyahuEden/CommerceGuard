@@ -3,9 +3,13 @@ node_modules/
 .tools/
 .runtime/
 .env
+.env.*
+!.env.example
 playwright-report/
 test-results/
 blob-report/
 allure-results/
 *.tsbuildinfo
 *.log
+docs/evidence/redesign/*-raw.json
+docs/evidence/enhancements/*-raw.json

@@ -1,0 +1,55 @@
+{
+  "url": "http://localhost:8000/dk/checkout?step=delivery",
+  "active": {
+    "tag": "SPAN",
+    "id": "headlessui-radio-_r_i_",
+    "role": "radio"
+  },
+  "radios": [
+    {
+      "tag": "DIV",
+      "role": "radiogroup",
+      "tabIndex": null,
+      "checked": null,
+      "disabled": null,
+      "text": "Express Shipping€10.00Standard Shipping€10.00",
+      "html": "<div aria-label=\"Delivery methods\" id=\"headlessui-radiogroup-_r_h_\" role=\"radiogroup\"><span data-testid=\"delivery-option-radio\" class=\"flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_i_\" role=\"radio\" aria-checked=\"false\" tabindex=\"0\" data-headlessui-state=\"focus\" data-focus=\"\"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><span class=\"text-base-regular\">Express Shipping</span></div><span class=\"justify-self-end text-ui-fg-base\">€10.00</span></span><span data-testid=\"delivery-option-radio\" class=\"flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_j_\" role=\"radio\" aria-checked=\"false\" tabindex=\"-1\" data-headlessui-state=\"\"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><span class=\"text-base-regular\">Standard Shipping</span></div><span class=\"justify-self-end text-ui-fg-base\">€10.00</span></span></div>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "radio",
+      "tabIndex": "0",
+      "checked": "false",
+      "disabled": null,
+      "text": "Express Shipping€10.00",
+      "html": "<span data-testid=\"delivery-option-radio\" class=\"flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_i_\" role=\"radio\" aria-checked=\"false\" tabindex=\"0\" data-headlessui-state=\"focus\" data-focus=\"\"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><span class=\"text-base-regular\">Express Shipping</span></div><span class=\"justify-self-end text-ui-fg-base\">€10.00</span></span>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "radio",
+      "tabIndex": "-1",
+      "checked": "false",
+      "disabled": null,
+      "text": "Standard Shipping€10.00",
+      "html": "<span data-testid=\"delivery-option-radio\" class=\"flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_j_\" role=\"radio\" aria-checked=\"false\" tabindex=\"-1\" data-headlessui-state=\"\"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><span class=\"text-base-regular\">Standard Shipping</span></div><span class=\"justify-self-end text-ui-fg-base\">€10.00</span></span>"
+    },
+    {
+      "tag": "DIV",
+      "role": "radiogroup",
+      "tabIndex": null,
+      "checked": null,
+      "disabled": null,
+      "text": "Manual PaymentAttention: For testing purposes only.Attention: For testing purposes only.",
+      "html": "<div aria-label=\"Payment methods\" id=\"headlessui-radiogroup-_r_k_\" role=\"radiogroup\"><div><span class=\"flex flex-col gap-y-2 text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_l_\" role=\"radio\" aria-checked=\"false\" tabindex=\"0\" data-headlessui-state=\"\"><div class=\"flex items-center justify-between \"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><p class=\"txt-medium text-base-regular\">Manual Payment</p><span class=\"inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 hidden small:block\"><span class=\"font-semibold\">Attention:</span> For testing purposes only.</span></div><span class=\"justify-self-end text-ui-fg-base\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\" fill=\"none\"><g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" clip-path=\"url(#a)\"><path d=\"M1.056 5.944h12.888M2.833 12.167h9.334c.982 0 1.777-.796 1.777-1.778V4.61c0-.982-.796-1.778-1.777-1.778H2.833c-.981 0-1.777.796-1.777 1.778v5.778c0 .982.796 1.778 1.777 1.778M3.278 9.5h2.666M10.833 9.5h.89\"></path></g><defs><clipPath id=\"a\"><path fill=\"#fff\" d=\"M0 0h15v15H0z\"></path></clipPath></defs></svg></span></div><span class=\"inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 small:hidden text-[10px]\"><span class=\"font-semibold\">Attention:</span> For testing purposes only.</span></span></div></div>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "radio",
+      "tabIndex": "0",
+      "checked": "false",
+      "disabled": null,
+      "text": "Manual PaymentAttention: For testing purposes only.Attention: For testing purposes only.",
+      "html": "<span class=\"flex flex-col gap-y-2 text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active\" id=\"headlessui-radio-_r_l_\" role=\"radio\" aria-checked=\"false\" tabindex=\"0\" data-headlessui-state=\"\"><div class=\"flex items-center justify-between \"><div class=\"flex items-center gap-x-4\"><span aria-hidden=\"true\" data-testid=\"radio-button\" data-state=\"unchecked\" class=\"forme-radio-mark\"><span></span></span><p class=\"txt-medium text-base-regular\">Manual Payment</p><span class=\"inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 hidden small:block\"><span class=\"font-semibold\">Attention:</span> For testing purposes only.</span></div><span class=\"justify-self-end text-ui-fg-base\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\" fill=\"none\"><g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" clip-path=\"url(#a)\"><path d=\"M1.056 5.944h12.888M2.833 12.167h9.334c.982 0 1.777-.796 1.777-1.778V4.61c0-.982-.796-1.778-1.777-1.778H2.833c-.981 0-1.777.796-1.777 1.778v5.778c0 .982.796 1.778 1.777 1.778M3.278 9.5h2.666M10.833 9.5h.89\"></path></g><defs><clipPath id=\"a\"><path fill=\"#fff\" d=\"M0 0h15v15H0z\"></path></clipPath></defs></svg></span></div><span class=\"inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 small:hidden text-[10px]\"><span class=\"font-semibold\">Attention:</span> For testing purposes only.</span></span>"
+    }
+  ]
+}

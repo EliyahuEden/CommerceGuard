@@ -9,6 +9,7 @@ import {
 } from "node:fs"
 import { resolve } from "node:path"
 import { randomBytes } from "node:crypto"
+import { applyStorefront } from "./storefront.mjs"
 import {
   assertTestDatabase,
   aut,
@@ -34,6 +35,7 @@ function checkPin() {
   if (actual !== pin.commit) throw new Error(`AUT commit mismatch: ${actual}`)
 }
 function service(name, cwd, args) {
+  const production = name === "storefront" && args.includes("start")
   const log = openSync(resolve(runtime, `${name}.log`), "a")
   const child = spawn(
     process.execPath,
@@ -43,7 +45,7 @@ function service(name, cwd, args) {
       env: {
         ...process.env,
         DATABASE_URL: databaseUrl,
-        NODE_ENV: "development",
+        NODE_ENV: production ? "production" : "development",
         MEDUSA_DISABLE_TELEMETRY: "true",
         NEXT_TELEMETRY_DISABLED: "1",
       },
@@ -53,9 +55,104 @@ function service(name, cwd, args) {
     },
   )
   child.unref()
-  return { name, pid: child.pid }
+  return {
+    name,
+    pid: child.pid,
+    ...(name === "storefront"
+      ? { mode: production ? "production" : "development" }
+      : {}),
+  }
+}
+function frontendArgs(mode = process.env.CG_STOREFRONT_MODE || "development") {
+  if (!["production", "development"].includes(mode))
+    throw new Error("CG_STOREFRONT_MODE must be production or development")
+  return [
+    "exec",
+    "next",
+    mode === "production" ? "start" : "dev",
+    ...(mode === "development" ? ["--webpack"] : []),
+    "-p",
+    "8000",
+  ]
+}
+async function buildStorefront() {
+  applyStorefront()
+  const startedAt = new Date().toISOString()
+  try {
+    await pnpm(["exec", "next", "build", "--webpack"], storefront, {
+      ...process.env,
+      NODE_ENV: "production",
+      NEXT_TELEMETRY_DISABLED: "1",
+    })
+    writeFileSync(
+      resolve(runtime, "storefront-build.json"),
+      JSON.stringify(
+        {
+          startedAt,
+          finishedAt: new Date().toISOString(),
+          status: "passed",
+          commit: pin.commit,
+          node: process.versions.node,
+        },
+        null,
+        2,
+      ),
+    )
+  } catch (error) {
+    writeFileSync(
+      resolve(runtime, "storefront-build.json"),
+      JSON.stringify(
+        {
+          startedAt,
+          finishedAt: new Date().toISOString(),
+          status: "failed",
+          error: error.message,
+        },
+        null,
+        2,
+      ),
+    )
+    throw error
+  }
+}
+function ownsProcess(pid) {
+  if (!Number.isSafeInteger(pid) || pid < 1) return false
+  try {
+    const command =
+      process.platform === "win32"
+        ? execFileSync(
+            "powershell.exe",
+            [
+              "-NoProfile",
+              "-NonInteractive",
+              "-Command",
+              `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; (Get-CimInstance Win32_Process -Filter 'ProcessId = ${pid}').CommandLine`,
+            ],
+            {
+              encoding: "utf8",
+              windowsHide: true,
+              stdio: ["ignore", "pipe", "ignore"],
+            },
+          )
+        : existsSync(`/proc/${pid}/cmdline`)
+          ? readFileSync(`/proc/${pid}/cmdline`, "utf8")
+          : execFileSync("ps", ["-p", String(pid), "-o", "command="], {
+              encoding: "utf8",
+              stdio: ["ignore", "pipe", "ignore"],
+            })
+    const normalized = command.replaceAll("\\", "/").toLowerCase()
+    return (
+      normalized.includes(root.replaceAll("\\", "/").toLowerCase()) &&
+      normalized.includes("node_modules/pnpm/bin/pnpm.cjs")
+    )
+  } catch {
+    return false
+  }
 }
 function stopService(pid) {
+  // PIDs can be reused after an interrupted session or reboot. Verify the
+  // workspace command before terminating a process tree, even with saved state.
+  if (!ownsProcess(pid)) return
   try {
     if (process.platform === "win32")
       execFileSync("taskkill", ["/PID", String(pid), "/T", "/F"], {
@@ -70,16 +167,28 @@ function stopService(pid) {
 async function warmStorefront() {
   const seed = JSON.parse(readFileSync(resolve(runtime, "seed.json"), "utf8"))
   const results = []
-  for (const path of [
-    "/dk/store",
-    "/dk/cart",
-    "/dk/account",
-    "/dk/account/profile",
-    "/dk/account/orders",
-    `/dk/products/${seed.handle}`,
-    "/dk/checkout",
-    "/dk/order/order_commerceguard_warmup/confirmed",
-  ]) {
+  const paths = process.env.CG_WARM_PATHS
+    ? JSON.parse(process.env.CG_WARM_PATHS)
+    : [
+        "/dk",
+        "/dk/about",
+        "/dk/store",
+        "/dk/cart",
+        "/dk/account",
+        "/dk/account/profile",
+        "/dk/account/orders",
+        "/dk/wishlist",
+        `/dk/products/${seed.handle}`,
+        "/dk/checkout",
+        "/dk/order/order_commerceguard_warmup/confirmed",
+      ]
+  for (const path of paths) {
+    if (
+      typeof path !== "string" ||
+      !path.startsWith("/dk") ||
+      path.startsWith("//")
+    )
+      throw new Error("Invalid local warmup path")
     const started = Date.now()
     const response = await fetch(`http://localhost:8000${path}`, {
       signal: AbortSignal.timeout(180_000),
@@ -124,6 +233,10 @@ switch (command) {
       resolve(backend, "src/scripts/commerceguard-seed.ts"),
     )
     copyFileSync(
+      resolve(root, "aut/catalog.ts"),
+      resolve(backend, "src/scripts/commerceguard-catalog.ts"),
+    )
+    copyFileSync(
       resolve(root, "aut/readiness.tsx"),
       resolve(storefront, "src/app/commerceguard-readiness.tsx"),
     )
@@ -139,6 +252,7 @@ switch (command) {
       )
       writeFileSync(layoutPath, layout)
     }
+    applyStorefront()
     console.log(
       `Prepared ${pin.commit}. Third-party source stays in ignored .aut/.`,
     )
@@ -182,6 +296,10 @@ switch (command) {
   case "seed": {
     assertTestDatabase()
     copyFileSync(
+      resolve(root, "aut/catalog.ts"),
+      resolve(backend, "src/scripts/commerceguard-catalog.ts"),
+    )
+    copyFileSync(
       resolve(root, "aut/seed.ts"),
       resolve(backend, "src/scripts/commerceguard-seed.ts"),
     )
@@ -199,6 +317,7 @@ switch (command) {
         DATABASE_URL: databaseUrl,
         MEDUSA_DISABLE_TELEMETRY: "true",
         COMMERCEGUARD_SEED_PATH: resolve(runtime, "seed.json"),
+        COMMERCEGUARD_CATALOG_PATH: resolve(root, "storefront/catalog.json"),
       },
     )
     const seed = JSON.parse(readFileSync(resolve(runtime, "seed.json"), "utf8"))
@@ -209,6 +328,7 @@ switch (command) {
         `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=${seed.publishableKey}`,
         "NEXT_PUBLIC_BASE_URL=http://localhost:8000",
         "NEXT_PUBLIC_DEFAULT_REGION=dk",
+        "COMMERCEGUARD_LOCAL_TEST=true",
         "",
       ].join("\n"),
     )
@@ -217,28 +337,29 @@ switch (command) {
     )
     break
   }
+  case "start-production":
   case "start": {
+    if (command === "start-production")
+      process.env.CG_STOREFRONT_MODE = "production"
     assertTestDatabase()
     checkPin()
-    if (existsSync(stateFile))
+    // A cold Medusa start can outlive the readiness budget. Resume the owned
+    // backend-only state instead of requiring a healthy backend to restart.
+    const processes = existsSync(stateFile)
+      ? JSON.parse(readFileSync(stateFile, "utf8")).filter((value) =>
+          ownsProcess(value.pid),
+        )
+      : []
+    if (!processes.length)
+      processes.push(service("backend", backend, ["exec", "medusa", "develop"]))
+    if (processes.length !== 1 || processes[0].name !== "backend")
       throw new Error(
         "Process state exists. Run npm run aut:stop before starting again.",
       )
-    const processes = [
-      service("backend", backend, ["exec", "medusa", "develop"]),
-    ]
     writeFileSync(stateFile, JSON.stringify(processes))
-    await waitFor("http://127.0.0.1:9000/health")
-    processes.push(
-      service("storefront", storefront, [
-        "exec",
-        "next",
-        "dev",
-        "--webpack",
-        "-p",
-        "8000",
-      ]),
-    )
+    await waitFor("http://127.0.0.1:9000/health", 300_000)
+    if (process.env.CG_STOREFRONT_MODE === "production") await buildStorefront()
+    processes.push(service("storefront", storefront, frontendArgs()))
     writeFileSync(stateFile, JSON.stringify(processes))
     await waitFor("http://localhost:8000/dk/store", 300_000)
     await warmStorefront()
@@ -264,23 +385,50 @@ switch (command) {
       }
       await new Promise((done) => setTimeout(done, 250))
     }
-    processes[index] = service("storefront", storefront, [
-      "exec",
-      "next",
-      "dev",
-      "--webpack",
-      "-p",
-      "8000",
-    ])
+    const mode =
+      process.env.CG_STOREFRONT_MODE || processes[index].mode || "development"
+    if (mode === "production") await buildStorefront()
+    processes[index] = service("storefront", storefront, frontendArgs(mode))
     writeFileSync(stateFile, JSON.stringify(processes))
     await waitFor("http://localhost:8000/dk/store", 300_000)
     await warmStorefront()
     console.log("Storefront restarted and source changes compiled.")
     break
   }
-  case "ready":
-    await waitFor("http://127.0.0.1:9000/health")
-    await waitFor("http://localhost:8000/dk/store", 300_000)
+  case "build-storefront": {
+    checkPin()
+    const processes = existsSync(stateFile)
+      ? JSON.parse(readFileSync(stateFile, "utf8"))
+      : []
+    const index = processes.findIndex((value) => value.name === "storefront")
+    const mode =
+      process.env.CG_STOREFRONT_MODE || processes[index]?.mode || "development"
+    if (index >= 0) stopService(processes[index].pid)
+    let succeeded = false
+    try {
+      await buildStorefront()
+      succeeded = true
+    } finally {
+      if (index >= 0) {
+        processes[index] = service(
+          "storefront",
+          storefront,
+          frontendArgs(succeeded ? mode : "development"),
+        )
+        writeFileSync(stateFile, JSON.stringify(processes))
+        await waitFor("http://localhost:8000/dk/store", 300_000)
+        await warmStorefront()
+      }
+    }
+    break
+  }
+  case "typecheck-storefront":
+    checkPin()
+    await pnpm(["exec", "tsc", "--noEmit"], storefront)
+    break
+  case "typecheck-backend":
+    checkPin()
+    await pnpm(["exec", "tsc", "--noEmit"], backend)
     break
   case "stop": {
     if (!existsSync(stateFile)) break
@@ -298,6 +446,6 @@ switch (command) {
   }
   default:
     throw new Error(
-      "Usage: node scripts/aut.mjs prepare|init|seed|start|ready|stop",
+      "Usage: node scripts/aut.mjs prepare|init|seed|start|ready|stop|restart-storefront|build-storefront|typecheck-storefront",
     )
 }

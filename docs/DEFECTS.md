@@ -1,7 +1,11 @@
 # Defect reports and controlled experiments
 
 Build: pinned Medusa DTC Starter `0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55`.
-Local Windows/PostgreSQL environment, 2026-11-11. Severity definitions are in
+Local Windows/PostgreSQL environment; initial reports dated 2026-11-11.
+The enhanced storefront campaign on 13 November again detected and restored all
+five seeded defects, with the same intended assertions failing.
+[Latest phase outcomes](evidence/enhancements/defects/summary.json) and
+[verified restoration hashes](evidence/enhancements/defect-restoration.json). Severity definitions are in
 `SEVERITY_PRIORITY.md`. Intentionally seeded defects and discoveries are separate.
 
 ## Independently discovered: CG-B001 — accepted fractional units silently change
@@ -42,6 +46,14 @@ so browser happy paths alone do not detect it.
 seeded examples. No third-party source fix is silently applied.
 
 ## Controlled source mutations
+
+The same five experiments were rerun on FORME on 12 November. Every baseline
+passed, every injected version failed a business assertion, and every restored
+version passed: **10 passing checks and 5 intentional failures**. These are five
+distinct seeded examples, not ten different defects across the two campaigns.
+See [the FORME mutation summary](evidence/redesign/defects/summary.json) and
+[verified restored source hashes](evidence/redesign/defect-restoration.json).
+The earlier screenshots/results below remain historical evidence.
 
 Each experiment runs on the ignored local checkout. All are deliberately introduced,
 not claims about defects shipped by Medusa. Exact source anchors and replacements

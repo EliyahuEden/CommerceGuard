@@ -1,0 +1,158 @@
+{
+  "measuredAt": "2026-11-12T03:10:35.742Z",
+  "source": "docs/evidence/redesign/navigation-stability-raw.json",
+  "stats": {
+    "startTime": "2026-11-12T03:08:21.103Z",
+    "duration": 85754.20199999999,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14340,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14334,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9182,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15500,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15228,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14737,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9100,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7922,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9148,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6976,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13402,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10830,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

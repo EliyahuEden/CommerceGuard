@@ -1,0 +1,122 @@
+{
+  "measuredAt": "2026-11-13T19:33:17.825Z",
+  "source": ".runtime/enhancements-post-navigation/results.json",
+  "stats": {
+    "startTime": "2026-11-13T19:32:03.650Z",
+    "duration": 73492.826,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 213,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15498,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 31030,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 44725,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16675,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2312,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6832,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5409,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3012,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

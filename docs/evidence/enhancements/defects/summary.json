@@ -1,0 +1,327 @@
+[
+  {
+    "id": "CG-D01",
+    "title": "Cart total displayed one euro too high",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-004",
+    "file": "apps/storefront/src/modules/common/components/cart-totals/index.tsx",
+    "find": "{convertToLocale({ amount: total ?? 0, currency_code })}",
+    "replace": "{convertToLocale({ amount: (total ?? 0) + 1, currency_code })}",
+    "expected": "Three EUR 10 items display EUR 30.00.",
+    "actual": "The API and data attribute remain 30, but the customer sees EUR 31.00.",
+    "measuredAt": "2026-11-13T19:18:23.816Z",
+    "originalSha256": "f652371463423643012d25aa10f5ab7be7d7d24b13ed9869d4a4377faa2224bb",
+    "baseline": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:15:45.614Z",
+        "duration": 13097.71,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D01/baseline/results.json"
+    },
+    "injected": {
+      "exitCode": 1,
+      "stats": {
+        "startTime": "2026-11-13T19:16:50.490Z",
+        "duration": 30910.647,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+            "column": 55,
+            "line": 72
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('cart-total')\nExpected: \u001b[32m\"€3\u001b[7m0\u001b[27m.00\"\u001b[39m\nReceived: \u001b[31m\"€3\u001b[7m1\u001b[27m.00\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-total') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-total')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"30\" class=\"txt-xlarge-plus\" data-testid=\"cart-total\">€31.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"€31.00\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:72\n\n  70 |       String(total),\n  71 |     )\n> 72 |     await expect(this.page.getByTestId(\"cart-total\")).toHaveText(\n     |                                                       ^\n  73 |       new Intl.NumberFormat(\"en-US\", {\n  74 |         style: \"currency\",\n  75 |         currency: \"EUR\",\n    at CartPage.expectTotal (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:72:55)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:71:3"
+        }
+      ],
+      "report": "docs/evidence/enhancements/defects/CG-D01/injected/results.json"
+    },
+    "restored": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:18:11.137Z",
+        "duration": 12579.993,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D01/restored/results.json"
+    }
+  },
+  {
+    "id": "CG-D02",
+    "title": "Promotion discount displayed twice",
+    "requirement": "R-PROMO",
+    "severity": "S2",
+    "test": "UI-007",
+    "file": "apps/storefront/src/modules/common/components/cart-totals/index.tsx",
+    "find": "amount: discount_subtotal ?? 0,",
+    "replace": "amount: (discount_subtotal ?? 0) * 2,",
+    "expected": "CG10 on EUR 30 shows a EUR 3.00 discount and EUR 27.00 total.",
+    "actual": "The discount shown is EUR 6.00 while the backend still charges EUR 27.00.",
+    "measuredAt": "2026-11-13T19:20:47.754Z",
+    "originalSha256": "f652371463423643012d25aa10f5ab7be7d7d24b13ed9869d4a4377faa2224bb",
+    "baseline": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:18:24.520Z",
+        "duration": 5840,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D02/baseline/results.json"
+    },
+    "injected": {
+      "exitCode": 1,
+      "stats": {
+        "startTime": "2026-11-13T19:19:21.542Z",
+        "duration": 26376.262,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+            "column": 51,
+            "line": 120
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('cart-discount')\nExpected pattern: \u001b[32m/^-\\s*€3\\.00$/\u001b[39m\nReceived string:  \u001b[31m\"- €6.00\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-discount') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-discount')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"3\" data-testid=\"cart-discount\" class=\"text-ui-fg-interactive\">- €6.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"- €6.00\"\u001b[22m\n\n\n  118 |     \"3\",\n  119 |   )\n> 120 |   await expect(page.getByTestId(\"cart-discount\")).toHaveText(/^-\\s*€3\\.00$/)\n      |                                                   ^\n  121 |   await cart.expectTotal(27)\n  122 | })\n  123 | test(\"UI-008 R-PROMO removing promotion restores full price\", async ({\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:120:51"
+        }
+      ],
+      "report": "docs/evidence/enhancements/defects/CG-D02/injected/results.json"
+    },
+    "restored": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:20:37.734Z",
+        "duration": 9906.186,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D02/restored/results.json"
+    }
+  },
+  {
+    "id": "CG-D03",
+    "title": "Product action silently adds two units",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-003",
+    "file": "apps/storefront/src/modules/products/components/product-actions/index.tsx",
+    "find": "variantId: selectedVariant.id,\n      quantity: 1,",
+    "replace": "variantId: selectedVariant.id,\n      quantity: 2,",
+    "expected": "One add action creates one cart unit.",
+    "actual": "One action sends quantity 2 to the real backend.",
+    "measuredAt": "2026-11-13T19:23:19.150Z",
+    "originalSha256": "730c5b7cc6990415889f6f702d8eec2268e9c918d10ec19277c2e211280fe0d9",
+    "baseline": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:20:48.469Z",
+        "duration": 8628.979,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D03/baseline/results.json"
+    },
+    "injected": {
+      "exitCode": 1,
+      "stats": {
+        "startTime": "2026-11-13T19:21:47.313Z",
+        "duration": 26871.424,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+            "column": 58,
+            "line": 56
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('nav-cart-link')\nExpected substring: \u001b[32m\"\u001b[7m(1\u001b[27m)\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mCart (2\u001b[27m)\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByTestId('nav-cart-link') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('nav-cart-link')\u001b[22m\n\u001b[2m    33 × locator resolved to <a href=\"/dk/cart\" data-testid=\"nav-cart-link\" class=\"hover:text-ui-fg-base\">Cart (2)</a>\u001b[22m\n\u001b[2m       - unexpected value \"Cart (2)\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:56\n\n  54 |     await button.click()\n  55 |     await expect(button).toBeEnabled()\n> 56 |     await expect(this.page.getByTestId(\"nav-cart-link\")).toContainText(\"(1)\")\n     |                                                          ^\n  57 |   }\n  58 | }\n  59 | export class CartPage {\n    at ProductPage.add (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:56:58)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:53:3"
+        }
+      ],
+      "report": "docs/evidence/enhancements/defects/CG-D03/injected/results.json"
+    },
+    "restored": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:23:04.361Z",
+        "duration": 14689.529,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D03/restored/results.json"
+    }
+  },
+  {
+    "id": "CG-D04",
+    "title": "Quantity update submits one more than selected",
+    "requirement": "R-CART",
+    "severity": "S2",
+    "test": "UI-004",
+    "file": "apps/storefront/src/modules/cart/components/item/index.tsx",
+    "find": "lineId: item.id,\n      quantity,",
+    "replace": "lineId: item.id,\n      quantity: quantity + 1,",
+    "expected": "Selecting quantity 3 persists three units and EUR 30 total.",
+    "actual": "The real cart is updated to four units and EUR 40 total.",
+    "measuredAt": "2026-11-13T19:25:43.392Z",
+    "originalSha256": "c93a49faddc417314f55144d1bd2de7e0614fafb1be65227e489cc49cf718170",
+    "baseline": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:23:19.853Z",
+        "duration": 5682.717000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D04/baseline/results.json"
+    },
+    "injected": {
+      "exitCode": 1,
+      "stats": {
+        "startTime": "2026-11-13T19:24:18.653Z",
+        "duration": 21045.199,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts",
+            "column": 66,
+            "line": 84
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('product-select-button')\nExpected: \u001b[32m\"3\"\u001b[39m\nReceived: \u001b[31m\"4\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByTestId('product-select-button') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('product-select-button')\u001b[22m\n\u001b[2m    16 × locator resolved to <select aria-label=\"Item quantity\" data-testid=\"product-select-button\" class=\"appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center\">…</select>\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\u001b[2m    17 × locator resolved to <select aria-label=\"Item quantity\" data-testid=\"product-select-button\" class=\"appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center\">…</select>\u001b[22m\n\u001b[2m       - unexpected value \"4\"\u001b[22m\n\n\n   at ..\\src\\pages\\storefront.ts:84\n\n  82 |       .selectOption(String(value))\n  83 |     await expect(this.page.getByTestId(\"product-select-button\")).toBeEnabled()\n> 84 |     await expect(this.page.getByTestId(\"product-select-button\")).toHaveValue(\n     |                                                                  ^\n  85 |       String(value),\n  86 |     )\n  87 |   }\n    at CartPage.quantity (C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\src\\pages\\storefront.ts:84:66)\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:70:3"
+        }
+      ],
+      "report": "docs/evidence/enhancements/defects/CG-D04/injected/results.json"
+    },
+    "restored": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:25:32.006Z",
+        "duration": 11274.521,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D04/restored/results.json"
+    }
+  },
+  {
+    "id": "CG-D05",
+    "title": "Invalid login error is suppressed",
+    "requirement": "R-ERROR",
+    "severity": "S3",
+    "test": "UI-013",
+    "file": "apps/storefront/src/modules/account/components/login/index.tsx",
+    "find": "error={message?.state === \"error\" ? message.error : null}",
+    "replace": "error={null}",
+    "expected": "Rejected credentials leave the form visible with an authentication error.",
+    "actual": "The backend rejects login, but the error component receives null.",
+    "measuredAt": "2026-11-13T19:27:55.898Z",
+    "originalSha256": "ce277c01256c5d9c411188f9e1ca0292edbb58c082c321502349ef2859e11c32",
+    "baseline": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:25:44.119Z",
+        "duration": 4256.6140000000005,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D05/baseline/results.json"
+    },
+    "injected": {
+      "exitCode": 1,
+      "stats": {
+        "startTime": "2026-11-13T19:26:38.637Z",
+        "duration": 19548.069,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+            "column": 57,
+            "line": 237
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-error-message')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('login-error-message') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-error-message')\u001b[22m\n\n\n  235 |   await account.open()\n  236 |   await account.login(customerData().email, \"wrong-password\")\n> 237 |   await expect(page.getByTestId(\"login-error-message\")).toBeVisible()\n      |                                                         ^\n  238 |   await expect(page.getByTestId(\"login-error-message\")).toContainText(\n  239 |     /invalid|unauthorized/i,\n  240 |   )\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:237:57"
+        }
+      ],
+      "report": "docs/evidence/enhancements/defects/CG-D05/injected/results.json"
+    },
+    "restored": {
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-13T19:27:47.212Z",
+        "duration": 8594.222,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": "passed",
+      "errors": [],
+      "report": "docs/evidence/enhancements/defects/CG-D05/restored/results.json"
+    }
+  }
+]

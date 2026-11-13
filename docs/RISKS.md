@@ -26,3 +26,23 @@ Residual risks: true race-condition duplicate submission and distributed locks;
 low remaining stock races; tax-inclusive pricing, currency rounding across regions,
 payment failures and refunds; email verification when enabled; real mobile devices;
 full accessibility/security audit. These are explicit gaps, not mocked successes.
+
+The FORME redesign also introduces presentation risks: stale catalog data, unnamed
+product links, image/color mismatch, mobile overflow, and pre-hydration interactions.
+UI-018–020 cover selected cases; catalog requests are current, product links have
+explicit names, and cart quantity controls wait for their own client mount. The
+overlay is tracked and exact-match patches fail visibly when upstream changes.
+
+Enhancement risks and controls:
+
+| Risk                                                    | Control                                                                              |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Guest wishlist lost on login or another account exposed | API-034/035 and UI-021/022 check merge, private caching and session ownership        |
+| Cross-customer order details or repeat charge           | UI-025/028 verify ownership, current totals and no additional order creation         |
+| Address errors erase a shopper's work                   | UI-024 checks retained values, associated errors and mobile field geometry           |
+| Unavailable size remains purchasable                    | API-033 and UI-026 check real zero-stock inventory                                   |
+| Product sizing/zoom or checkout unusable by keyboard    | UI-023/027 plus a separate keyboard-only purchase audit and state-specific axe scans |
+
+Wishlist metadata uses last-write-wins across concurrent tabs. The size guide is
+fictional demonstration data, not measured garment specifications. Guest confirmation
+links retain the upstream order-ID access model. These limits remain documented.

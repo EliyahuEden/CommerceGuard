@@ -1,0 +1,309 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.tools\\node_modules\\node\\bin\\node.exe",
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=chromium",
+      "--workers=1",
+      "--grep",
+      "UI-007"
+    ],
+    "configFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\playwright.config.ts",
+    "rootDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "integration",
+        "name": "integration",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D02/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "snapshotDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\docs\\evidence\\redesign\\defects\\CG-D02\\injected\\results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [
+      "@regression"
+    ],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+          "ok": false,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 24874,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('cart-discount')\nExpected pattern: \u001b[32m/^-\\s*€3\\.00$/\u001b[39m\nReceived string:  \u001b[31m\"- €6.00\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-discount') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-discount')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"3\" data-testid=\"cart-discount\" class=\"text-ui-fg-interactive\">- €6.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"- €6.00\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('cart-discount')\nExpected pattern: \u001b[32m/^-\\s*€3\\.00$/\u001b[39m\nReceived string:  \u001b[31m\"- €6.00\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-discount') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-discount')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"3\" data-testid=\"cart-discount\" class=\"text-ui-fg-interactive\">- €6.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"- €6.00\"\u001b[22m\n\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:120:51",
+                    "location": {
+                      "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                      "column": 51,
+                      "line": 120
+                    },
+                    "snippet": " \u001b[90m 118 |\u001b[39m     \u001b[32m\"3\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 119 |\u001b[39m   )\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m\"cart-discount\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[35m/^-\\s*€3\\.00$/\u001b[39m)\n \u001b[90m     |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m   \u001b[36mawait\u001b[39m cart\u001b[33m.\u001b[39mexpectTotal(\u001b[35m27\u001b[39m)\n \u001b[90m 122 |\u001b[39m })\n \u001b[90m 123 |\u001b[39m test(\u001b[32m\"UI-008 R-PROMO removing promotion restores full price\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                        "column": 51,
+                        "line": 120
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('cart-discount')\nExpected pattern: \u001b[32m/^-\\s*€3\\.00$/\u001b[39m\nReceived string:  \u001b[31m\"- €6.00\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('cart-discount') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('cart-discount')\u001b[22m\n\u001b[2m    33 × locator resolved to <span data-value=\"3\" data-testid=\"cart-discount\" class=\"text-ui-fg-interactive\">- €6.00</span>\u001b[22m\n\u001b[2m       - unexpected value \"- €6.00\"\u001b[22m\n\n\n  118 |     \"3\",\n  119 |   )\n> 120 |   await expect(page.getByTestId(\"cart-discount\")).toHaveText(/^-\\s*€3\\.00$/)\n      |                                                   ^\n  121 |   await cart.expectTotal(27)\n  122 | })\n  123 | test(\"UI-008 R-PROMO removing promotion restores full price\", async ({\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:120:51"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T03:34:10.078Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\artifacts\\ui-storefront-UI-007-R-PRO-c7f9c-ten-percent-promotion-smoke-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\artifacts\\ui-storefront-UI-007-R-PRO-c7f9c-ten-percent-promotion-smoke-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\artifacts\\ui-storefront-UI-007-R-PRO-c7f9c-ten-percent-promotion-smoke-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D02\\injected\\artifacts\\ui-storefront-UI-007-R-PRO-c7f9c-ten-percent-promotion-smoke-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                    "column": 51,
+                    "line": 120
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-82651c9db31f2c8721d9",
+          "file": "ui/storefront.spec.ts",
+          "line": 106,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T03:34:07.957Z",
+    "duration": 27976.473,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

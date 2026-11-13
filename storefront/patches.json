@@ -1,0 +1,52 @@
+[
+  {
+    "file": "src/lib/util/site.ts",
+    "find": "export const STORE_NAME = \"Medusa Store\"",
+    "replace": "export const STORE_NAME = \"FORME\""
+  },
+  {
+    "file": "src/modules/account/components/login/index.tsx",
+    "find": "Sign in to access an enhanced shopping experience.",
+    "replace": "Your orders, your details. All in one considered place."
+  },
+  {
+    "file": "src/modules/account/components/register/index.tsx",
+    "find": "Become a Medusa Store Member",
+    "replace": "Make yourself at home"
+  },
+  {
+    "file": "src/lib/data/products.ts",
+    "find": "cache: \"force-cache\"",
+    "replace": "// The local QA catalog must reflect seed and inventory changes immediately.\n        cache: \"no-store\""
+  },
+  {
+    "file": "next.config.js",
+    "find": "reactStrictMode: true,",
+    "replace": "reactStrictMode: true,\n  devIndicators: false,"
+  },
+  {
+    "file": "next.config.js",
+    "find": "ignoreBuildErrors: true",
+    "replace": "ignoreBuildErrors: false"
+  },
+  {
+    "file": "src/app/[countryCode]/(main)/products/[handle]/page.tsx",
+    "find": "export const dynamic = \"force-static\"",
+    "replace": "// QA storefront: reflect controlled catalog/inventory updates on each request.\nexport const dynamic = \"force-dynamic\""
+  },
+  {
+    "file": "src/app/[countryCode]/(main)/products/[handle]/page.tsx",
+    "find": "\n    title: `${product.title} | ${STORE_NAME}`,",
+    "replace": "\n    title: product.title,"
+  },
+  {
+    "file": "src/app/[countryCode]/(main)/categories/[...category]/page.tsx",
+    "find": "title: `${title} | Medusa Store`,",
+    "replace": "title,"
+  },
+  {
+    "file": "src/app/[countryCode]/(main)/collections/[handle]/page.tsx",
+    "find": "title: `${collection.title} | Medusa Store`,",
+    "replace": "title: collection.title,"
+  }
+]

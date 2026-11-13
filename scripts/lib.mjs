@@ -13,6 +13,9 @@ if (major !== 22 || minor < 23 || (minor === 23 && patch < 4)) {
 // pnpm's generated executable shims must use this same runtime, even when the
 // caller invoked an absolute portable node.exe without changing the shell PATH.
 process.env.PATH = dirname(process.execPath) + delimiter + process.env.PATH
+// Run the reviewed QA toolchain rather than downloading the older executable
+// named in the third-party packageManager field. Its frozen lockfile stays intact.
+process.env.npm_config_manage_package_manager_versions = "false"
 export const aut = resolve(root, ".aut/dtc-starter")
 export const runtime = resolve(root, ".runtime")
 mkdirSync(runtime, { recursive: true })

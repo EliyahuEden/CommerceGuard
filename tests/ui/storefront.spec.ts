@@ -19,15 +19,15 @@ test("UI-001 R-CATALOG product browsing and details show the seeded product @smo
   await expect(page.getByTestId("store-page-title")).toHaveText("All products")
   const product = page
     .getByTestId("product-wrapper")
-    .filter({ hasText: "Medusa T-Shirt" })
+    .filter({ hasText: seed.productTitle })
   await expect(product).toHaveCount(1)
   await page
     .getByTestId("products-list")
-    .getByRole("link", { name: /Medusa T-Shirt/ })
+    .getByRole("link", { name: new RegExp(seed.productTitle) })
     .click()
   await expect(
     page.getByTestId("product-container").getByTestId("product-title"),
-  ).toHaveText("Medusa T-Shirt")
+  ).toHaveText(seed.productTitle)
   await expect(page.getByTestId("product-description")).not.toBeEmpty()
   expect(new URL(page.url()).pathname).toBe(`/dk/products/${seed.handle}`)
 })
@@ -141,15 +141,32 @@ test("UI-008 R-PROMO removing promotion restores full price", async ({
 })
 test("UI-009 R-CATALOG search narrows products and can be cleared", async ({
   page,
+  seed,
+  store,
 }) => {
+  const catalog = await jsonOk<{ products: { title: string }[] }>(
+    await store.get("/store/products?limit=100"),
+  )
+  const expected = catalog.products
+    .filter((product) => product.title.toLowerCase().includes("t-shirt"))
+    .map((product) => product.title)
+    .sort()
   await openPage(page, "/dk/store")
   await page.getByTestId("store-search-input").fill("T-Shirt")
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(1)
-  await expect(page.getByTestId("product-wrapper")).toContainText(
-    "Medusa T-Shirt",
-  )
+  await expect(page.getByTestId("product-wrapper")).toHaveCount(expected.length)
+  expect(
+    (
+      await page
+        .getByTestId("products-list")
+        .getByTestId("product-title")
+        .allTextContents()
+    ).sort(),
+  ).toEqual(expected)
+  expect(expected).toContain(seed.productTitle)
   await page.getByTestId("store-search-clear").click()
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(4)
+  await expect(page.getByTestId("product-wrapper")).toHaveCount(
+    catalog.products.length,
+  )
 })
 test("UI-010 R-ERROR search with no matching product shows empty state", async ({
   page,
@@ -163,17 +180,36 @@ test("UI-010 R-ERROR search with no matching product shows empty state", async (
 })
 test("UI-011 R-CATALOG category filter restricts the catalog", async ({
   page,
+  seed,
+  store,
 }) => {
+  const catalog = await jsonOk<{
+    products: { title: string; categories: { name: string }[] }[]
+  }>(await store.get("/store/products?limit=100&fields=*categories"))
+  const expected = catalog.products
+    .filter((product) =>
+      product.categories.some((category) => category.name === "Shirts"),
+    )
+    .map((product) => product.title)
+    .sort()
   await openPage(page, "/dk/store")
+  const toggle = page.getByTestId("filters-toggle")
+  if (await toggle.isVisible()) await toggle.click()
   const filter = page
     .getByTestId("refinement-category")
     .locator("..")
     .filter({ hasText: /^Shirts/ })
   await filter.getByRole("checkbox").check()
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(1)
-  await expect(page.getByTestId("product-wrapper")).toContainText(
-    "Medusa T-Shirt",
-  )
+  await expect(page.getByTestId("product-wrapper")).toHaveCount(expected.length)
+  expect(
+    (
+      await page
+        .getByTestId("products-list")
+        .getByTestId("product-title")
+        .allTextContents()
+    ).sort(),
+  ).toEqual(expected)
+  expect(expected).toContain(seed.productTitle)
 })
 test("UI-012 R-AUTH registration creates a usable customer account", async ({
   page,
@@ -241,6 +277,7 @@ test("UI-016 R-ACCOUNT name edit persists after reload", async ({
 })
 test("UI-017 R-ORDER customer completes checkout and sees order history @smoke", async ({
   page,
+  seed,
   store,
   context,
 }) => {
@@ -256,5 +293,104 @@ test("UI-017 R-ORDER customer completes checkout and sees order history @smoke",
   await checkout.placeOrder()
   await openPage(page, "/dk/account/orders")
   await expect(page.getByTestId("order-card")).toHaveCount(1)
-  await expect(page.getByTestId("order-card")).toContainText("Medusa T-Shirt")
+  await expect(page.getByTestId("order-card")).toContainText(seed.productTitle)
+})
+
+test("UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke", async ({
+  page,
+  seed,
+}) => {
+  await openPage(page, "/dk")
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "Everyday,",
+  )
+  await expect(
+    page.getByTestId("home-products").getByTestId("product-wrapper"),
+  ).toHaveCount(4)
+  const images = page.getByTestId("home-products").locator("img")
+  await images.first().scrollIntoViewIfNeeded()
+  await expect
+    .poll(() =>
+      images.evaluateAll((images) =>
+        images.every(
+          (image) =>
+            (image as HTMLImageElement).complete &&
+            (image as HTMLImageElement).naturalWidth > 0,
+        ),
+      ),
+    )
+    .toBe(true)
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(await page.evaluate(() => innerWidth))
+  await page
+    .getByTestId("home-products")
+    .getByRole("link")
+    .filter({ hasText: seed.productTitle })
+    .click()
+  await expect(
+    page.getByTestId("product-container").getByTestId("product-title"),
+  ).toHaveText(seed.productTitle)
+})
+
+test("UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work", async ({
+  page,
+  store,
+}) => {
+  const catalog = await jsonOk<{ count: number }>(
+    await store.get("/store/products?limit=1"),
+  )
+  await openPage(page, "/dk")
+  // Native WebKit tab-navigation preferences vary by platform; verify keyboard
+  // activation and main-content focus transfer consistently in all engines.
+  await page.getByRole("link", { name: "Skip to content" }).focus()
+  await expect(
+    page.getByRole("link", { name: "Skip to content" }),
+  ).toBeFocused()
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#main-content")).toBeFocused()
+  await expect(page.getByRole("main")).toHaveCount(1)
+  await expect(
+    page.getByRole("main").getByRole("navigation", { name: "Main navigation" }),
+  ).toHaveCount(0)
+  const menu = page.getByTestId("nav-menu-button")
+  if (await menu.isVisible()) {
+    await menu.click()
+    await expect(page.getByTestId("nav-menu-popup")).toBeVisible()
+    await page.getByTestId("nav-menu-popup").getByTestId("store-link").click()
+  } else await page.getByTestId("home-shop-button").click()
+  await expect(page.getByTestId("store-page-title")).toHaveText("All products")
+  await expect(page.getByTestId("product-wrapper")).toHaveCount(
+    Math.min(catalog.count, 12),
+  )
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(await page.evaluate(() => innerWidth))
+  await page.getByTestId("nav-account-link").click()
+  await expect(page.getByTestId("login-page")).toBeVisible()
+})
+
+test("UI-020 R-CATALOG selected color displays the matching variant photograph", async ({
+  page,
+  seed,
+}) => {
+  await new ProductPage(page, seed).open()
+  const color = page.getByRole("group", { name: "Select Color" })
+  await color
+    .getByTestId("option-button")
+    .filter({ hasText: /^White$/ })
+    .click()
+  await expect(
+    page.locator(".forme-gallery-image img").first(),
+  ).toHaveAttribute("src", /tee-white/)
+  await expect(
+    color.getByRole("radio", { name: "White", exact: true }),
+  ).toBeChecked()
+  await color
+    .getByTestId("option-button")
+    .filter({ hasText: /^Black$/ })
+    .click()
+  await expect(
+    page.locator(".forme-gallery-image img").first(),
+  ).toHaveAttribute("src", /tee\.webp/)
 })

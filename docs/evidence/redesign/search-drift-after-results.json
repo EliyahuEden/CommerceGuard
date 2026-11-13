@@ -1,0 +1,26 @@
+{
+  "measuredAt": "2026-11-12T14:29:34.054Z",
+  "source": "docs/evidence/redesign/search-drift-after-raw.json",
+  "stats": {
+    "startTime": "2026-11-12T14:29:32.726Z",
+    "duration": 1215.784,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 128,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

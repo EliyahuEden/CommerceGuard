@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs"
+import { dirname } from "node:path"
 const path = process.argv[2] || "test-results/results.json"
 const report = JSON.parse(readFileSync(path, "utf8"))
 const cases = []
@@ -29,5 +30,6 @@ const summary = {
 }
 mkdirSync("docs/evidence", { recursive: true })
 const output = process.argv[3] || "docs/evidence/latest-results.json"
+mkdirSync(dirname(output), { recursive: true })
 writeFileSync(output, JSON.stringify(summary, null, 2))
 console.log(JSON.stringify(report.stats, null, 2))

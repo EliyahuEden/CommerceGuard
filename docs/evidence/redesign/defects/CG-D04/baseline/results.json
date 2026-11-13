@@ -1,0 +1,263 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.tools\\node_modules\\node\\bin\\node.exe",
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=chromium",
+      "--workers=1",
+      "--grep",
+      "UI-004"
+    ],
+    "configFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\playwright.config.ts",
+    "rootDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "integration",
+        "name": "integration",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D04/baseline/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D04\\baseline\\artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "snapshotDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D04\\baseline\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\docs\\evidence\\redesign\\defects\\CG-D04\\baseline\\results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D04\\baseline\\junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [
+      "@regression"
+    ],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-004 R-CART quantity update recalculates displayed total",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8038,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T03:39:52.607Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-c8d5da6c129725259c21",
+          "file": "ui/storefront.spec.ts",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T03:39:50.516Z",
+    "duration": 10672.142,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -36,8 +36,33 @@ owns request/database lifetimes; `tests/{api,ui,integration}` expresses business
 expectations; `performance` owns k6 workloads; `scripts` owns lifecycle/evidence;
 `aut` contains the original seed/instrumentation copied into the ignored application.
 
+`storefront` contains the independently maintained FORME presentation overlay, local
+assets, and exact-match patches. `aut:prepare` applies it to the pinned checkout;
+`aut:seed` uses official core workflows to create missing collections, products and
+inventory levels, apply catalog text, and reconcile variant image associations.
+Repeat seeding does not replenish existing inventory. Commerce, order, authentication and persistence behavior remain
+Medusa implementations. See [the storefront decisions](STOREFRONT.md).
+
+Seeding explicitly awaits derived search ingestion before exit. The normal local
+event bus can finish after a CLI script, so relying only on product-update events
+can leave a document stale. The catalog smoke contract independently compares the
+search index's title/image projection with the Store API's current records.
+
 There is no mock commerce service, in-memory fake database or intercepted successful
 checkout response. API setup creates real prerequisites. Browser tests still perform
 the user action being asserted. SQL checks use the actual tables inspected in the
 pinned package models/migrations: `cart`, `cart_line_item`,
 `cart_line_item_adjustment`, `order_item`, `order_line_item`, `order_cart`.
+
+The wishlist read boundary is a same-origin, private/no-store GET route that derives
+the customer from its HttpOnly session. Wishlist writes use authenticated server
+actions and the existing customer metadata contract; simultaneous account writes
+use last-write-wins semantics. Guest lists merge only after a successful account
+write. Account order pages verify ownership before metadata/details render; buy
+again creates a new real cart with current price/stock and never creates an order.
+
+Quality gates compile and run the Next.js production server. Source mutation uses
+development compilation so each injected patch is exercised. Production localhost
+HTTP cookies require an explicit private test flag plus exact loopback origins;
+other production configurations retain Secure cookies. Process teardown verifies
+the recorded PID still belongs to this workspace before stopping it.

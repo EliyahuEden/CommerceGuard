@@ -7,14 +7,17 @@ import {
   copyFileSync,
   unlinkSync,
 } from "node:fs"
-import { resolve, basename } from "node:path"
+import { resolve, basename, relative } from "node:path"
 import { createHash } from "node:crypto"
 import { aut, root, runtime, waitFor, run } from "./lib.mjs"
 
 const scenarios = JSON.parse(
   readFileSync(resolve(root, "defects/scenarios.json"), "utf8"),
 )
-const evidence = resolve(root, "docs/evidence/defects")
+const evidence = resolve(
+  root,
+  process.env.CG_DEFECT_EVIDENCE_DIR || "docs/evidence/defects",
+)
 mkdirSync(evidence, { recursive: true })
 const recoveryPath = resolve(runtime, "defect-recovery.json")
 if (process.argv.includes("--restore")) {
@@ -49,10 +52,21 @@ process.on("SIGINT", restoreOnSignal)
 process.on("SIGTERM", restoreOnSignal)
 await waitFor("http://127.0.0.1:9000/health")
 const restart = () =>
-  run(process.execPath, [
-    resolve(root, "scripts/aut.mjs"),
-    "restart-storefront",
-  ])
+  run(
+    process.execPath,
+    [resolve(root, "scripts/aut.mjs"), "restart-storefront"],
+    {
+      env: {
+        ...process.env,
+        CG_STOREFRONT_MODE: "development",
+        CG_WARM_PATHS: JSON.stringify([
+          "/dk/cart",
+          `/dk/products/${JSON.parse(readFileSync(resolve(runtime, "seed.json"), "utf8")).handle}`,
+          "/dk/account",
+        ]),
+      },
+    },
+  )
 await restart()
 async function execute(scenario, phase) {
   const folder = resolve(evidence, scenario.id, phase)
@@ -119,7 +133,7 @@ async function execute(scenario, phase) {
     stats: result.stats,
     status: outcome.status,
     errors: outcome.errors,
-    report: `docs/evidence/defects/${scenario.id}/${phase}/results.json`,
+    report: relative(root, report).replaceAll("\\", "/"),
   }
 }
 const summary = []

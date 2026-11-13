@@ -6,20 +6,28 @@ copyright Medusa. Pinned commit:
 Its source, history, MIT license, AGENTS.md, manifests, lockfile, seed, storefront
 components and installed package instructions were inspected before API/seed work.
 The original license remains in the cloned checkout; CommerceGuard has its own MIT
-license. Nothing publishes upstream code or claims the storefront as original work.
+license. The FORME presentation layer is an original redesign with adapted upstream
+components attributed separately; see [storefront design](STOREFRONT.md). The complete
+upstream application remains an ignored clone.
 
 ## Runtime
 
-Node 22.23.4; upstream pnpm 10.11.1 (its authoritative `packageManager` value);
+Node 22.23.4; upstream declares pnpm 10.11.1 in its `packageManager` value;
 Medusa 2.22.6; Next.js 16.3.8; PostgreSQL 18.6. Upstream packages install with its
 frozen lockfile. Root QA dependencies use npm and the independent package-lock.json.
-The root package manager is never used inside the upstream checkout.
+The QA scripts execute reviewed pnpm 10.34.9 against that same frozen upstream
+lockfile. Version auto-download is disabled so the upstream declaration cannot
+silently select the older executable. This compatible pnpm 10 patch removes the
+high-severity advisories reported for the previous QA tool dependency; the npm
+audit after the upgrade reported zero vulnerabilities. npm itself is never used
+to install the upstream application. No upstream lockfile is hand-edited.
 
 `aut:prepare` clones/checks out the pinned revision in ignored `.aut/dtc-starter`,
 installs dependencies, disables the unrelated admin dashboard, copies the seed, and
-adds a tiny hydration-readiness component to the root layout. That React effect
+applies the tracked FORME overlay and a tiny hydration-readiness component to the root layout. That React effect
 sets `data-commerceguard-hydrated` after the client app commits. Tests wait for this
-hook before acting on SSR controls, preventing dropped pre-hydration events. It
+hook before acting on SSR controls. The cart quantity control additionally stays
+disabled until its own client mount, preventing lost changes at that boundary. The root hook
 returns null and changes no commerce state, HTTP response or visible content.
 This is explicit test instrumentation; the framework does not mock backend calls.
 The source is `aut/readiness.tsx`, and setup applies it repeatably.
@@ -41,6 +49,12 @@ real module/link/search tables. The starter's one-time initial migration creates
 expected fixture values to `.runtime/seed.json`, and writes storefront `.env.local`.
 Repeat seeding preserves the same promotion. Checkout and stock assertions validate
 the seed against real responses rather than trusting setup blindly.
+
+The same script applies `storefront/catalog.json` presentation metadata through
+`updateProductsWorkflow`, and variant photographs through
+`batchVariantImagesWorkflow`. Products retain their real handles, SKUs, prices,
+inventory and options. The T-Shirt is presented as Essential T-Shirt, with locally
+hosted black/white images. Tests read its title from the exported seed manifest.
 
 ## API source of truth
 
@@ -90,8 +104,14 @@ running commands. A first Next route compilation can be slow; `aut:start` warms
 all critical routes, including checkout and confirmation, and drains their streamed
 HTML. Business API contexts request `Connection: close`; k6 keeps its normal
 connection behavior. Earlier compilation/transport failures remain in `STR.md`.
-External demo images may fail independently of commerce APIs;
-tests synchronize to hydration and do not claim image availability coverage.
+
+On this OneDrive host a cold Medusa start exceeded 180s. Startup now allows 300s
+and can resume an owned backend-only partial start by rerunning `aut:start`.
+It refuses to duplicate a running backend/storefront pair. Prefer a local,
+non-synced workspace for cold builds and long test campaigns.
+FORME imagery and fonts are local assets. UI-018 checks homepage product image
+availability; UI-020 checks selected-color image associations. This does not certify
+every image or a full accessibility audit.
 
 If an experiment is interrupted, run `node scripts/defects.mjs --restore` before
 rerunning tests. If services already exist, use `aut:stop` before `aut:start`.
@@ -101,3 +121,21 @@ To upgrade: change the commit pin; inspect upstream AGENTS/package versions; rei
 with its lockfile; inspect API validators, migrations and selectors; rerun migration,
 seed, all projects, smoke repetitions and the five mutation experiments. The patch
 runner requires unique source anchors and refuses mismatches.
+
+## Enhanced catalog and production QA mode
+
+`aut/catalog.ts` adds six products through public Medusa workflows, bringing the
+catalog to ten. New products have varied EUR/USD prices, three collections, and
+explicit low/zero-stock variants. Existing levels are never reset by repeat seed.
+The original EUR10 fixture is retained for independent money assertions.
+
+Use `npm run aut:start:production` for release checks; `npm run aut:start` supports
+local development. Production startup compiles the storefront before readiness.
+The generated local environment enables HTTP test cookies only with explicit
+`COMMERCEGUARD_LOCAL_TEST=true` and exact loopback storefront/backend origins.
+This exception does not apply to other production configurations.
+
+For this measured Windows campaign the ignored `.aut/dtc-starter` checkout was
+moved to a workspace-hashed Local AppData cache and linked with a junction to avoid
+OneDrive build overhead. The upstream commit is unchanged. A fresh checkout outside
+OneDrive is recommended; this relocation is not required by the normal setup.

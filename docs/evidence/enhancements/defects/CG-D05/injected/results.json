@@ -1,0 +1,309 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.tools\\node_modules\\node\\bin\\node.exe",
+      "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=chromium",
+      "--workers=1",
+      "--grep",
+      "UI-013"
+    ],
+    "configFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\playwright.config.ts",
+    "rootDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "integration",
+        "name": "integration",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/integration/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/.runtime/defects/CG-D05/injected/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-chromium",
+        "name": "mobile-chromium",
+        "testDir": "C:/Users/edene/OneDrive/שולחן העבודה/CommerceGuard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/ui/**/*.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "snapshotDir": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests",
+        "testIgnore": [],
+        "testMatch": "**/ui/**/*.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "actionTimeout": 15000,
+          "navigationTimeout": 60000,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "locale": "en-GB",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\docs\\evidence\\enhancements\\defects\\CG-D05\\injected\\results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [
+      "@regression"
+    ],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\storefront.spec.ts",
+      "file": "ui/storefront.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+          "ok": false,
+          "tags": [
+            "regression",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18136,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-error-message')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('login-error-message') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-error-message')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-error-message')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('login-error-message') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-error-message')\u001b[22m\n\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:237:57",
+                    "location": {
+                      "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                      "column": 57,
+                      "line": 237
+                    },
+                    "snippet": " \u001b[90m 235 |\u001b[39m   \u001b[36mawait\u001b[39m account\u001b[33m.\u001b[39mopen()\n \u001b[90m 236 |\u001b[39m   \u001b[36mawait\u001b[39m account\u001b[33m.\u001b[39mlogin(customerData()\u001b[33m.\u001b[39memail\u001b[33m,\u001b[39m \u001b[32m\"wrong-password\"\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 237 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m\"login-error-message\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 238 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m\"login-error-message\"\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\n \u001b[90m 239 |\u001b[39m     \u001b[35m/invalid|unauthorized/i\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 240 |\u001b[39m   )"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                        "column": 57,
+                        "line": 237
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-error-message')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('login-error-message') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-error-message')\u001b[22m\n\n\n  235 |   await account.open()\n  236 |   await account.login(customerData().email, \"wrong-password\")\n> 237 |   await expect(page.getByTestId(\"login-error-message\")).toBeVisible()\n      |                                                         ^\n  238 |   await expect(page.getByTestId(\"login-error-message\")).toContainText(\n  239 |     /invalid|unauthorized/i,\n  240 |   )\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:237:57"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-13T19:26:39.448Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\artifacts\\ui-storefront-UI-013-R-AUT-4bd64-splays-a-useful-error-smoke-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\artifacts\\ui-storefront-UI-013-R-AUT-4bd64-splays-a-useful-error-smoke-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\artifacts\\ui-storefront-UI-013-R-AUT-4bd64-splays-a-useful-error-smoke-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\.runtime\\defects\\CG-D05\\injected\\artifacts\\ui-storefront-UI-013-R-AUT-4bd64-splays-a-useful-error-smoke-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                    "column": 57,
+                    "line": 237
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0b7995a52e40b0d2c818-2bdc54196469b34b9c2c",
+          "file": "ui/storefront.spec.ts",
+          "line": 231,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-13T19:26:38.637Z",
+    "duration": 19548.069,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

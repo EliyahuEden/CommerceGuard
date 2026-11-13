@@ -12,9 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/prepare
+        id: prepare
         with:
           browsers: chromium firefox webkit
+      - run: npm run typecheck
+      - run: npm run storefront:typecheck
+      - run: npm run backend:typecheck
       - run: npm run test:regression
+      - run: npm run test:keyboard
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        env:
+          CG_KEYBOARD_EVIDENCE_DIR: test-results/keyboard
       - uses: actions/upload-artifact@v5
         if: always()
         with:

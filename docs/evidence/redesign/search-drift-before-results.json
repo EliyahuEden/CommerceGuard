@@ -1,0 +1,35 @@
+{
+  "measuredAt": "2026-11-12T14:25:38.024Z",
+  "source": "docs/evidence/redesign/search-drift-before-raw.json",
+  "stats": {
+    "startTime": "2026-11-12T14:25:34.625Z",
+    "duration": 3221.1180000000004,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke",
+      "project": "api",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 201,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\catalog.spec.ts",
+                "column": 70,
+                "line": 34
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[33m@@ -1,10 +1,10 @@\u001b[39m\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    Object {\u001b[22m\n\u001b[2m      \"id\": \"prod_01M760AJQC2KWRQM5XNB9WBDHP\",\u001b[22m\n\u001b[32m-     \"thumbnail\": \"/forme/shorts.webp\",\u001b[39m\n\u001b[32m-     \"title\": \"Weekend Shorts\",\u001b[39m\n\u001b[31m+     \"thumbnail\": \"https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png\",\u001b[39m\n\u001b[31m+     \"title\": \"Medusa Shorts\",\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    Object {\u001b[22m\n\u001b[2m      \"id\": \"prod_01M760AJQC9HD2J7DZ0NP3VB3V\",\u001b[22m\n\u001b[2m      \"thumbnail\": \"/forme/tee.webp\",\u001b[22m\n\u001b[2m      \"title\": \"Essential T-Shirt\",\u001b[22m\n\n  32 |   expect(search.results).toHaveLength(1)\n  33 |   const byId = (a: { id: string }, b: { id: string }) => a.id.localeCompare(b.id)\n> 34 |   expect(search.results[0].hits.map(hit => hit.document).sort(byId)).toEqual(\n     |                                                                      ^\n  35 |     products.map(({ id, title, thumbnail }) => ({ id, title, thumbnail })).sort(byId),\n  36 |   )\n  37 | })\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\catalog.spec.ts:34:70"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "measuredAt": "2026-11-13T19:02:34.950Z",
+  "source": ".runtime/enhancements-menu-fixed/results.json",
+  "stats": {
+    "startTime": "2026-11-13T19:02:10.030Z",
+    "duration": 24694.207,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2048,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1929,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2030,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2013,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1977,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2006,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2039,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2747,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

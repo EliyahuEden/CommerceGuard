@@ -23,7 +23,7 @@ runs:
       shell: bash
     - run: npm run aut:seed
       shell: bash
-    - run: npm run aut:start
+    - run: npm run aut:start:production
       shell: bash
       env:
         MEDUSA_DISABLE_TELEMETRY: "true"

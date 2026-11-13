@@ -1,0 +1,31 @@
+{
+  "verifiedAt": "2026-11-13T19:30:30.540Z",
+  "defects": [
+    {
+      "id": "CG-D01",
+      "restored": true,
+      "sha256": "f652371463423643012d25aa10f5ab7be7d7d24b13ed9869d4a4377faa2224bb"
+    },
+    {
+      "id": "CG-D02",
+      "restored": true,
+      "sha256": "f652371463423643012d25aa10f5ab7be7d7d24b13ed9869d4a4377faa2224bb"
+    },
+    {
+      "id": "CG-D03",
+      "restored": true,
+      "sha256": "730c5b7cc6990415889f6f702d8eec2268e9c918d10ec19277c2e211280fe0d9"
+    },
+    {
+      "id": "CG-D04",
+      "restored": true,
+      "sha256": "c93a49faddc417314f55144d1bd2de7e0614fafb1be65227e489cc49cf718170"
+    },
+    {
+      "id": "CG-D05",
+      "restored": true,
+      "sha256": "ce277c01256c5d9c411188f9e1ca0292edbb58c082c321502349ef2859e11c32"
+    }
+  ],
+  "recoveryRecordRemaining": false
+}

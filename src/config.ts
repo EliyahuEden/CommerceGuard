@@ -25,6 +25,7 @@ const seedSchema = z.object({
   regionId: z.string(),
   publishableKey: z.string(),
   productId: z.string(),
+  productTitle: z.string().default("Medusa T-Shirt"),
   variantId: z.string(),
   handle: z.string(),
   unitPrice: z.number(),

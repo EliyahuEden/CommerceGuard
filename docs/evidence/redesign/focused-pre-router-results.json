@@ -1,0 +1,179 @@
+{
+  "measuredAt": "2026-11-12T03:07:41.693Z",
+  "source": "docs/evidence/redesign/focused-final-raw.json",
+  "stats": {
+    "startTime": "2026-11-12T03:04:57.775Z",
+    "duration": 89374.48300000001,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9578,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6212,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14082,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9623,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7397,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 22248,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 48,
+                "line": 328
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-page')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('login-page') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-page')\u001b[22m\n\u001b[2m    - waiting for \"http://localhost:8000/dk/store\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"http://localhost:8000/dk/store\"\u001b[22m\n\n\n  326 |   ).toBeLessThanOrEqual(await page.evaluate(() => innerWidth))\n  327 |   await page.getByTestId(\"nav-account-link\").click()\n> 328 |   await expect(page.getByTestId(\"login-page\")).toBeVisible()\n      |                                                ^\n  329 | })\n  330 |\n  331 | test(\"UI-020 R-CATALOG selected color displays the matching variant photograph\", async ({\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:328:48"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15146,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9686,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8554,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17658,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11179,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9449,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8827,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

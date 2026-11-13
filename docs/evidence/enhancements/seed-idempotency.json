@@ -1,0 +1,699 @@
+{
+  "startedAt": "2026-11-13T19:12:13.742Z",
+  "finishedAt": "2026-11-13T19:14:19.986Z",
+  "unchanged": true,
+  "manifestUnchanged": true,
+  "projection": {
+    "count": 10,
+    "products": [
+      {
+        "id": "prod_01M760AJQC2KWRQM5XNB9WBDHP",
+        "handle": "shorts",
+        "title": "Weekend Shorts",
+        "material": "Cotton blend",
+        "thumbnail": "/forme/shorts.webp",
+        "metadata": {
+          "fit": "Relaxed fit. Choose your usual size for an easy silhouette.",
+          "care": "Machine wash cold with similar colours. Reshape while damp and air dry. Do not bleach."
+        },
+        "collection": "off-duty",
+        "images": [
+          {
+            "id": "img_01M78C3TC6FM0RBGN4YN0AYT0H",
+            "url": "/forme/shorts.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M760AJV18ZB1CN5623477NS8",
+            "title": "M",
+            "sku": "SHORTS-M",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/shorts.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1NZTGJ4MKKAMCB9JA",
+            "title": "S",
+            "sku": "SHORTS-S",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/shorts.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1Z9C98EA5C13MSY4T",
+            "title": "L",
+            "sku": "SHORTS-L",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/shorts.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV2MN7QBPQNNK88DXY7",
+            "title": "XL",
+            "sku": "SHORTS-XL",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/shorts.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M760AJQC9HD2J7DZ0NP3VB3V",
+        "handle": "t-shirt",
+        "title": "Essential T-Shirt",
+        "material": "Cotton blend",
+        "thumbnail": "/forme/tee.webp",
+        "metadata": {
+          "fit": "Regular fit. Your everyday silhouette, with room to move.",
+          "care": "Machine wash cold with similar colours. Reshape while damp and air dry. Do not bleach."
+        },
+        "collection": "everyday-essentials",
+        "images": [
+          {
+            "id": "img_01M78C3RWC6WRXXFX68VWCDYDS",
+            "url": "/forme/tee.webp"
+          },
+          {
+            "id": "img_01M78C3RWCRWWE48Q78P2FBZ36",
+            "url": "/forme/tee-white.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M760AJTZEB9Y0KXPFGYGXDCG",
+            "title": "S / White",
+            "sku": "SHIRT-S-WHITE",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee-white.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJTZN4MP2REA339Q8KBD",
+            "title": "S / Black",
+            "sku": "SHIRT-S-BLACK",
+            "inventory": 999730,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV062EZP9DP26N5069Y",
+            "title": "L / White",
+            "sku": "SHIRT-L-WHITE",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee-white.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV0GN6MVATZNF4W243Z",
+            "title": "XL / White",
+            "sku": "SHIRT-XL-WHITE",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee-white.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV0GV0APF04DTX46W89",
+            "title": "L / Black",
+            "sku": "SHIRT-L-BLACK",
+            "inventory": 999999,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV0HDSF5WAEWP15JPXZ",
+            "title": "XL / Black",
+            "sku": "SHIRT-XL-BLACK",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV0N2JQCEH7R9HFQ71Z",
+            "title": "M / Black",
+            "sku": "SHIRT-M-BLACK",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV0S451V73GM9690MZ5",
+            "title": "M / White",
+            "sku": "SHIRT-M-WHITE",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/tee-white.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M760AJQCV260GZJKJ5FH0T1Z",
+        "handle": "sweatpants",
+        "title": "Relaxed Sweatpants",
+        "material": "Cotton blend",
+        "thumbnail": "/forme/sweatpants.webp",
+        "metadata": {
+          "fit": "Relaxed fit. Choose your usual size for an easy silhouette.",
+          "care": "Machine wash cold with similar colours. Reshape while damp and air dry. Do not bleach."
+        },
+        "collection": "off-duty",
+        "images": [
+          {
+            "id": "img_01M78C3SZWMWWMJQ832KKZQJFE",
+            "url": "/forme/sweatpants.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M760AJV1045B8EZ1ZSQ08C5N",
+            "title": "M",
+            "sku": "SWEATPANTS-M",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatpants.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV13MGT7EA5Z4QSGWMM",
+            "title": "S",
+            "sku": "SWEATPANTS-S",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatpants.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1R1QTMCD9X527F2HQ",
+            "title": "L",
+            "sku": "SWEATPANTS-L",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatpants.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1YDG460KRR19QVC8N",
+            "title": "XL",
+            "sku": "SWEATPANTS-XL",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatpants.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M760AJQCWQP9ANASGRKE1F89",
+        "handle": "sweatshirt",
+        "title": "Everyday Sweatshirt",
+        "material": "Cotton blend",
+        "thumbnail": "/forme/sweatshirt.webp",
+        "metadata": {
+          "fit": "Relaxed fit. Choose your usual size for an easy silhouette.",
+          "care": "Machine wash cold with similar colours. Reshape while damp and air dry. Do not bleach."
+        },
+        "collection": "off-duty",
+        "images": [
+          {
+            "id": "img_01M78C3SKA5Q1V5QVSW8CETJY7",
+            "url": "/forme/sweatshirt.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M760AJV03KE9D7ZSH4WWY22Z",
+            "title": "S",
+            "sku": "SWEATSHIRT-S",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV12YB9CRMMSZQ5Q087",
+            "title": "XL",
+            "sku": "SWEATSHIRT-XL",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1R2T8GK0A4P1527DM",
+            "title": "M",
+            "sku": "SWEATSHIRT-M",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M760AJV1Z5MKENKNQZVQ6GT9",
+            "title": "L",
+            "sku": "SWEATSHIRT-L",
+            "inventory": 1000000,
+            "price": 10,
+            "currency": "eur",
+            "images": [
+              "/forme/sweatshirt.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3MSS2W2BB42E0GKCJGQ6",
+        "handle": "sage-tee",
+        "title": "Sage Cotton T-Shirt",
+        "material": "100% cotton",
+        "thumbnail": "/forme/sage-tee.webp",
+        "metadata": {
+          "fit": "Regular fit. A straight body and easy short sleeve.",
+          "care": "Machine wash cold with similar colours. Air dry. Cool iron. Do not bleach."
+        },
+        "collection": "everyday-essentials",
+        "images": [
+          {
+            "id": "img_01M78C3MSX95TF301PTCW52Q4B",
+            "url": "/forme/sage-tee.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3N1JW42QEPKHR93QEAJ7",
+            "title": "S / Sage",
+            "sku": "CG-SAGE-TEE-S",
+            "inventory": 25,
+            "price": 28,
+            "currency": "eur",
+            "images": [
+              "/forme/sage-tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3N1KF6PTTNFRPNNE227K",
+            "title": "M / Sage",
+            "sku": "CG-SAGE-TEE-M",
+            "inventory": 25,
+            "price": 28,
+            "currency": "eur",
+            "images": [
+              "/forme/sage-tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3N1KTG0X8VMVZASETTW4",
+            "title": "L / Sage",
+            "sku": "CG-SAGE-TEE-L",
+            "inventory": 25,
+            "price": 28,
+            "currency": "eur",
+            "images": [
+              "/forme/sage-tee.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3N1MP8QJPJ70NA7XABNT",
+            "title": "XL / Sage",
+            "sku": "CG-SAGE-TEE-XL",
+            "inventory": 25,
+            "price": 28,
+            "currency": "eur",
+            "images": [
+              "/forme/sage-tee.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3NZXATRMTM3P271RESSK",
+        "handle": "ivory-tank",
+        "title": "Ribbed Ivory Tank",
+        "material": "95% cotton, 5% elastane",
+        "thumbnail": "/forme/ivory-tank.webp",
+        "metadata": {
+          "fit": "Close fit. Soft stretch and a neat ribbed silhouette.",
+          "care": "Machine wash cold with similar colours. Air dry. Cool iron. Do not bleach."
+        },
+        "collection": "everyday-essentials",
+        "images": [
+          {
+            "id": "img_01M78C3NZYDPWX706AYS7AJ5ZQ",
+            "url": "/forme/ivory-tank.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3P4SAFQ5XWCT0K47WR3Q",
+            "title": "S / Ivory",
+            "sku": "CG-IVORY-TANK-S",
+            "inventory": 12,
+            "price": 24,
+            "currency": "eur",
+            "images": [
+              "/forme/ivory-tank.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3P4SSYMH6V36FSQPJGBB",
+            "title": "M / Ivory",
+            "sku": "CG-IVORY-TANK-M",
+            "inventory": 12,
+            "price": 24,
+            "currency": "eur",
+            "images": [
+              "/forme/ivory-tank.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3P4T5RM8N322FBFAXG4S",
+            "title": "L / Ivory",
+            "sku": "CG-IVORY-TANK-L",
+            "inventory": 12,
+            "price": 24,
+            "currency": "eur",
+            "images": [
+              "/forme/ivory-tank.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3P4TQT26B9GDGQN4N5DN",
+            "title": "XL / Ivory",
+            "sku": "CG-IVORY-TANK-XL",
+            "inventory": 12,
+            "price": 24,
+            "currency": "eur",
+            "images": [
+              "/forme/ivory-tank.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3PR8P305QBB45Q898AG1",
+        "handle": "navy-overshirt",
+        "title": "Navy Twill Overshirt",
+        "material": "100% cotton twill",
+        "thumbnail": "/forme/navy-overshirt.webp",
+        "metadata": {
+          "fit": "Relaxed fit. Room for a light layer underneath.",
+          "care": "Machine wash cold with similar colours. Air dry. Cool iron. Do not bleach."
+        },
+        "collection": "considered-layers",
+        "images": [
+          {
+            "id": "img_01M78C3PR9Q82MNJ8T6MWYQ3C2",
+            "url": "/forme/navy-overshirt.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3PXNA1WQHVXK2GT70TFE",
+            "title": "M / Navy",
+            "sku": "CG-NAVY-OVERSHIRT-M",
+            "inventory": 8,
+            "price": 78,
+            "currency": "eur",
+            "images": [
+              "/forme/navy-overshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3PXNYFPN2NKNVQ9CP537",
+            "title": "S / Navy",
+            "sku": "CG-NAVY-OVERSHIRT-S",
+            "inventory": 8,
+            "price": 78,
+            "currency": "eur",
+            "images": [
+              "/forme/navy-overshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3PXPMQNP2J95QPAP0AXJ",
+            "title": "L / Navy",
+            "sku": "CG-NAVY-OVERSHIRT-L",
+            "inventory": 8,
+            "price": 78,
+            "currency": "eur",
+            "images": [
+              "/forme/navy-overshirt.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3PXPSATAGS89S99NN46T",
+            "title": "XL / Navy",
+            "sku": "CG-NAVY-OVERSHIRT-XL",
+            "inventory": 8,
+            "price": 78,
+            "currency": "eur",
+            "images": [
+              "/forme/navy-overshirt.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3QEN8J466VF1Z9N6GBC8",
+        "handle": "sand-chinos",
+        "title": "Sand Straight Chinos",
+        "material": "98% cotton, 2% elastane",
+        "thumbnail": "/forme/sand-chinos.webp",
+        "metadata": {
+          "fit": "Straight leg. A comfortable mid-rise and easy movement.",
+          "care": "Machine wash cold with similar colours. Air dry. Cool iron. Do not bleach."
+        },
+        "collection": "everyday-essentials",
+        "images": [
+          {
+            "id": "img_01M78C3QENSE7CWJE91RMHNVZQ",
+            "url": "/forme/sand-chinos.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3QH2ATTZ1YPWHVQK0GPA",
+            "title": "S / Sand",
+            "sku": "CG-SAND-CHINOS-S",
+            "inventory": 15,
+            "price": 68,
+            "currency": "eur",
+            "images": [
+              "/forme/sand-chinos.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QH2KQGA9GADQY22PNDR",
+            "title": "M / Sand",
+            "sku": "CG-SAND-CHINOS-M",
+            "inventory": 15,
+            "price": 68,
+            "currency": "eur",
+            "images": [
+              "/forme/sand-chinos.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QH2W3Z1SXBRKMC2CX5T",
+            "title": "L / Sand",
+            "sku": "CG-SAND-CHINOS-L",
+            "inventory": 15,
+            "price": 68,
+            "currency": "eur",
+            "images": [
+              "/forme/sand-chinos.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QH31FXFYN6SV4TGP33C",
+            "title": "XL / Sand",
+            "sku": "CG-SAND-CHINOS-XL",
+            "inventory": 15,
+            "price": 68,
+            "currency": "eur",
+            "images": [
+              "/forme/sand-chinos.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3QXWFZ665ER0RW9NZXF0",
+        "handle": "cream-knit",
+        "title": "Cream Knit Sweater",
+        "material": "60% cotton, 40% recycled polyester",
+        "thumbnail": "/forme/cream-knit.webp",
+        "metadata": {
+          "fit": "Relaxed fit. A soft shape with a gently dropped shoulder.",
+          "care": "Hand wash cold. Reshape and dry flat. Do not tumble dry."
+        },
+        "collection": "considered-layers",
+        "images": [
+          {
+            "id": "img_01M78C3QXXQWN38SYN1ACK454J",
+            "url": "/forme/cream-knit.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3QZRS0DC9532GEBRTWSC",
+            "title": "S / Cream",
+            "sku": "CG-CREAM-KNIT-S",
+            "inventory": 3,
+            "price": 89,
+            "currency": "eur",
+            "images": [
+              "/forme/cream-knit.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QZSAREMMTWVE4JWC7VZ",
+            "title": "XL / Cream",
+            "sku": "CG-CREAM-KNIT-XL",
+            "inventory": 3,
+            "price": 89,
+            "currency": "eur",
+            "images": [
+              "/forme/cream-knit.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QZSEAM7ZWARA5ZN9A6F",
+            "title": "L / Cream",
+            "sku": "CG-CREAM-KNIT-L",
+            "inventory": 3,
+            "price": 89,
+            "currency": "eur",
+            "images": [
+              "/forme/cream-knit.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3QZSM71MRH6M0E37Y8DN",
+            "title": "M / Cream",
+            "sku": "CG-CREAM-KNIT-M",
+            "inventory": 3,
+            "price": 89,
+            "currency": "eur",
+            "images": [
+              "/forme/cream-knit.webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prod_01M78C3RCABH1BM8H2CK9G1QK6",
+        "handle": "charcoal-hoodie",
+        "title": "Charcoal Zip Hoodie",
+        "material": "80% cotton, 20% polyester",
+        "thumbnail": "/forme/charcoal-hoodie.webp",
+        "metadata": {
+          "fit": "Relaxed fit. A full zip and room to layer.",
+          "care": "Machine wash cold with similar colours. Air dry. Cool iron. Do not bleach."
+        },
+        "collection": "off-duty",
+        "images": [
+          {
+            "id": "img_01M78C3RCARRCHMTMFZAZGNF0P",
+            "url": "/forme/charcoal-hoodie.webp"
+          }
+        ],
+        "variants": [
+          {
+            "id": "variant_01M78C3RF9PSF4NMM08TTRTQVY",
+            "title": "M / Charcoal",
+            "sku": "CG-CHARCOAL-HOODIE-M",
+            "inventory": 10,
+            "price": 72,
+            "currency": "eur",
+            "images": [
+              "/forme/charcoal-hoodie.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3RF9SPESKFSCHSG2T9VF",
+            "title": "S / Charcoal",
+            "sku": "CG-CHARCOAL-HOODIE-S",
+            "inventory": 10,
+            "price": 72,
+            "currency": "eur",
+            "images": [
+              "/forme/charcoal-hoodie.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3RF9WK4EBTHM9QC03779",
+            "title": "L / Charcoal",
+            "sku": "CG-CHARCOAL-HOODIE-L",
+            "inventory": 10,
+            "price": 72,
+            "currency": "eur",
+            "images": [
+              "/forme/charcoal-hoodie.webp"
+            ]
+          },
+          {
+            "id": "variant_01M78C3RFADKDQNHRW00GXJ14N",
+            "title": "XL / Charcoal",
+            "sku": "CG-CHARCOAL-HOODIE-XL",
+            "inventory": 0,
+            "price": 72,
+            "currency": "eur",
+            "images": [
+              "/forme/charcoal-hoodie.webp"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

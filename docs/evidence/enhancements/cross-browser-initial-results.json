@@ -1,0 +1,479 @@
+{
+  "measuredAt": "2026-11-12T17:44:20.810Z",
+  "source": ".runtime/enhancements-cross-browser/results.json",
+  "stats": {
+    "startTime": "2026-11-12T17:35:55.135Z",
+    "duration": 345462.052,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-032 R-CATALOG expanded collection has varied regional prices, colors and inventory @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 477,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-033 R-INVENTORY unavailable new variant is rejected without changing an existing cart",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2126,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-034 R-WISHLIST customer wishlist persists and remains isolated from another account @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1556,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22505,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 26585,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 24619,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11146,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 38518,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 36751,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 33061,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16635,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4593,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8960,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8273,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4848,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10815,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12078,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7758,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5727,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 39646,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 62,
+                "line": 160
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('order-fulfillment-status')\nExpected: \u001b[32m\"not fulfilled\"\u001b[39m\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('order-fulfillment-status') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('order-fulfillment-status')\u001b[22m\n\n\n  158 |   await setCustomer(context, user.token)\n  159 |   await openPage(page, `/dk/account/orders/details/${order.id}`)\n> 160 |   await expect(page.getByTestId(\"order-fulfillment-status\")).toHaveText(\n      |                                                              ^\n  161 |     \"not fulfilled\",\n  162 |   )\n  163 |   await expect(page.getByTestId(\"order-payment-status\")).toHaveText(\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:160:62"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 27017,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 62,
+                "line": 160
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('order-fulfillment-status')\nExpected: \u001b[32m\"not fulfilled\"\u001b[39m\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('order-fulfillment-status') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('order-fulfillment-status')\u001b[22m\n\n\n  158 |   await setCustomer(context, user.token)\n  159 |   await openPage(page, `/dk/account/orders/details/${order.id}`)\n> 160 |   await expect(page.getByTestId(\"order-fulfillment-status\")).toHaveText(\n      |                                                              ^\n  161 |     \"not fulfilled\",\n  162 |   )\n  163 |   await expect(page.getByTestId(\"order-payment-status\")).toHaveText(\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:160:62"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 27309,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 62,
+                "line": 160
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('order-fulfillment-status')\nExpected: \u001b[32m\"not fulfilled\"\u001b[39m\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('order-fulfillment-status') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('order-fulfillment-status')\u001b[22m\n\n\n  158 |   await setCustomer(context, user.token)\n  159 |   await openPage(page, `/dk/account/orders/details/${order.id}`)\n> 160 |   await expect(page.getByTestId(\"order-fulfillment-status\")).toHaveText(\n      |                                                              ^\n  161 |     \"not fulfilled\",\n  162 |   )\n  163 |   await expect(page.getByTestId(\"order-payment-status\")).toHaveText(\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:160:62"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "mobile-chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 22867,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 62,
+                "line": 160
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('order-fulfillment-status')\nExpected: \u001b[32m\"not fulfilled\"\u001b[39m\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('order-fulfillment-status') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('order-fulfillment-status')\u001b[22m\n\n\n  158 |   await setCustomer(context, user.token)\n  159 |   await openPage(page, `/dk/account/orders/details/${order.id}`)\n> 160 |   await expect(page.getByTestId(\"order-fulfillment-status\")).toHaveText(\n      |                                                              ^\n  161 |     \"not fulfilled\",\n  162 |   )\n  163 |   await expect(page.getByTestId(\"order-payment-status\")).toHaveText(\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:160:62"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5188,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6411,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8370,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3646,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20042,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10862,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12718,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6750,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 42135,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 70189,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 50877,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "mobile-chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 12833,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 7,
+                "line": 250
+              },
+              "message": "Error: /dk/products/t-shirt: [{\"id\":\"color-contrast\",\"nodes\":[[\"button[data-testid=\\\"mobile-cart-button\\\"]\"]]}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 58\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#5d6059\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.34,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#d4d5d3\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"9.0pt (12px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.34 (foreground color: #d4d5d3, background color: #5d6059, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<button class=\\\"inline-flex gap-2 it...\\\" type=\\\"button\\\" data-testid=\\\"mobile-cart-button\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"button[data-testid=\\\"mobile-cart-button\\\"]\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.34 (foreground color: #d4d5d3, background color: #5d6059, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<button class=\\\"inline-flex gap-2 it...\\\" type=\\\"button\\\" data-testid=\\\"mobile-cart-button\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"button[data-testid=\\\"mobile-cart-button\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.color\",\u001b[39m\n\u001b[31m+       \"wcag2aa\",\u001b[39m\n\u001b[31m+       \"wcag143\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT13.c\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.4.3\",\u001b[39m\n\u001b[31m+       \"ACT\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-3.2.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  248 |       result.violations,\n  249 |       `${path}: ${JSON.stringify(result.violations.map((value) => ({ id: value.id, nodes: value.nodes.map((node) => node.target) })))}`,\n> 250 |     ).toEqual([])\n      |       ^\n  251 |   }\n  252 | })\n  253 |\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:250:7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

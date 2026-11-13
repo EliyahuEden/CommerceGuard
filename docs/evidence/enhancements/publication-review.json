@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-11-13T19:37:39.018Z",
+  "files": 357,
+  "totalBytes": 53324893,
+  "credentialPatternFindings": [],
+  "brokenLocalLinks": [],
+  "limitation": "Pattern review is not a comprehensive security audit; binary assets excluded from credential matching."
+}

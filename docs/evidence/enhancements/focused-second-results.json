@@ -1,0 +1,152 @@
+{
+  "measuredAt": "2026-11-12T17:31:20.212Z",
+  "source": ".runtime/enhancements-focused-fixed/results.json",
+  "stats": {
+    "startTime": "2026-11-12T17:23:30.504Z",
+    "duration": 86176.71399999999,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-032 R-CATALOG expanded collection has varied regional prices, colors and inventory",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 502,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-033 R-INVENTORY unavailable new variant is rejected without changing an existing cart",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1611,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-034 R-WISHLIST customer wishlist persists and remains isolated from another account",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1274,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 38977,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 5,
+                "line": 24
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Something will catch your eye.' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Something will catch your eye.' }) with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Something will catch your eye.' })\u001b[22m\n\n\n  22 |   await expect(\n  23 |     page.getByRole(\"heading\", { name: \"Something will catch your eye.\" }),\n> 24 |   ).toBeVisible()\n     |     ^\n  25 | })\n  26 |\n  27 | test(\"UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session\", async ({\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:24:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 29399,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4170,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 14094,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 27241,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12339,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 20008,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 7,
+                "line": 229
+              },
+              "message": "Error: /dk/account: [{\"id\":\"target-size\",\"nodes\":[[\".duration-150\"]]}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 60\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure touch targets have sufficient size and space\",\u001b[39m\n\u001b[31m+     \"help\": \"All touch targets must be 24px large, or leave sufficient space\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.14/target-size?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"target-size\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"height\": 20,\u001b[39m\n\u001b[31m+               \"minSize\": 24,\u001b[39m\n\u001b[31m+               \"width\": 52,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"target-size\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Target has insufficient size (52px by 20px, should be at least 24px by 24px)\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"closestOffset\": 20,\u001b[39m\n\u001b[31m+               \"minOffset\": 24,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"target-offset\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px.\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<input id=\\\"password\\\" type=\\\"password\\\" placeholder=\\\" \\\" required=\\\"\\\" class=\\\"pt-4 pb-1 block w-fu...\\\" autocomplete=\\\"current-password\\\" data-testid=\\\"password-input\\\" name=\\\"password\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"#password\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Target has insufficient size (52px by 20px, should be at least 24px by 24px)\u001b[39m\n\u001b[31m+   Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px.\",\u001b[39m\n\u001b[31m+         \"html\": \"<button type=\\\"button\\\" aria-label=\\\"Show password\\\" class=\\\"text-ui-fg-subtle px-4 focus:outline-none transition-all duration-150 outline-none focus:text-ui-fg-base absolute right-0 top-3\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".duration-150\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.sensory-and-visual-cues\",\u001b[39m\n\u001b[31m+       \"wcag22aa\",\u001b[39m\n\u001b[31m+       \"wcag258\",\u001b[39m\n\u001b[31m+       \"EN-301-549v4\",\u001b[39m\n\u001b[31m+       \"EN-9.2.5.8\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  227 |       result.violations,\n  228 |       `${path}: ${JSON.stringify(result.violations.map((value) => ({ id: value.id, nodes: value.nodes.map((node) => node.target) })))}`,\n> 229 |     ).toEqual([])\n      |       ^\n  230 |   }\n  231 | })\n  232 |\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:229:7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

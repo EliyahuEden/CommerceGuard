@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs"
-import { resolve } from "node:path"
+import { resolve, dirname } from "node:path"
 import pg from "pg"
 import { assertTestDatabase, databaseUrl, pin, root } from "./lib.mjs"
 
@@ -58,11 +58,12 @@ const result = {
   expected:
     "Reject fractional input or preserve it. Never silently change the requested units.",
 }
-mkdirSync(resolve(root, "docs/evidence"), { recursive: true })
-writeFileSync(
-  resolve(root, "docs/evidence/quantity-coercion.json"),
-  JSON.stringify(result, null, 2),
+const output = resolve(
+  root,
+  process.env.CG_QUANTITY_EVIDENCE || "docs/evidence/quantity-coercion.json",
 )
+mkdirSync(dirname(output), { recursive: true })
+writeFileSync(output, JSON.stringify(result, null, 2))
 console.log(JSON.stringify(result, null, 2))
 if (response.ok && result.response.quantity !== payload.quantity)
   process.exitCode = 1

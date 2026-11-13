@@ -1,0 +1,114 @@
+[
+  {
+    "name": "home",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "catalog",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "product",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "cart",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "account",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "checkout",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "about",
+    "viewport": 1440,
+    "width": 1440,
+    "brokenImages": []
+  },
+  {
+    "name": "home",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "catalog",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "product",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "cart",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "account",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "checkout",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "name": "about",
+    "viewport": 393,
+    "width": 393,
+    "brokenImages": []
+  },
+  {
+    "type": "asset",
+    "path": "/forme/favicon.svg",
+    "status": 200,
+    "bytes": 225,
+    "contentType": "image/svg+xml"
+  },
+  {
+    "type": "asset",
+    "path": "/favicon.ico",
+    "status": 200,
+    "bytes": 570,
+    "contentType": "image/x-icon"
+  },
+  {
+    "type": "asset",
+    "path": "/opengraph-image.jpg",
+    "status": 200,
+    "bytes": 114325,
+    "contentType": "image/jpeg"
+  },
+  {
+    "type": "asset",
+    "path": "/twitter-image.jpg",
+    "status": 200,
+    "bytes": 114325,
+    "contentType": "image/jpeg"
+  }
+]

@@ -1,0 +1,215 @@
+{
+  "measuredAt": "2026-11-11T21:34:09.954Z",
+  "source": "docs/evidence/redesign/focused-raw.json",
+  "stats": {
+    "startTime": "2026-11-11T21:29:47.604Z",
+    "duration": 175681.919,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21727,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 33723,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22493,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12925,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8664,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 30763,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 23392,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 25141,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 5,
+                "line": 311
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('link', { name: 'Skip to content' })\nExpected: focused\nReceived: inactive\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('link', { name: 'Skip to content' }) with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Skip to content' })\u001b[22m\n\u001b[2m    30 × locator resolved to <a href=\"#main-content\" class=\"forme-skip-link\">Skip to content</a>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n  309 |   await expect(\n  310 |     page.getByRole(\"link\", { name: \"Skip to content\" }),\n> 311 |   ).toBeFocused()\n      |     ^\n  312 |   await page.keyboard.press(\"Enter\")\n  313 |   await expect(page.locator(\"#main-content\")).toBeFocused()\n  314 |   const menu = page.getByTestId(\"nav-menu-button\")\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:311:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10910,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 24311,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 5,
+                "line": 341
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.forme-gallery-image img').first()\nExpected pattern: \u001b[32m/tee-white/\u001b[39m\nReceived string:  \u001b[31m\"/forme/tee.webp\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.forme-gallery-image img').first() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.forme-gallery-image img').first()\u001b[22m\n\u001b[2m    33 × locator resolved to <img decoding=\"async\" data-nimg=\"fill\" alt=\"Product view 1\" src=\"/forme/tee.webp\" class=\"forme-gallery-photo\"/>\u001b[22m\n\u001b[2m       - unexpected value \"/forme/tee.webp\"\u001b[22m\n\n\n  339 |   await expect(\n  340 |     page.locator(\".forme-gallery-image img\").first(),\n> 341 |   ).toHaveAttribute(\"src\", /tee-white/)\n      |     ^\n  342 |   await expect(\n  343 |     color.getByRole(\"radio\", { name: \"White\", exact: true }),\n  344 |   ).toBeChecked()\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:341:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 27800,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 5,
+                "line": 341
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.forme-gallery-image img').first()\nExpected pattern: \u001b[32m/tee-white/\u001b[39m\nReceived string:  \u001b[31m\"/forme/tee.webp\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.forme-gallery-image img').first() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.forme-gallery-image img').first()\u001b[22m\n\u001b[2m    32 × locator resolved to <img decoding=\"async\" data-nimg=\"fill\" alt=\"Product view 1\" src=\"/forme/tee.webp\" class=\"forme-gallery-photo\"/>\u001b[22m\n\u001b[2m       - unexpected value \"/forme/tee.webp\"\u001b[22m\n\n\n  339 |   await expect(\n  340 |     page.locator(\".forme-gallery-image img\").first(),\n> 341 |   ).toHaveAttribute(\"src\", /tee-white/)\n      |     ^\n  342 |   await expect(\n  343 |     color.getByRole(\"radio\", { name: \"White\", exact: true }),\n  344 |   ).toBeChecked()\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:341:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 27790,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 5,
+                "line": 341
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.forme-gallery-image img').first()\nExpected pattern: \u001b[32m/tee-white/\u001b[39m\nReceived string:  \u001b[31m\"/forme/tee.webp\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.forme-gallery-image img').first() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.forme-gallery-image img').first()\u001b[22m\n\u001b[2m    31 × locator resolved to <img decoding=\"async\" data-nimg=\"fill\" alt=\"Product view 1\" src=\"/forme/tee.webp\" class=\"forme-gallery-photo\"/>\u001b[22m\n\u001b[2m       - unexpected value \"/forme/tee.webp\"\u001b[22m\n\n\n  339 |   await expect(\n  340 |     page.locator(\".forme-gallery-image img\").first(),\n> 341 |   ).toHaveAttribute(\"src\", /tee-white/)\n      |     ^\n  342 |   await expect(\n  343 |     color.getByRole(\"radio\", { name: \"White\", exact: true }),\n  344 |   ).toBeChecked()\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:341:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "mobile-chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 24505,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts",
+                "column": 5,
+                "line": 341
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.forme-gallery-image img').first()\nExpected pattern: \u001b[32m/tee-white/\u001b[39m\nReceived string:  \u001b[31m\"/forme/tee.webp\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.forme-gallery-image img').first() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.forme-gallery-image img').first()\u001b[22m\n\u001b[2m    33 × locator resolved to <img decoding=\"async\" data-nimg=\"fill\" alt=\"Product view 1\" src=\"/forme/tee.webp\" class=\"forme-gallery-photo\"/>\u001b[22m\n\u001b[2m       - unexpected value \"/forme/tee.webp\"\u001b[22m\n\n\n  339 |   await expect(\n  340 |     page.locator(\".forme-gallery-image img\").first(),\n> 341 |   ).toHaveAttribute(\"src\", /tee-white/)\n      |     ^\n  342 |   await expect(\n  343 |     color.getByRole(\"radio\", { name: \"White\", exact: true }),\n  344 |   ).toBeChecked()\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\storefront.spec.ts:341:5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

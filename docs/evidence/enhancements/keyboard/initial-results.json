@@ -1,0 +1,11 @@
+{
+  "startedAt": "2026-11-13T17:29:28.793Z",
+  "finishedAt": "2026-11-13T17:30:05.274Z",
+  "status": "failed",
+  "browser": "Chromium desktop",
+  "pointerActions": 0,
+  "steps": [
+    "Skip link moves focus to the main landmark"
+  ],
+  "error": "expect(locator).toBeVisible() failed\n\nLocator: getByTestId('email-input')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByTestId('email-input') with timeout 15000ms\n  - waiting for getByTestId('email-input')\n"
+}

@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-11-13T19:10:16.491Z",
+  "finishedAt": "2026-11-13T19:10:31.691Z",
+  "status": "passed",
+  "browser": "Chromium desktop",
+  "pointerActions": 0,
+  "steps": [
+    "Skip link moves focus to the main landmark",
+    "Existing customer signs in using keyboard controls",
+    "Catalog, variant radio group and size dialog work without a pointer",
+    "Quantity and promotion controls update independent expected totals",
+    "Address validation announces errors, preserves input and supports correction",
+    "Delivery, manual payment and order creation complete using keys",
+    "The customer's new order appears in account history"
+  ],
+  "limitation": "Keyboard audit supplements axe. No real screen-reader or real-device certification is claimed."
+}

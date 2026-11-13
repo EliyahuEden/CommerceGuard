@@ -7,6 +7,10 @@ export async function openPage(page: Page, path: string) {
   // Avoid lost interactions with SSR controls and dependence on remote image load.
   await page.waitForFunction(
     () => document.documentElement.dataset.commerceguardHydrated === "true",
+    undefined,
+    // Initial client readiness belongs to the 60s navigation budget. Business
+    // actions/assertions retain their separate 15s timeout; no retries are used.
+    { timeout: 60_000 },
   )
 }
 

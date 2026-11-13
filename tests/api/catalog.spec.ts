@@ -7,18 +7,42 @@ const productSchema = z
     id: z.string(),
     title: z.string(),
     handle: z.string(),
+    thumbnail: z.string().nullable(),
     variants: z.array(z.object({ id: z.string() }).passthrough()),
   })
   .passthrough()
 
-test("API-001 R-CATALOG published catalog has the required contract @smoke", async ({
+test("API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke", async ({
   store,
 }) => {
   const body = await jsonOk<{ products: unknown[]; count: number }>(
     await store.get("/store/products?limit=10"),
   )
   expect(body.count).toBeGreaterThanOrEqual(4)
-  expect(z.array(productSchema).parse(body.products).length).toBeGreaterThan(0)
+  const products = z.array(productSchema).parse(body.products)
+  expect(products.length).toBeGreaterThan(0)
+  const search = await jsonOk<{
+    results: {
+      hits: {
+        document: { id: string; title: string; thumbnail: string | null }
+      }[]
+    }[]
+  }>(
+    await store.post("/store/search", {
+      entity: "product",
+      fields: ["id", "title", "thumbnail"],
+      filters: { id: { $in: products.map((product) => product.id) } },
+      pagination: { take: 100 },
+    }),
+  )
+  expect(search.results).toHaveLength(1)
+  const byId = (a: { id: string }, b: { id: string }) =>
+    a.id.localeCompare(b.id)
+  expect(search.results[0].hits.map((hit) => hit.document).sort(byId)).toEqual(
+    products
+      .map(({ id, title, thumbnail }) => ({ id, title, thumbnail }))
+      .sort(byId),
+  )
 })
 test("API-002 R-CATALOG variant price is calculated for the seeded region @smoke", async ({
   store,

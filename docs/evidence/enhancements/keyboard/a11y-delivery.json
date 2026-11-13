@@ -1,0 +1,32 @@
+{
+  "url": "http://localhost:8000/dk/checkout?step=delivery",
+  "violations": [],
+  "passes": [
+    "aria-allowed-attr",
+    "aria-conditional-attr",
+    "aria-deprecated-role",
+    "aria-hidden-body",
+    "aria-hidden-focus",
+    "aria-prohibited-attr",
+    "aria-required-attr",
+    "aria-roles",
+    "aria-toggle-field-name",
+    "aria-valid-attr-value",
+    "aria-valid-attr",
+    "button-name",
+    "bypass",
+    "color-contrast",
+    "document-title",
+    "duplicate-id-aria",
+    "html-has-lang",
+    "html-lang-valid",
+    "image-alt",
+    "link-name",
+    "list",
+    "listitem",
+    "meta-viewport",
+    "nested-interactive",
+    "target-size",
+    "td-headers-attr"
+  ]
+}

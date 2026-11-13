@@ -1,6 +1,7 @@
 # Software Test Plan
 
-**System:** Medusa DTC Starter at the commit in `config/aut.json`.
+**System:** Medusa DTC Starter at the commit in `config/aut.json`, with the tracked
+FORME storefront presentation overlay.
 **Owner:** CommerceGuard QA. **Date:** 2026-11-11. **Environment:** local disposable
 PostgreSQL, Medusa API, Next.js storefront; built-in manual payment provider.
 
@@ -13,7 +14,16 @@ and UI/API/database disagreement. Original QA code resides outside the AUT.
 In scope: catalog/search/category filters, variant selection, cart CRUD and stock
 overflow, percentage promotions, registration/login, profile edits, customer
 address ownership, checkout/order history, duplicate completion, persistence.
+The redesign adds local image availability, selected-color photographs, keyboard
+skip navigation, responsive menu/filter operation, and horizontal overflow checks.
 Browsers: bundled Chromium, Firefox, WebKit; Pixel 7 viewport with touch emulation.
+
+The shopping enhancement scope adds realistic catalog prices/stock/collections,
+guest-to-account wishlist merging and isolation, size/zoom modal keyboard behavior,
+address-error retention and mobile layout, current-price buy-again carts, account
+order ownership, and axe checks on eight key shopping routes. Automated accessibility
+checks supplement keyboard/visual review; real assistive-technology certification
+is not claimed.
 
 Out of scope: real settlement/refunds, paid providers, email delivery, admin UX,
 multi-process distributed locking, real mobile hardware, full accessibility or

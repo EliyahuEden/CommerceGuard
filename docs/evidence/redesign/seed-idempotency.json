@@ -1,0 +1,159 @@
+{
+  "startedAt": "2026-11-12T14:26:37.693Z",
+  "finishedAt": "2026-11-12T14:28:36.149Z",
+  "status": "passed",
+  "productCount": 4,
+  "manifestUnchanged": true,
+  "catalogUnchanged": true,
+  "catalogSha256": "7a78d979840d90efc9ab683de4a299dee1b379267b5516de4a567310d0e1c862",
+  "products": [
+    {
+      "id": "prod_01M760AJQC2KWRQM5XNB9WBDHP",
+      "handle": "shorts",
+      "title": "Weekend Shorts",
+      "subtitle": "Take the long way home",
+      "description": "Easy proportions, a pared-back shape, and plenty of possibility. An everyday pair for warmer days and a slower pace.",
+      "thumbnail": "/forme/shorts.webp",
+      "images": [
+        {
+          "id": "img_01M76765RN5RSQS9885E7XKMM2",
+          "url": "/forme/shorts.webp"
+        }
+      ],
+      "variants": [
+        {
+          "id": "variant_01M760AJV18ZB1CN5623477NS8",
+          "sku": "SHORTS-M"
+        },
+        {
+          "id": "variant_01M760AJV1NZTGJ4MKKAMCB9JA",
+          "sku": "SHORTS-S"
+        },
+        {
+          "id": "variant_01M760AJV1Z9C98EA5C13MSY4T",
+          "sku": "SHORTS-L"
+        },
+        {
+          "id": "variant_01M760AJV2MN7QBPQNNK88DXY7",
+          "sku": "SHORTS-XL"
+        }
+      ]
+    },
+    {
+      "id": "prod_01M760AJQC9HD2J7DZ0NP3VB3V",
+      "handle": "t-shirt",
+      "title": "Essential T-Shirt",
+      "subtitle": "The everyday foundation",
+      "description": "An easy silhouette. A soft cotton feel. The piece you reach for, again and again. Choose your colour, find your fit, and make it part of your everyday.",
+      "thumbnail": "/forme/tee.webp",
+      "images": [
+        {
+          "id": "img_01M76764D1Z7HGT3GEGWXGXW70",
+          "url": "/forme/tee.webp"
+        },
+        {
+          "id": "img_01M76764D268WQH9J6YSE01X5T",
+          "url": "/forme/tee-white.webp"
+        }
+      ],
+      "variants": [
+        {
+          "id": "variant_01M760AJTZEB9Y0KXPFGYGXDCG",
+          "sku": "SHIRT-S-WHITE"
+        },
+        {
+          "id": "variant_01M760AJTZN4MP2REA339Q8KBD",
+          "sku": "SHIRT-S-BLACK"
+        },
+        {
+          "id": "variant_01M760AJV062EZP9DP26N5069Y",
+          "sku": "SHIRT-L-WHITE"
+        },
+        {
+          "id": "variant_01M760AJV0GN6MVATZNF4W243Z",
+          "sku": "SHIRT-XL-WHITE"
+        },
+        {
+          "id": "variant_01M760AJV0GV0APF04DTX46W89",
+          "sku": "SHIRT-L-BLACK"
+        },
+        {
+          "id": "variant_01M760AJV0HDSF5WAEWP15JPXZ",
+          "sku": "SHIRT-XL-BLACK"
+        },
+        {
+          "id": "variant_01M760AJV0N2JQCEH7R9HFQ71Z",
+          "sku": "SHIRT-M-BLACK"
+        },
+        {
+          "id": "variant_01M760AJV0S451V73GM9690MZ5",
+          "sku": "SHIRT-M-WHITE"
+        }
+      ]
+    },
+    {
+      "id": "prod_01M760AJQCV260GZJKJ5FH0T1Z",
+      "handle": "sweatpants",
+      "title": "Relaxed Sweatpants",
+      "subtitle": "Room to move",
+      "description": "A relaxed silhouette for the days that don't need dressing up. Pair with your favourite tee or the Everyday Sweatshirt for an effortless everyday uniform.",
+      "thumbnail": "/forme/sweatpants.webp",
+      "images": [
+        {
+          "id": "img_01M76765MAQ3XXKT433HJ87GXH",
+          "url": "/forme/sweatpants.webp"
+        }
+      ],
+      "variants": [
+        {
+          "id": "variant_01M760AJV1045B8EZ1ZSQ08C5N",
+          "sku": "SWEATPANTS-M"
+        },
+        {
+          "id": "variant_01M760AJV13MGT7EA5Z4QSGWMM",
+          "sku": "SWEATPANTS-S"
+        },
+        {
+          "id": "variant_01M760AJV1R1QTMCD9X527F2HQ",
+          "sku": "SWEATPANTS-L"
+        },
+        {
+          "id": "variant_01M760AJV1YDG460KRR19QVC8N",
+          "sku": "SWEATPANTS-XL"
+        }
+      ]
+    },
+    {
+      "id": "prod_01M760AJQCWQP9ANASGRKE1F89",
+      "handle": "sweatshirt",
+      "title": "Everyday Sweatshirt",
+      "subtitle": "Your off-duty layer",
+      "description": "A familiar shape with room to relax. This crewneck sweatshirt brings an easy, understated layer to slow mornings and everything after.",
+      "thumbnail": "/forme/sweatshirt.webp",
+      "images": [
+        {
+          "id": "img_01M76765FWS85TF0N6BYFBRAY2",
+          "url": "/forme/sweatshirt.webp"
+        }
+      ],
+      "variants": [
+        {
+          "id": "variant_01M760AJV03KE9D7ZSH4WWY22Z",
+          "sku": "SWEATSHIRT-S"
+        },
+        {
+          "id": "variant_01M760AJV12YB9CRMMSZQ5Q087",
+          "sku": "SWEATSHIRT-XL"
+        },
+        {
+          "id": "variant_01M760AJV1R2T8GK0A4P1527DM",
+          "sku": "SWEATSHIRT-M"
+        },
+        {
+          "id": "variant_01M760AJV1Z5MKENKNQZVQ6GT9",
+          "sku": "SWEATSHIRT-L"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "CommerceGuard QA root dependencies only; excludes the upstream application dependency graph",
+  "checkedAfter": "pnpm upgrade to 10.34.9",
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 14,
+      "dev": 32,
+      "optional": 31,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 56
+    }
+  }
+}

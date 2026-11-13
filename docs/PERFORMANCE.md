@@ -40,3 +40,9 @@ another filename. `docs/STR.md` records measured results, machine context and li
 Run performance separately from browser suites, after readiness/route warmup. Never
 compare runs without recording hardware, dataset, build and concurrency. A short
 five-VU local pass demonstrates test execution and budgets, not a capacity benchmark.
+
+The 13 November enhancement campaign used the expanded ten-product catalog while
+retaining the four-item page workload. It measured 102 baseline and 330 ramp
+requests, all thresholds passing. See the [current measured report](ENHANCEMENT_RESULTS.md)
+and its separate JSON metrics. The original 429-request campaign remains dated in
+STR; different local samples do not establish a performance improvement.

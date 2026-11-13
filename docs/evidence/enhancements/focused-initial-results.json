@@ -1,0 +1,191 @@
+{
+  "measuredAt": "2026-11-12T17:24:14.566Z",
+  "source": ".runtime/enhancements-focused/results.json",
+  "stats": {
+    "startTime": "2026-11-12T17:19:36.819Z",
+    "duration": 121984.90400000001,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-032 R-CATALOG expanded collection has varied regional prices, colors and inventory",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1070,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-033 R-INVENTORY unavailable new variant is rejected without changing an existing cart",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2578,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-034 R-WISHLIST customer wishlist persists and remains isolated from another account",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1663,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 61910,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 5,
+                "line": 24
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Something will catch your eye.' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Something will catch your eye.' }) with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Something will catch your eye.' })\u001b[22m\n\u001b[2m    - waiting for \"http://localhost:8000/dk/products/t-shirt?v_id=variant_01M760AJTZEB9Y0KXPFGYGXDCG\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"http://localhost:8000/dk/products/t-shirt?v_id=variant_01M760AJTZEB9Y0KXPFGYGXDCG\"\u001b[22m\n\n\n  22 |   await expect(\n  23 |     page.getByRole(\"heading\", { name: \"Something will catch your eye.\" }),\n> 24 |   ).toBeVisible()\n     |     ^\n  25 | })\n  26 |\n  27 | test(\"UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session\", async ({\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:24:5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 43149,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 41,
+                "line": 48
+              },
+              "message": "TimeoutError: locator.fill: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('email-input')\u001b[22m\n\n\n  46 |     .click()\n  47 |   await page.getByTestId(\"nav-account-link\").click()\n> 48 |   await page.getByTestId(\"email-input\").fill(user.email)\n     |                                         ^\n  49 |   await page.getByTestId(\"password-input\").fill(user.password)\n  50 |   await page.getByTestId(\"sign-in-button\").click()\n  51 |   await expect\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:48:41"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-023 R-DESIGN size guide and image zoom support keyboard dismissal and restore focus",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 11601,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 19,
+                "line": 101
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   99 |     dialog.contains(document.activeElement),\n  100 |   )\n> 101 |   expect(trapped).toBe(true)\n      |                   ^\n  102 |   await page.keyboard.press(\"Escape\")\n  103 |   await expect(guide).not.toBeVisible()\n  104 |   await expect(size).toBeFocused()\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:101:19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-024 R-CHECKOUT invalid address announces fields and preserves typed values on mobile and desktop",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 30171,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 41,
+                "line": 130
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected substring: \u001b[32m\"Your details have been kept\"\u001b[39m\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" tabindex=\"-1\" class=\"forme-form-error\" data-testid=\"address-error-message\">Please correct the highlighted fields. Your detai…</div> aka getByTestId('address-error-message')\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('alert') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  128 |   await page.getByTestId(\"shipping-email-input\").fill(\"not-an-email\")\n  129 |   await page.getByTestId(\"submit-address-button\").click()\n> 130 |   await expect(page.getByRole(\"alert\")).toContainText(\n      |                                         ^\n  131 |     \"Your details have been kept\",\n  132 |   )\n  133 |   await expect(first).toHaveValue(\"Retained\")\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:130:41"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 28764,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 20465,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 63,
+                "line": 188
+              },
+              "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'XL', exact: true })\u001b[22m\n\n\n  186 | }) => {\n  187 |   await openPage(page, \"/dk/products/charcoal-hoodie\")\n> 188 |   await page.getByRole(\"button\", { name: \"XL\", exact: true }).click()\n      |                                                               ^\n  189 |   await page.getByRole(\"button\", { name: \"Charcoal\", exact: true }).click()\n  190 |   await expect(page.getByTestId(\"product-availability\")).toHaveText(\n  191 |     \"Out of stock\",\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:188:63"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-027 R-A11Y key shopping routes pass scoped WCAG automated checks",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 6919,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts",
+                "column": 7,
+                "line": 226
+              },
+              "message": "Error: /dk: [{\"id\":\"color-contrast\",\"nodes\":[[\".forme-footer-top > div:nth-child(1) > p\"]]},{\"id\":\"nested-interactive\",\"nodes\":[[\".relative.h-full[data-headlessui-state=\\\"\\\"] > button[data-headlessui-state=\\\"\\\"][type=\\\"button\\\"]\"]]}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -   1\u001b[39m\n\u001b[31m+ Received  + 105\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#eaece3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.49,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#666d5e\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"9.0pt (12px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.49 (foreground color: #666d5e, background color: #eaece3, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<footer class=\\\"forme-footer\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"footer\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.49 (foreground color: #666d5e, background color: #eaece3, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<p>For the way you move.<br>For the everyday.</p>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".forme-footer-top > div:nth-child(1) > p\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.color\",\u001b[39m\n\u001b[31m+       \"wcag2aa\",\u001b[39m\n\u001b[31m+       \"wcag143\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT13.c\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.4.3\",\u001b[39m\n\u001b[31m+       \"ACT\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-3.2.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies\",\u001b[39m\n\u001b[31m+     \"help\": \"Interactive controls must not be nested\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"nested-interactive\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": null,\u001b[39m\n\u001b[31m+             \"id\": \"no-focusable-content\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has focusable descendants. Move them outside of the element, or remove them.\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<a class=\\\"hover:text-ui-fg-base\\\" data-testid=\\\"nav-cart-link\\\" href=\\\"/dk/cart\\\">Cart (0)</a>\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"a[data-testid=\\\"nav-cart-link\\\"]\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has focusable descendants. Move them outside of the element, or remove them.\",\u001b[39m\n\u001b[31m+         \"html\": \"<button class=\\\"h-full\\\" type=\\\"button\\\" aria-expanded=\\\"false\\\" data-headlessui-state=\\\"\\\"><a class=\\\"hover:text-ui-fg-base\\\" data-testid=\\\"nav-cart-link\\\" href=\\\"/dk/cart\\\">Cart (0)</a></button>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".relative.h-full[data-headlessui-state=\\\"\\\"] > button[data-headlessui-state=\\\"\\\"][type=\\\"button\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.keyboard\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag412\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT6.a\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.4.1.2\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-7.1.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  224 |       result.violations,\n  225 |       `${path}: ${JSON.stringify(result.violations.map((value) => ({ id: value.id, nodes: value.nodes.map((node) => node.target) })))}`,\n> 226 |     ).toEqual([])\n      |       ^\n  227 |   }\n  228 | })\n  229 |\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\ui\\shopping-enhancements.spec.ts:226:7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 name: PR release quality gate
 on:
+  push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -15,7 +17,12 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/prepare
       - run: npm run typecheck
+      - run: npm run storefront:typecheck
+      - run: npm run backend:typecheck
       - run: npm run test:smoke
+      - run: npm run test:keyboard
+        env:
+          CG_KEYBOARD_EVIDENCE_DIR: test-results/keyboard
       - uses: actions/upload-artifact@v5
         if: always()
         with:

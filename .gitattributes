@@ -1,3 +1,11 @@
 * text=auto eol=lf
 *.png binary
 *.zip binary
+*.webp binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
+
+# Preserve upstream notices and captured reporter context verbatim.
+docs/evidence/**/initial/*.md -whitespace
+storefront/public/forme/fonts/*-OFL.txt -whitespace

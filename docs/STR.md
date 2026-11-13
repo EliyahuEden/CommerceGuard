@@ -1,5 +1,10 @@
 # Software Test Summary Report
 
+This is the original 11 November baseline. For the current FORME storefront,
+expanded matrix and separate verification evidence, see
+[the shopping enhancement verification](ENHANCEMENT_RESULTS.md). The
+[12 November redesign report](REDESIGN_RESULTS.md) is also retained.
+
 **Campaign date:** 2026-11-11, Asia/Jerusalem. Evidence stores ISO timestamps in UTC.
 **AUT:** Medusa DTC Starter `0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55`.
 **Host:** Windows 11 Home 10.0.26200, Intel i5-1235U / 12 logical processors,

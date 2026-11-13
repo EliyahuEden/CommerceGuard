@@ -1,0 +1,1427 @@
+{
+  "measuredAt": "2026-11-12T14:11:41.045Z",
+  "source": "docs/evidence/redesign/regression-verified-raw.json",
+  "stats": {
+    "startTime": "2026-11-12T14:05:18.641Z",
+    "duration": 381659.25899999996,
+    "expected": 116,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-007 R-CART an empty cart starts at zero @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 657,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-008 R-CART quantity multiplies unit price exactly @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1299,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-009 R-CART updating quantity recalculates totals",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 996,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-010 R-CART removing the final item returns the cart to zero",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 738,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-Q0 R-INVENTORY rejects invalid add quantity 0",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 261,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-Q-1 R-INVENTORY rejects invalid add quantity -1",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 295,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-013 R-INVENTORY fractional input must be rejected or preserved without silent coercion @product-bug",
+      "project": "api",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 699,
+          "errors": [
+            {
+              "location": {
+                "file": "C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\cart.spec.ts",
+                "column": 7,
+                "line": 81
+              },
+              "message": "Error: CG-B001: accepted buyer quantity must not be silently rounded\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1.5\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  79 |       cart.items[0].quantity,\n  80 |       \"CG-B001: accepted buyer quantity must not be silently rounded\",\n> 81 |     ).toBe(1.5)\n     |       ^\n  82 |     expect(cart.total).toBe(seed.unitPrice * 1.5)\n  83 |   }\n  84 | })\n    at C:\\Users\\edene\\OneDrive\\שולחן העבודה\\CommerceGuard\\tests\\api\\cart.spec.ts:81:7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "API-014 R-INVENTORY stock overflow is rejected without cart changes",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 361,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-015 R-ERROR missing variant is a validation error",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 183,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-016 R-CART repeated add requests merge quantity rather than duplicate lines",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 886,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-017 R-PROMO ten percent promotion uses item subtotal @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 528,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-018 R-PROMO applying the same promotion twice does not stack discounts",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 837,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-019 R-PROMO unknown promotion grants no discount",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 632,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-001 R-CATALOG published catalog has the required contract @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 111,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-002 R-CATALOG variant price is calculated for the seeded region @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 142,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-003 R-CATALOG text query excludes unrelated products",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 74,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-004 R-CATALOG pagination returns distinct records and stable count",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 123,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-005 R-ERROR unknown product returns a structured 404",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 38,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-006 R-ACCESS store catalog rejects requests without a publishable key",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 24,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-028 R-ORDER checkout creates an order with correct items and totals @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4100,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-029 R-ORDER completing the same cart twice returns the same order",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4414,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-030 R-ORDER incomplete checkout returns an error without order data",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 924,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-031 R-ACCOUNT authenticated order history includes only the owner order",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3627,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-020 R-AUTH customer registration and login establish the correct identity @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 538,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-021 R-AUTH wrong password returns 401",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 779,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-022 R-AUTH duplicate registration cannot create another identity",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 540,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-023 R-ACCESS anonymous customer access is denied @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 27,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-024 R-ACCESS forged token cannot read customer data",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 26,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-025 R-ACCOUNT profile updates persist for that customer only",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1091,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-026 R-ACCESS another customer cannot delete an owned address",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 989,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-027 R-ACCESS customer token cannot use admin product endpoints",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 473,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-001 R-CART UI quantity API totals and SQL line records agree @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7177,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-002 R-PROMO promotion adjustment SQL matches API and expected discount",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 954,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-003 R-INVENTORY rejected stock overflow writes no cart line",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 490,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-004 R-ORDER completed order SQL items match API quantities and price @smoke",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2713,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-005 R-ORDER repeat completion preserves one order for the cart",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2905,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "INT-006 R-ORDER failed completion has no order link and leaves cart incomplete",
+      "project": "integration",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 666,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7986,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15836,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8074,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-001 R-CATALOG product browsing and details show the seeded product @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7684,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5193,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11945,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6323,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-002 R-INVENTORY selecting a variant updates availability and selected options",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4584,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11585,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15221,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11372,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11350,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6836,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8569,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8659,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6787,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7025,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10261,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6520,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5965,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7855,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8284,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5829,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5134,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5975,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8192,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7010,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5451,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5621,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6592,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4919,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5511,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8471,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6943,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6279,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5358,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8273,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4937,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-010 R-ERROR search with no matching product shows empty state",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4720,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6140,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10417,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5196,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-011 R-CATALOG category filter restricts the catalog",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4704,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6587,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12734,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7805,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-012 R-AUTH registration creates a usable customer account",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6042,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4973,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8164,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5119,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-013 R-AUTH invalid login displays a useful error @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4563,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6723,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9248,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8382,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7467,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3752,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6983,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4337,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-015 R-ACCESS unauthenticated profile navigation requires login",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4050,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6171,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9478,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9752,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-016 R-ACCOUNT name edit persists after reload",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6310,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20733,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 25058,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22643,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20729,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7018,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10416,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8121,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8865,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7962,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12550,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8993,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10248,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6714,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9608,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10229,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-020 R-CATALOG selected color displays the matching variant photograph",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7764,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

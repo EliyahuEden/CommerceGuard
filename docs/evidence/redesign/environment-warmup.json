@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/dk",
+    "status": 200,
+    "duration": 3455
+  },
+  {
+    "path": "/dk/about",
+    "status": 200,
+    "duration": 2856
+  },
+  {
+    "path": "/dk/store",
+    "status": 200,
+    "duration": 209
+  },
+  {
+    "path": "/dk/cart",
+    "status": 200,
+    "duration": 4000
+  },
+  {
+    "path": "/dk/account",
+    "status": 200,
+    "duration": 5348
+  },
+  {
+    "path": "/dk/account/profile",
+    "status": 200,
+    "duration": 3565
+  },
+  {
+    "path": "/dk/account/orders",
+    "status": 200,
+    "duration": 3745
+  },
+  {
+    "path": "/dk/products/t-shirt",
+    "status": 200,
+    "duration": 4343
+  },
+  {
+    "path": "/dk/checkout",
+    "status": 404,
+    "duration": 7574
+  },
+  {
+    "path": "/dk/order/order_commerceguard_warmup/confirmed",
+    "status": 200,
+    "duration": 5654
+  }
+]

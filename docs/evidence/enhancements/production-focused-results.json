@@ -1,0 +1,146 @@
+{
+  "measuredAt": "2026-11-13T18:19:58.273Z",
+  "source": ".runtime/enhancements-production-check/results.json",
+  "stats": {
+    "startTime": "2026-11-13T18:16:32.375Z",
+    "duration": 113927.64099999999,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-035 R-WISHLIST session endpoint is private, uncached and scoped to the session cookie @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3949,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4473,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-021 R-WISHLIST guest can save, reload and remove a product @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9469,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10921,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-022 R-WISHLIST guest selection merges after real login and survives in an independent session",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 32531,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 26078,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 27415,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13598,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-014 R-AUTH existing customer can log in and log out",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9231,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16412,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-017 R-ORDER customer completes checkout and sees order history @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 30132,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}
