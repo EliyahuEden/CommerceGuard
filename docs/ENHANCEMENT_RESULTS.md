@@ -175,3 +175,24 @@ TypeScript checks pass. Hosted verification of the corrected revision follows.
 Artifact upload now uses the Node 24 action and includes only the explicit report
 and log paths, including hidden runtime logs; generated environment files remain
 excluded. No product assertion, skip or retry was changed for this CI correction.
+
+The corrected hosted smoke gate passed **22/22** in 23.89 seconds, plus the separate
+seven-stage keyboard audit. The hosted k6 baseline passed **108 requests**, p95
+184.67ms / p99 303.37ms, with zero HTTP/business failures. These Linux runner
+measurements are separate from the local 432-request campaign.
+
+The first hosted full matrix completed **151 pass / 2 fail**: CG-B001 and a mobile
+profile selector that matched a hidden streaming copy. The trace shows a hidden
+`S:1` fragment and the active main-content tree. The locator now requires one visible
+editor instead of selecting an arbitrary copy. Existing save/reload assertions
+remain. Profile inputs also have unique generated IDs; collapsed forms are natively
+hidden, expansion is announced, and successful saves restore focus to Edit. The
+profile copy no longer advertises an unavailable password-change control.
+
+The strengthened profile check passed **12/12** (four projects × three cycles),
+including keyboard editing, unique field names, scoped axe checks and persisted
+updates. These are repeated checks, not additional unique cases.
+[Initial hosted outcomes](evidence/enhancements/hosted-regression-initial-results.json),
+[trace diagnosis](evidence/enhancements/profile-streaming-diagnostic.json),
+[profile stability](evidence/enhancements/profile-stability-results.json),
+[profile production build](evidence/enhancements/production-build-profile-fix.json).

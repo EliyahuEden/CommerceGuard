@@ -48,5 +48,10 @@
     "file": "src/app/[countryCode]/(main)/collections/[handle]/page.tsx",
     "find": "title: `${collection.title} | Medusa Store`,",
     "replace": "title: collection.title,"
+  },
+  {
+    "file": "src/modules/account/components/profile-phone/index.tsx",
+    "find": "currentInfo={`${customer.phone}`}",
+    "replace": "currentInfo={customer.phone || \"Not provided\"}"
   }
 ]

@@ -20,7 +20,10 @@ See [the current verification report](ENHANCEMENT_RESULTS.md) and
 Public GitHub publication to EliyahuEden was explicitly authorized. The public source and baseline tag are uploaded at
 https://github.com/EliyahuEden/CommerceGuard. Initial hosted runs failed during
 first-index activation in aut:seed. The correction uses the public search service
-to activate a pending index; hosted reruns and observed result recording remain. Do not
+to activate a pending index; hosted smoke 22/22 and baseline performance passed on 5844f76.
+The first hosted full matrix had one extra hidden-stream profile locator failure
+(151/2); the visible-editor fix and account accessibility improvements passed
+12/12 local repetitions. Final hosted rerun/result recording remain. Do not
 represent local Compose or hosted CI as executed until that evidence exists.
 
 The local preview uses `aut:start:production`; mutation runs use development mode

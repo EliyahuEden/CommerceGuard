@@ -1,0 +1,31 @@
+{
+  "observedInRun": "https://github.com/EliyahuEden/CommerceGuard/actions/runs/43495876339",
+  "test": "UI-016",
+  "project": "mobile-chromium",
+  "failure": "Strict locator matched two edit controls",
+  "traceEvidence": [
+    {
+      "snapshot": "oxka@1344 after",
+      "editorAncestor": {
+        "tag": "DIV",
+        "hidden": "",
+        "id": "S:1"
+      }
+    },
+    {
+      "snapshot": "oxka@1348 after",
+      "editorAncestor": {
+        "tag": "MAIN",
+        "id": "main-content"
+      }
+    }
+  ],
+  "classification": "Automation locator included a hidden Next.js streaming fragment; the visible account page was not duplicated.",
+  "correction": "Require exactly one visible editor, preserve the save/reload persistence assertions, and verify keyboard focus and labels.",
+  "additionalAccessibilityCorrections": [
+    "React useId for unique input-label associations",
+    "Native hidden disclosure panels exclude collapsed inputs from keyboard navigation",
+    "Edit button announces expansion and receives focus after save",
+    "Unsupported password-change claim removed; empty phone uses a helpful placeholder"
+  ]
+}

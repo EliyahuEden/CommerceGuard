@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright"
 import { test, expect } from "../../src/fixtures/test.js"
 import {
   ProductPage,
@@ -267,10 +268,28 @@ test("UI-016 R-ACCOUNT name edit persists after reload", async ({
   const user = await store.customer()
   await setCustomer(context, user.token)
   await openPage(page, "/dk/account/profile")
-  const editor = page.getByTestId("account-name-editor")
-  await editor.getByTestId("edit-button").click()
+  // Next.js can temporarily retain an extra editor inside a hidden streaming
+  // fragment. Require one active editor rather than selecting an arbitrary copy.
+  const editor = page
+    .getByTestId("account-name-editor")
+    .filter({ visible: true })
+  await expect(editor).toHaveCount(1)
+  const edit = editor.getByRole("button", { name: "Edit", exact: true })
+  await edit.focus()
+  await page.keyboard.press("Enter")
+  await expect(editor.getByTestId("first-name-input")).toHaveAccessibleName(
+    /^First name\s*\*$/,
+  )
   await editor.getByTestId("first-name-input").fill("Updated")
-  await editor.getByTestId("save-button").click()
+  const accessibility = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+    .analyze()
+  expect(accessibility.violations).toEqual([])
+  await editor
+    .getByRole("button", { name: "Save changes", exact: true })
+    .focus()
+  await page.keyboard.press("Enter")
+  await expect(edit).toBeFocused()
   await expect(editor.getByTestId("current-info")).toContainText("Updated")
   await page.reload({ waitUntil: "domcontentloaded" })
   await expect(editor.getByTestId("current-info")).toContainText("Updated")

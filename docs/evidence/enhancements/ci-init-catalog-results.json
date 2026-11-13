@@ -1,0 +1,38 @@
+{
+  "measuredAt": "2026-11-13T19:50:16.003Z",
+  "source": ".runtime/ci-init-catalog/results.json",
+  "stats": {
+    "startTime": "2026-11-13T19:50:14.632Z",
+    "duration": 1228.0259999999998,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "API-001 R-CATALOG catalog contract and indexed titles and images agree @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 328,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "API-032 R-CATALOG expanded collection has varied regional prices, colors and inventory @smoke",
+      "project": "api",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 323,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}
