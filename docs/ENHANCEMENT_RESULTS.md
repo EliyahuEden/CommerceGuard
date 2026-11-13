@@ -160,3 +160,18 @@ WCAG certification. No real payment settlement, shipping, email delivery, mercha
 deployment, distributed consistency or production capacity is claimed. Wishlist
 metadata uses last-write-wins across simultaneous account writes. Guest order
 confirmation links retain the starter's order-ID access model.
+
+## Hosted execution
+
+The public source is at [EliyahuEden/CommerceGuard](https://github.com/EliyahuEden/CommerceGuard).
+The first hosted smoke attempt failed during fresh search-index initialization,
+before correctness tests ran. Docker PostgreSQL and physical migrations succeeded.
+The existing local database had hidden the missing first-index activation step.
+The seed now uses the public Search Module API to activate a pending first index,
+then preserves awaited per-product ingestion. Local repeat seed and backend
+TypeScript checks pass. Hosted verification of the corrected revision follows.
+[Initial failure record](evidence/enhancements/ci-initialization-initial.json).
+
+Artifact upload now uses the Node 24 action and includes only the explicit report
+and log paths, including hidden runtime logs; generated environment files remain
+excluded. No product assertion, skip or retry was changed for this CI correction.

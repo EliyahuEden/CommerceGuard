@@ -139,3 +139,11 @@ For this measured Windows campaign the ignored `.aut/dtc-starter` checkout was
 moved to a workspace-hashed Local AppData cache and linked with a junction to avoid
 OneDrive build overhead. The upstream commit is unchanged. A fresh checkout outside
 OneDrive is recommended; this relocation is not required by the normal setup.
+
+Fresh databases require more than physical search migrations. `medusa exec` runs
+in server mode and does not perform the worker's first index seed. Before changing
+catalog products, our seed inspects the public `listIndexes()` status and calls
+`reindex({ index: "product" })` for a pending index. Existing ready indexes retain
+the per-product awaited ingestion path. This fixes the first clean hosted run's
+initialization failure without weakening the catalog consistency check.
+See [Medusa's search lifecycle](https://docs.medusajs.com/resources/infrastructure-modules/search/reindexing).

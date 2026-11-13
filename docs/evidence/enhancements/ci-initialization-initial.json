@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-13T19:49:53.536Z",
+  "runId": 43494486731,
+  "url": "https://github.com/EliyahuEden/CommerceGuard/actions/runs/43494486731",
+  "commit": "e0ceef6e453ddb54f94a1d9f0663657c713c209d",
+  "conclusion": "failure",
+  "stage": "aut:seed during fresh environment preparation",
+  "error": "Search index \"product\" has no active version yet. It has to be migrated and seeded first.",
+  "dockerPostgreSQLAndMigrations": "succeeded",
+  "correctnessSuitesExecuted": false,
+  "correction": "Use the public Search Module listIndexes/reindex methods to activate a pending first index before catalog events and explicit ingestion."
+}

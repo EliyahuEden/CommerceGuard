@@ -23,9 +23,10 @@ jobs:
         if: ${{ always() && steps.prepare.outcome == 'success' }}
         env:
           CG_KEYBOARD_EVIDENCE_DIR: test-results/keyboard
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
+          include-hidden-files: true
           name: regression-evidence
           path: |
             playwright-report/

@@ -16,6 +16,19 @@ import { prepareCatalog, type CatalogEntry } from "./commerceguard-catalog"
 export default async function seed({ container }: ExecArgs) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
   const search = container.resolve(Modules.SEARCH)
+  // db:migrate creates the physical index; medusa exec runs in server mode and
+  // does not perform worker startup seeding. Activate a fresh index before the
+  // catalog workflows emit events or we explicitly ingest their final metadata.
+  const productIndex = (await search.listIndexes()).find(
+    (index) => index.name === "product",
+  )
+  if (!productIndex)
+    throw new MedusaError(
+      MedusaError.Types.INVALID_DATA,
+      "Product search is not configured. Run aut:init first.",
+    )
+  if (productIndex.status === "pending")
+    await search.reindex({ index: "product" })
   const catalogPath = process.env.COMMERCEGUARD_CATALOG_PATH
   if (!catalogPath)
     throw new MedusaError(

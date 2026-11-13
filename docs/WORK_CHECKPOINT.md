@@ -17,9 +17,10 @@ See [the current verification report](ENHANCEMENT_RESULTS.md) and
 - Twenty-seven route/viewport captures (1440, 393, 320px) have no overflow, broken
   images or browser errors. Repeated seed preserves catalog, stock and manifest.
 
-Public GitHub publication to EliyahuEden was explicitly authorized. The remaining
-release step at this checkpoint is the initial public push and observed hosted
-smoke/regression/performance runs, then recording their actual outcomes. Do not
+Public GitHub publication to EliyahuEden was explicitly authorized. The public source and baseline tag are uploaded at
+https://github.com/EliyahuEden/CommerceGuard. Initial hosted runs failed during
+first-index activation in aut:seed. The correction uses the public search service
+to activate a pending index; hosted reruns and observed result recording remain. Do not
 represent local Compose or hosted CI as executed until that evidence exists.
 
 The local preview uses `aut:start:production`; mutation runs use development mode

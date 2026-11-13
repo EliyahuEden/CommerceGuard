@@ -119,6 +119,8 @@ workspace and keep the application on local ports 8000/9000 and PostgreSQL 54329
 No admin account, payment credential or secret service is required.
 
 ```sh
+git clone https://github.com/EliyahuEden/CommerceGuard.git
+cd CommerceGuard
 npm ci
 npx playwright install --with-deps chromium firefox webkit
 docker compose up -d --wait postgres
