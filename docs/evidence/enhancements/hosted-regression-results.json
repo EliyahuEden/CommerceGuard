@@ -1,9 +1,9 @@
 {
-  "measuredAt": "2026-11-13T19:59:19.075Z",
-  "source": ".runtime/hosted-regression/test-results/results.json",
+  "measuredAt": "2026-11-14T03:48:21.005Z",
+  "source": ".runtime/hosted-regression-final/test-results/results.json",
   "stats": {
-    "startTime": "2026-11-13T19:53:11.544Z",
-    "duration": 166955.302,
+    "startTime": "2026-11-13T20:16:58.654Z",
+    "duration": 163490.74099999998,
     "expected": 151,
     "skipped": 0,
     "unexpected": 2,
@@ -17,7 +17,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 315,
+          "duration": 240,
           "errors": []
         }
       ]
@@ -29,7 +29,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 699,
+          "duration": 541,
           "errors": []
         }
       ]
@@ -41,7 +41,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 763,
+          "duration": 667,
           "errors": []
         }
       ]
@@ -53,7 +53,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 536,
+          "duration": 462,
           "errors": []
         }
       ]
@@ -65,7 +65,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 162,
+          "duration": 176,
           "errors": []
         }
       ]
@@ -77,7 +77,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 172,
+          "duration": 156,
           "errors": []
         }
       ]
@@ -89,7 +89,7 @@
       "results": [
         {
           "status": "failed",
-          "duration": 347,
+          "duration": 354,
           "errors": [
             {
               "location": {
@@ -110,7 +110,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 232,
+          "duration": 253,
           "errors": []
         }
       ]
@@ -122,7 +122,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 116,
+          "duration": 115,
           "errors": []
         }
       ]
@@ -134,7 +134,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 570,
+          "duration": 553,
           "errors": []
         }
       ]
@@ -146,7 +146,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 350,
+          "duration": 371,
           "errors": []
         }
       ]
@@ -158,7 +158,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 550,
+          "duration": 559,
           "errors": []
         }
       ]
@@ -170,7 +170,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 400,
+          "duration": 374,
           "errors": []
         }
       ]
@@ -182,7 +182,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 107,
+          "duration": 100,
           "errors": []
         }
       ]
@@ -194,7 +194,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 68,
+          "duration": 57,
           "errors": []
         }
       ]
@@ -206,7 +206,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 47,
+          "duration": 55,
           "errors": []
         }
       ]
@@ -218,7 +218,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 93,
+          "duration": 87,
           "errors": []
         }
       ]
@@ -230,7 +230,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 20,
+          "duration": 19,
           "errors": []
         }
       ]
@@ -242,7 +242,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 10,
+          "duration": 13,
           "errors": []
         }
       ]
@@ -254,7 +254,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1619,
+          "duration": 1513,
           "errors": []
         }
       ]
@@ -266,7 +266,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1784,
+          "duration": 1623,
           "errors": []
         }
       ]
@@ -278,7 +278,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 416,
+          "duration": 401,
           "errors": []
         }
       ]
@@ -290,7 +290,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1592,
+          "duration": 1554,
           "errors": []
         }
       ]
@@ -302,7 +302,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 245,
+          "duration": 240,
           "errors": []
         }
       ]
@@ -314,7 +314,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 381,
+          "duration": 378,
           "errors": []
         }
       ]
@@ -326,7 +326,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 278,
+          "duration": 281,
           "errors": []
         }
       ]
@@ -338,7 +338,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 13,
+          "duration": 11,
           "errors": []
         }
       ]
@@ -350,7 +350,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 12,
+          "duration": 10,
           "errors": []
         }
       ]
@@ -362,7 +362,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 535,
+          "duration": 550,
           "errors": []
         }
       ]
@@ -374,7 +374,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 527,
+          "duration": 491,
           "errors": []
         }
       ]
@@ -386,7 +386,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 227,
+          "duration": 225,
           "errors": []
         }
       ]
@@ -398,7 +398,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 90,
+          "duration": 102,
           "errors": []
         }
       ]
@@ -410,7 +410,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 316,
+          "duration": 338,
           "errors": []
         }
       ]
@@ -422,7 +422,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 544,
+          "duration": 889,
           "errors": []
         }
       ]
@@ -434,7 +434,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 518,
+          "duration": 1280,
           "errors": []
         }
       ]
@@ -446,7 +446,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2191,
+          "duration": 1975,
           "errors": []
         }
       ]
@@ -458,7 +458,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 590,
+          "duration": 658,
           "errors": []
         }
       ]
@@ -470,7 +470,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 270,
+          "duration": 216,
           "errors": []
         }
       ]
@@ -482,7 +482,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1413,
+          "duration": 1078,
           "errors": []
         }
       ]
@@ -494,7 +494,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1157,
+          "duration": 1254,
           "errors": []
         }
       ]
@@ -506,7 +506,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 377,
+          "duration": 347,
           "errors": []
         }
       ]
@@ -518,7 +518,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1991,
+          "duration": 1768,
           "errors": []
         }
       ]
@@ -530,7 +530,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3508,
+          "duration": 3648,
           "errors": []
         }
       ]
@@ -542,7 +542,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4510,
+          "duration": 4434,
           "errors": []
         }
       ]
@@ -554,7 +554,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1806,
+          "duration": 1897,
           "errors": []
         }
       ]
@@ -566,7 +566,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3868,
+          "duration": 4300,
           "errors": []
         }
       ]
@@ -578,7 +578,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 6296,
+          "duration": 6119,
           "errors": []
         }
       ]
@@ -590,7 +590,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 6922,
+          "duration": 6758,
           "errors": []
         }
       ]
@@ -602,7 +602,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3796,
+          "duration": 3815,
           "errors": []
         }
       ]
@@ -614,7 +614,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1495,
+          "duration": 1376,
           "errors": []
         }
       ]
@@ -626,7 +626,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1621,
+          "duration": 1709,
           "errors": []
         }
       ]
@@ -638,7 +638,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2448,
+          "duration": 2170,
           "errors": []
         }
       ]
@@ -650,7 +650,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1399,
+          "duration": 1466,
           "errors": []
         }
       ]
@@ -662,7 +662,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1809,
+          "duration": 1668,
           "errors": []
         }
       ]
@@ -674,7 +674,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2099,
+          "duration": 1982,
           "errors": []
         }
       ]
@@ -686,7 +686,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1892,
+          "duration": 1787,
           "errors": []
         }
       ]
@@ -698,7 +698,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1670,
+          "duration": 1582,
           "errors": []
         }
       ]
@@ -710,109 +710,13 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3327,
+          "duration": 3118,
           "errors": []
         }
       ]
     },
     {
       "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 3372,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 4238,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 3157,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 895,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1344,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2496,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 974,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details @smoke",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 3371,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details @smoke",
       "project": "firefox",
       "status": "expected",
       "results": [
@@ -824,13 +728,109 @@
       ]
     },
     {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4140,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-025 R-ORDER status reflects the order and buy again uses a fresh cart without duplicating orders",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3202,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 860,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1369,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2056,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available size restores it",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1151,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2734,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-028 R-ACCESS another customer's account order page exposes no order details @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3416,
+          "errors": []
+        }
+      ]
+    },
+    {
       "title": "UI-028 R-ACCESS another customer's account order page exposes no order details @smoke",
       "project": "webkit",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "duration": 3233,
+          "duration": 3032,
           "errors": []
         }
       ]
@@ -842,7 +842,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2583,
+          "duration": 2434,
           "errors": []
         }
       ]
@@ -854,7 +854,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 10648,
+          "duration": 10771,
           "errors": []
         }
       ]
@@ -866,7 +866,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 16964,
+          "duration": 15928,
           "errors": []
         }
       ]
@@ -878,7 +878,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 14664,
+          "duration": 14280,
           "errors": []
         }
       ]
@@ -890,7 +890,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 10457,
+          "duration": 9557,
           "errors": []
         }
       ]
@@ -902,7 +902,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1754,
+          "duration": 1572,
           "errors": []
         }
       ]
@@ -914,7 +914,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2039,
+          "duration": 2494,
           "errors": []
         }
       ]
@@ -926,7 +926,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2503,
+          "duration": 2530,
           "errors": []
         }
       ]
@@ -938,7 +938,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1465,
+          "duration": 1559,
           "errors": []
         }
       ]
@@ -950,7 +950,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 775,
+          "duration": 1074,
           "errors": []
         }
       ]
@@ -962,7 +962,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1390,
+          "duration": 1275,
           "errors": []
         }
       ]
@@ -974,7 +974,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1826,
+          "duration": 1781,
           "errors": []
         }
       ]
@@ -986,7 +986,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1200,
+          "duration": 854,
           "errors": []
         }
       ]
@@ -998,109 +998,13 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1827,
+          "duration": 1967,
           "errors": []
         }
       ]
     },
     {
       "title": "UI-003 R-CART product action adds exactly one unit @smoke",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2882,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2978,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1773,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-004 R-CART quantity update recalculates displayed total",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1906,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-004 R-CART quantity update recalculates displayed total",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1870,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-004 R-CART quantity update recalculates displayed total",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2323,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-004 R-CART quantity update recalculates displayed total",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1295,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1308,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
       "project": "firefox",
       "status": "expected",
       "results": [
@@ -1112,13 +1016,118 @@
       ]
     },
     {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3082,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-003 R-CART product action adds exactly one unit @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1792,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1340,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1628,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1996,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-004 R-CART quantity update recalculates displayed total",
+      "project": "mobile-chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 1287,
+          "errors": [
+            {
+              "location": {
+                "file": "/home/runner/work/CommerceGuard/CommerceGuard/src/pages/storefront.ts",
+                "column": 8,
+                "line": 82
+              },
+              "message": "Error: locator.selectOption: Error: strict mode violation: getByTestId('product-select-button') resolved to 2 elements:\n    1) <select aria-label=\"Item quantity\" data-testid=\"product-select-button\" class=\"appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center\">…</select> aka getByRole('row', { name: 'View Essential T-Shirt' }).getByTestId('product-select-button')\n    2) <select disabled aria-label=\"Item quantity\" data-testid=\"product-select-button\" class=\"appearance-none bg-transparent border-none px-4 transition-colors duration-150 focus:border-gray-700 outline-none w-16 h-16 items-center justify-center\">…</select> aka getByTestId('product-select-button').nth(1)\n\nCall log:\n\u001b[2m  - waiting for getByTestId('product-select-button')\u001b[22m\n\n\n   at ../src/pages/storefront.ts:82\n\n  80 |     await this.page\n  81 |       .getByTestId(\"product-select-button\")\n> 82 |       .selectOption(String(value))\n     |        ^\n  83 |     await expect(this.page.getByTestId(\"product-select-button\")).toBeEnabled()\n  84 |     await expect(this.page.getByTestId(\"product-select-button\")).toHaveValue(\n  85 |       String(value),\n    at CartPage.quantity (/home/runner/work/CommerceGuard/CommerceGuard/src/pages/storefront.ts:82:8)\n    at /home/runner/work/CommerceGuard/CommerceGuard/tests/ui/storefront.spec.ts:71:14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1743,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2738,
+          "errors": []
+        }
+      ]
+    },
+    {
       "title": "UI-005 R-INVENTORY cart offers its documented one to ten quantity range",
       "project": "webkit",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "duration": 2174,
+          "duration": 2068,
           "errors": []
         }
       ]
@@ -1130,7 +1139,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1515,
+          "duration": 1425,
           "errors": []
         }
       ]
@@ -1142,7 +1151,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1345,
+          "duration": 1171,
           "errors": []
         }
       ]
@@ -1154,7 +1163,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1783,
+          "duration": 1725,
           "errors": []
         }
       ]
@@ -1162,126 +1171,6 @@
     {
       "title": "UI-006 R-CART deleting the last item displays an empty cart",
       "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2117,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-006 R-CART deleting the last item displays an empty cart",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1184,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1665,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1837,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2297,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1397,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-008 R-PROMO removing promotion restores full price",
-      "project": "chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 1783,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-008 R-PROMO removing promotion restores full price",
-      "project": "firefox",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2485,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-008 R-PROMO removing promotion restores full price",
-      "project": "webkit",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2350,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-008 R-PROMO removing promotion restores full price",
-      "project": "mobile-chromium",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "duration": 2093,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
-      "project": "chromium",
       "status": "expected",
       "results": [
         {
@@ -1292,13 +1181,133 @@
       ]
     },
     {
+      "title": "UI-006 R-CART deleting the last item displays an empty cart",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1280,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1262,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1816,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2427,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1554,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1558,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2442,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2650,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-008 R-PROMO removing promotion restores full price",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1655,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "UI-009 R-CATALOG search narrows products and can be cleared",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1997,
+          "errors": []
+        }
+      ]
+    },
+    {
       "title": "UI-009 R-CATALOG search narrows products and can be cleared",
       "project": "firefox",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "duration": 2165,
+          "duration": 2045,
           "errors": []
         }
       ]
@@ -1310,7 +1319,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2540,
+          "duration": 2352,
           "errors": []
         }
       ]
@@ -1322,7 +1331,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2082,
+          "duration": 1784,
           "errors": []
         }
       ]
@@ -1334,7 +1343,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1290,
+          "duration": 992,
           "errors": []
         }
       ]
@@ -1346,7 +1355,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1587,
+          "duration": 2234,
           "errors": []
         }
       ]
@@ -1358,7 +1367,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1924,
+          "duration": 2190,
           "errors": []
         }
       ]
@@ -1370,7 +1379,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1226,
+          "duration": 1062,
           "errors": []
         }
       ]
@@ -1382,7 +1391,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1088,
+          "duration": 1419,
           "errors": []
         }
       ]
@@ -1394,7 +1403,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2058,
+          "duration": 1994,
           "errors": []
         }
       ]
@@ -1406,7 +1415,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2523,
+          "duration": 2495,
           "errors": []
         }
       ]
@@ -1418,7 +1427,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1321,
+          "duration": 1312,
           "errors": []
         }
       ]
@@ -1430,7 +1439,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2093,
+          "duration": 2079,
           "errors": []
         }
       ]
@@ -1442,7 +1451,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2879,
+          "duration": 2495,
           "errors": []
         }
       ]
@@ -1454,7 +1463,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2748,
+          "duration": 2573,
           "errors": []
         }
       ]
@@ -1466,7 +1475,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1911,
+          "duration": 1958,
           "errors": []
         }
       ]
@@ -1478,7 +1487,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 977,
+          "duration": 778,
           "errors": []
         }
       ]
@@ -1490,7 +1499,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1338,
+          "duration": 1428,
           "errors": []
         }
       ]
@@ -1502,7 +1511,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1511,
+          "duration": 1685,
           "errors": []
         }
       ]
@@ -1514,7 +1523,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 890,
+          "duration": 721,
           "errors": []
         }
       ]
@@ -1526,7 +1535,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1484,
+          "duration": 1341,
           "errors": []
         }
       ]
@@ -1538,7 +1547,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2092,
+          "duration": 1720,
           "errors": []
         }
       ]
@@ -1550,7 +1559,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2317,
+          "duration": 2293,
           "errors": []
         }
       ]
@@ -1562,7 +1571,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1356,
+          "duration": 1304,
           "errors": []
         }
       ]
@@ -1574,7 +1583,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 736,
+          "duration": 662,
           "errors": []
         }
       ]
@@ -1586,7 +1595,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1161,
+          "duration": 971,
           "errors": []
         }
       ]
@@ -1598,7 +1607,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1287,
+          "duration": 1209,
           "errors": []
         }
       ]
@@ -1610,7 +1619,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 706,
+          "duration": 625,
           "errors": []
         }
       ]
@@ -1622,7 +1631,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1405,
+          "duration": 2280,
           "errors": []
         }
       ]
@@ -1634,7 +1643,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2151,
+          "duration": 3134,
           "errors": []
         }
       ]
@@ -1646,7 +1655,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2244,
+          "duration": 3330,
           "errors": []
         }
       ]
@@ -1654,21 +1663,12 @@
     {
       "title": "UI-016 R-ACCOUNT name edit persists after reload",
       "project": "mobile-chromium",
-      "status": "unexpected",
+      "status": "expected",
       "results": [
         {
-          "status": "failed",
-          "duration": 1101,
-          "errors": [
-            {
-              "location": {
-                "file": "/home/runner/work/CommerceGuard/CommerceGuard/tests/ui/storefront.spec.ts",
-                "column": 43,
-                "line": 271
-              },
-              "message": "Error: locator.click: Error: strict mode violation: getByTestId('account-name-editor').getByTestId('edit-button') resolved to 2 elements:\n    1) <button type=\"button\" data-active=\"false\" data-testid=\"edit-button\" class=\"inline-flex gap-2 items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-black border border-gray-200 hover:bg-gray-50 h-10 px-4 w-[100px] min-h-[25px] py-1\">Edit</button> aka getByTestId('edit-button').first()\n    2) <button type=\"button\" data-active=\"false\" data-testid=\"edit-button\" class=\"inline-flex gap-2 items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-black border border-gray-200 hover:bg-gray-50 h-10 px-4 w-[100px] min-h-[25px] py-1\">Edit</button> aka getByTestId('edit-button').nth(4)\n\nCall log:\n\u001b[2m  - waiting for getByTestId('account-name-editor').getByTestId('edit-button')\u001b[22m\n\n\n  269 |   await openPage(page, \"/dk/account/profile\")\n  270 |   const editor = page.getByTestId(\"account-name-editor\")\n> 271 |   await editor.getByTestId(\"edit-button\").click()\n      |                                           ^\n  272 |   await editor.getByTestId(\"first-name-input\").fill(\"Updated\")\n  273 |   await editor.getByTestId(\"save-button\").click()\n  274 |   await expect(editor.getByTestId(\"current-info\")).toContainText(\"Updated\")\n    at /home/runner/work/CommerceGuard/CommerceGuard/tests/ui/storefront.spec.ts:271:43"
-            }
-          ]
+          "status": "passed",
+          "duration": 2225,
+          "errors": []
         }
       ]
     },
@@ -1679,7 +1679,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5577,
+          "duration": 5622,
           "errors": []
         }
       ]
@@ -1691,7 +1691,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 7753,
+          "duration": 5867,
           "errors": []
         }
       ]
@@ -1703,7 +1703,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 7088,
+          "duration": 6419,
           "errors": []
         }
       ]
@@ -1715,7 +1715,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 6800,
+          "duration": 6048,
           "errors": []
         }
       ]
@@ -1727,7 +1727,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2322,
+          "duration": 1601,
           "errors": []
         }
       ]
@@ -1739,7 +1739,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1986,
+          "duration": 3219,
           "errors": []
         }
       ]
@@ -1751,7 +1751,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2976,
+          "duration": 2598,
           "errors": []
         }
       ]
@@ -1763,7 +1763,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1722,
+          "duration": 1534,
           "errors": []
         }
       ]
@@ -1775,7 +1775,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2101,
+          "duration": 2344,
           "errors": []
         }
       ]
@@ -1787,7 +1787,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2085,
+          "duration": 2175,
           "errors": []
         }
       ]
@@ -1799,7 +1799,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2819,
+          "duration": 2894,
           "errors": []
         }
       ]
@@ -1811,7 +1811,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1432,
+          "duration": 1568,
           "errors": []
         }
       ]
@@ -1823,7 +1823,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 919,
+          "duration": 845,
           "errors": []
         }
       ]
@@ -1835,7 +1835,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2282,
+          "duration": 1786,
           "errors": []
         }
       ]
@@ -1847,7 +1847,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1716,
+          "duration": 2021,
           "errors": []
         }
       ]
@@ -1859,7 +1859,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1089,
+          "duration": 1254,
           "errors": []
         }
       ]

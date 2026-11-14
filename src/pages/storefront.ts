@@ -46,10 +46,12 @@ export class ProductPage {
       this.page,
       `/dk/products/${this.seed.handle}${selected ? `?v_id=${this.seed.variantId}` : ""}`,
     )
-    await expect(this.page.getByTestId("product-container")).toBeVisible()
+    await expect(
+      this.page.getByRole("main").getByTestId("product-container"),
+    ).toBeVisible()
   }
   async add() {
-    const button = this.page.getByTestId("add-product-button")
+    const button = this.page.getByRole("main").getByTestId("add-product-button")
     await expect(button).toBeEnabled()
     await button.click()
     await expect(button).toBeEnabled()
@@ -62,14 +64,15 @@ export class CartPage {
     await openPage(this.page, "/dk/cart")
   }
   row() {
-    return this.page.getByTestId("product-row")
+    return this.page.getByRole("main").getByTestId("product-row")
   }
   async expectTotal(total: number) {
-    await expect(this.page.getByTestId("cart-total")).toHaveAttribute(
-      "data-value",
-      String(total),
-    )
-    await expect(this.page.getByTestId("cart-total")).toHaveText(
+    await expect(
+      this.page.getByRole("main").getByTestId("cart-total"),
+    ).toHaveAttribute("data-value", String(total))
+    await expect(
+      this.page.getByRole("main").getByTestId("cart-total"),
+    ).toHaveText(
       new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "EUR",
@@ -78,18 +81,26 @@ export class CartPage {
   }
   async quantity(value: number) {
     await this.page
+      .getByRole("main")
       .getByTestId("product-select-button")
       .selectOption(String(value))
-    await expect(this.page.getByTestId("product-select-button")).toBeEnabled()
-    await expect(this.page.getByTestId("product-select-button")).toHaveValue(
-      String(value),
-    )
+    await expect(
+      this.page.getByRole("main").getByTestId("product-select-button"),
+    ).toBeEnabled()
+    await expect(
+      this.page.getByRole("main").getByTestId("product-select-button"),
+    ).toHaveValue(String(value))
   }
   async apply(code: string) {
-    await this.page.getByTestId("add-discount-button").click()
-    await this.page.getByTestId("discount-input").fill(code)
-    await this.page.getByTestId("discount-apply-button").click()
-    await expect(this.page.getByTestId("discount-code")).toContainText(code)
+    await this.page.getByRole("main").getByTestId("add-discount-button").click()
+    await this.page.getByRole("main").getByTestId("discount-input").fill(code)
+    await this.page
+      .getByRole("main")
+      .getByTestId("discount-apply-button")
+      .click()
+    await expect(
+      this.page.getByRole("main").getByTestId("discount-code"),
+    ).toContainText(code)
   }
 }
 export class AccountPage {
@@ -98,42 +109,81 @@ export class AccountPage {
     await openPage(this.page, "/dk/account")
   }
   async login(email: string, password: string) {
-    await this.page.getByTestId("email-input").fill(email)
-    await this.page.getByTestId("password-input").fill(password)
-    await this.page.getByTestId("sign-in-button").click()
+    await this.page.getByRole("main").getByTestId("email-input").fill(email)
+    await this.page
+      .getByRole("main")
+      .getByTestId("password-input")
+      .fill(password)
+    await this.page.getByRole("main").getByTestId("sign-in-button").click()
   }
 }
 export class CheckoutPage {
   constructor(readonly page: Page) {}
   async address(email: string) {
-    await this.page.getByTestId("shipping-first-name-input").fill("Commerce")
-    await this.page.getByTestId("shipping-last-name-input").fill("Guard")
-    await this.page.getByTestId("shipping-address-input").fill("Test Street 42")
-    await this.page.getByTestId("shipping-postal-code-input").fill("2100")
-    await this.page.getByTestId("shipping-city-input").fill("Copenhagen")
-    await this.page.getByTestId("shipping-country-select").selectOption("dk")
-    await this.page.getByTestId("shipping-email-input").fill(email)
-    await this.page.getByTestId("shipping-phone-input").fill("+4512345678")
-    await this.page.getByTestId("submit-address-button").click()
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-first-name-input")
+      .fill("Commerce")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-last-name-input")
+      .fill("Guard")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-address-input")
+      .fill("Test Street 42")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-postal-code-input")
+      .fill("2100")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-city-input")
+      .fill("Copenhagen")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-country-select")
+      .selectOption("dk")
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-email-input")
+      .fill(email)
+    await this.page
+      .getByRole("main")
+      .getByTestId("shipping-phone-input")
+      .fill("+4512345678")
+    await this.page
+      .getByRole("main")
+      .getByTestId("submit-address-button")
+      .click()
   }
   async deliveryAndPayment() {
     await this.page
+      .getByRole("main")
       .getByTestId("delivery-option-radio")
       .filter({ hasText: "Standard Shipping" })
       .click()
-    await this.page.getByTestId("submit-delivery-option-button").click()
+    await this.page
+      .getByRole("main")
+      .getByTestId("submit-delivery-option-button")
+      .click()
     await this.page
       .getByRole("radio")
       .filter({ hasText: /manual|test/i })
       .click()
-    await this.page.getByTestId("submit-payment-button").click()
-    await expect(this.page.getByTestId("submit-order-button")).toBeEnabled()
+    await this.page
+      .getByRole("main")
+      .getByTestId("submit-payment-button")
+      .click()
+    await expect(
+      this.page.getByRole("main").getByTestId("submit-order-button"),
+    ).toBeEnabled()
   }
   async placeOrder() {
-    await this.page.getByTestId("submit-order-button").click()
+    await this.page.getByRole("main").getByTestId("submit-order-button").click()
     await expect(this.page).toHaveURL(/\/order\/.*\/confirmed/)
     await expect(
-      this.page.getByTestId("order-complete-container"),
+      this.page.getByRole("main").getByTestId("order-complete-container"),
     ).toBeVisible()
   }
 }

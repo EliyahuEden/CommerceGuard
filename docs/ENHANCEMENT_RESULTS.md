@@ -196,3 +196,12 @@ updates. These are repeated checks, not additional unique cases.
 [trace diagnosis](evidence/enhancements/profile-streaming-diagnostic.json),
 [profile stability](evidence/enhancements/profile-stability-results.json),
 [profile production build](evidence/enhancements/production-build-profile-fix.json).
+
+A subsequent hosted matrix exposed the same transient streaming duplication in the
+cart quantity selector (151/2). The framework now scopes business page-object and
+UI locators to the active main landmark; header navigation stays outside that scope.
+Privacy absence checks still inspect the whole document. This addresses the shared
+lifecycle cause without first-match selection, sleeps, retries or weaker money/data
+assertions. The second hosted outcomes are preserved separately; verification of
+this consistent locator correction follows.
+[Second hosted matrix](evidence/enhancements/hosted-regression-second-results.json).

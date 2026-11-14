@@ -46,9 +46,9 @@ test("UI-022 R-WISHLIST guest selection merges after real login and survives in 
     .getByRole("button", { name: `Save ${seed.productTitle} to wishlist` })
     .click()
   await page.getByTestId("nav-account-link").click()
-  await page.getByTestId("email-input").fill(user.email)
-  await page.getByTestId("password-input").fill(user.password)
-  await page.getByTestId("sign-in-button").click()
+  await page.getByRole("main").getByTestId("email-input").fill(user.email)
+  await page.getByRole("main").getByTestId("password-input").fill(user.password)
+  await page.getByRole("main").getByTestId("sign-in-button").click()
   await expect
     .poll(async () => {
       const result = await jsonOk<{
@@ -126,22 +126,29 @@ test("UI-024 R-CHECKOUT invalid address announces fields and preserves typed val
   await expect(
     page.getByRole("navigation", { name: "Checkout progress" }),
   ).toContainText("Address")
-  const first = page.getByTestId("shipping-first-name-input")
+  const first = page.getByRole("main").getByTestId("shipping-first-name-input")
   await first.fill("Retained")
-  await page.getByTestId("shipping-email-input").fill("not-an-email")
-  await page.getByTestId("submit-address-button").click()
-  await expect(page.getByTestId("address-error-message")).toContainText(
-    "Your details have been kept",
-  )
+  await page
+    .getByRole("main")
+    .getByTestId("shipping-email-input")
+    .fill("not-an-email")
+  await page.getByRole("main").getByTestId("submit-address-button").click()
+  await expect(
+    page.getByRole("main").getByTestId("address-error-message"),
+  ).toContainText("Your details have been kept")
   await expect(first).toHaveValue("Retained")
-  await expect(page.getByTestId("shipping-email-input")).toHaveAttribute(
-    "aria-invalid",
-    "true",
-  )
-  await expect(page.getByTestId("shipping-last-name-input")).toBeFocused()
+  await expect(
+    page.getByRole("main").getByTestId("shipping-email-input"),
+  ).toHaveAttribute("aria-invalid", "true")
+  await expect(
+    page.getByRole("main").getByTestId("shipping-last-name-input"),
+  ).toBeFocused()
   if (page.viewportSize()!.width < 768) {
     const a = await first.boundingBox()
-    const b = await page.getByTestId("shipping-last-name-input").boundingBox()
+    const b = await page
+      .getByRole("main")
+      .getByTestId("shipping-last-name-input")
+      .boundingBox()
     expect(b!.y).toBeGreaterThanOrEqual(a!.y + a!.height)
   }
   expect((await store.cart(cart.id)).items[0].quantity).toBe(1)
@@ -162,12 +169,12 @@ test("UI-025 R-ORDER status reflects the order and buy again uses a fresh cart w
   }>(await user.client.get(`/store/orders/${order.id}`))
   await setCustomer(context, user.token)
   await openPage(page, `/dk/account/orders/details/${order.id}`)
-  await expect(page.getByTestId("order-fulfillment-status")).toHaveText(
-    current.order.fulfillment_status.replaceAll("_", " "),
-  )
-  await expect(page.getByTestId("order-payment-status")).toHaveText(
-    current.order.payment_status.replaceAll("_", " "),
-  )
+  await expect(
+    page.getByRole("main").getByTestId("order-fulfillment-status"),
+  ).toHaveText(current.order.fulfillment_status.replaceAll("_", " "))
+  await expect(
+    page.getByRole("main").getByTestId("order-payment-status"),
+  ).toHaveText(current.order.payment_status.replaceAll("_", " "))
   await page.getByRole("button", { name: "Buy again" }).click()
   await expect(page).toHaveURL(/\/cart$/)
   const cookie = (await context.cookies()).find(
@@ -191,18 +198,33 @@ test("UI-026 R-INVENTORY unavailable hoodie size blocks purchase and available s
   page,
 }) => {
   await openPage(page, "/dk/products/charcoal-hoodie")
-  await page.getByTestId("option-button").filter({ hasText: /^XL$/ }).click()
   await page
+    .getByRole("main")
+    .getByTestId("option-button")
+    .filter({ hasText: /^XL$/ })
+    .click()
+  await page
+    .getByRole("main")
     .getByTestId("option-button")
     .filter({ hasText: /^Charcoal$/ })
     .click()
-  await expect(page.getByTestId("product-availability")).toHaveText(
-    "Out of stock",
-  )
-  await expect(page.getByTestId("add-product-button")).toBeDisabled()
-  await page.getByTestId("option-button").filter({ hasText: /^M$/ }).click()
-  await expect(page.getByTestId("product-availability")).toHaveText("In stock")
-  await expect(page.getByTestId("add-product-button")).toBeEnabled()
+  await expect(
+    page.getByRole("main").getByTestId("product-availability"),
+  ).toHaveText("Out of stock")
+  await expect(
+    page.getByRole("main").getByTestId("add-product-button"),
+  ).toBeDisabled()
+  await page
+    .getByRole("main")
+    .getByTestId("option-button")
+    .filter({ hasText: /^M$/ })
+    .click()
+  await expect(
+    page.getByRole("main").getByTestId("product-availability"),
+  ).toHaveText("In stock")
+  await expect(
+    page.getByRole("main").getByTestId("add-product-button"),
+  ).toBeEnabled()
 })
 
 test("UI-028 R-ACCESS another customer's account order page exposes no order details @smoke", async ({

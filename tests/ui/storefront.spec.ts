@@ -17,19 +17,28 @@ test("UI-001 R-CATALOG product browsing and details show the seeded product @smo
   seed,
 }) => {
   await openPage(page, "/dk/store")
-  await expect(page.getByTestId("store-page-title")).toHaveText("All products")
+  await expect(
+    page.getByRole("main").getByTestId("store-page-title"),
+  ).toHaveText("All products")
   const product = page
+    .getByRole("main")
     .getByTestId("product-wrapper")
     .filter({ hasText: seed.productTitle })
   await expect(product).toHaveCount(1)
   await page
+    .getByRole("main")
     .getByTestId("products-list")
     .getByRole("link", { name: new RegExp(seed.productTitle) })
     .click()
   await expect(
-    page.getByTestId("product-container").getByTestId("product-title"),
+    page
+      .getByRole("main")
+      .getByTestId("product-container")
+      .getByTestId("product-title"),
   ).toHaveText(seed.productTitle)
-  await expect(page.getByTestId("product-description")).not.toBeEmpty()
+  await expect(
+    page.getByRole("main").getByTestId("product-description"),
+  ).not.toBeEmpty()
   expect(new URL(page.url()).pathname).toBe(`/dk/products/${seed.handle}`)
 })
 test("UI-002 R-INVENTORY selecting a variant updates availability and selected options", async ({
@@ -42,8 +51,12 @@ test("UI-002 R-INVENTORY selecting a variant updates availability and selected o
   await expect(
     size.getByRole("radio", { name: "M", exact: true }),
   ).toBeChecked()
-  await expect(page.getByTestId("product-availability")).toHaveText("In stock")
-  await expect(page.getByTestId("add-product-button")).toBeEnabled()
+  await expect(
+    page.getByRole("main").getByTestId("product-availability"),
+  ).toHaveText("In stock")
+  await expect(
+    page.getByRole("main").getByTestId("add-product-button"),
+  ).toBeEnabled()
 })
 test("UI-003 R-CART product action adds exactly one unit @smoke", async ({
   page,
@@ -55,7 +68,9 @@ test("UI-003 R-CART product action adds exactly one unit @smoke", async ({
   const cart = new CartPage(page)
   await cart.open()
   await expect(cart.row()).toHaveCount(1)
-  await expect(page.getByTestId("product-select-button")).toHaveValue("1")
+  await expect(
+    page.getByRole("main").getByTestId("product-select-button"),
+  ).toHaveValue("1")
   await cart.expectTotal(seed.unitPrice)
 })
 test("UI-004 R-CART quantity update recalculates displayed total", async ({
@@ -82,6 +97,7 @@ test("UI-005 R-INVENTORY cart offers its documented one to ten quantity range", 
   const view = new CartPage(page)
   await view.open()
   const values = await page
+    .getByRole("main")
     .getByTestId("product-select-button")
     .locator("option:not([disabled])")
     .evaluateAll((options) =>
@@ -100,9 +116,15 @@ test("UI-006 R-CART deleting the last item displays an empty cart", async ({
   await setCart(context, (await store.cartWithItem()).id)
   await new CartPage(page).open()
   // Upstream DeleteButton does not forward its test id; scope its button to the item row.
-  await page.getByTestId("product-row").getByRole("button").click()
-  await expect(page.getByTestId("empty-cart-message")).toBeVisible()
-  await expect(page.getByTestId("product-row")).toHaveCount(0)
+  await page
+    .getByRole("main")
+    .getByTestId("product-row")
+    .getByRole("button")
+    .click()
+  await expect(
+    page.getByRole("main").getByTestId("empty-cart-message"),
+  ).toBeVisible()
+  await expect(page.getByRole("main").getByTestId("product-row")).toHaveCount(0)
 })
 test("UI-007 R-PROMO discount and final total agree with ten percent promotion @smoke", async ({
   page,
@@ -114,11 +136,12 @@ test("UI-007 R-PROMO discount and final total agree with ten percent promotion @
   const cart = new CartPage(page)
   await cart.open()
   await cart.apply(seed.promotionCode)
-  await expect(page.getByTestId("cart-discount")).toHaveAttribute(
-    "data-value",
-    "3",
+  await expect(
+    page.getByRole("main").getByTestId("cart-discount"),
+  ).toHaveAttribute("data-value", "3")
+  await expect(page.getByRole("main").getByTestId("cart-discount")).toHaveText(
+    /^-\s*€3\.00$/,
   )
-  await expect(page.getByTestId("cart-discount")).toHaveText(/^-\s*€3\.00$/)
   await cart.expectTotal(27)
 })
 test("UI-008 R-PROMO removing promotion restores full price", async ({
@@ -136,8 +159,10 @@ test("UI-008 R-PROMO removing promotion restores full price", async ({
   await setCart(context, cart.id)
   const view = new CartPage(page)
   await view.open()
-  await page.getByTestId("remove-discount-button").click()
-  await expect(page.getByTestId("cart-discount")).toHaveCount(0)
+  await page.getByRole("main").getByTestId("remove-discount-button").click()
+  await expect(page.getByRole("main").getByTestId("cart-discount")).toHaveCount(
+    0,
+  )
   await view.expectTotal(seed.unitPrice)
 })
 test("UI-009 R-CATALOG search narrows products and can be cleared", async ({
@@ -153,31 +178,37 @@ test("UI-009 R-CATALOG search narrows products and can be cleared", async ({
     .map((product) => product.title)
     .sort()
   await openPage(page, "/dk/store")
-  await page.getByTestId("store-search-input").fill("T-Shirt")
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(expected.length)
+  await page.getByRole("main").getByTestId("store-search-input").fill("T-Shirt")
+  await expect(
+    page.getByRole("main").getByTestId("product-wrapper"),
+  ).toHaveCount(expected.length)
   expect(
     (
       await page
+        .getByRole("main")
         .getByTestId("products-list")
         .getByTestId("product-title")
         .allTextContents()
     ).sort(),
   ).toEqual(expected)
   expect(expected).toContain(seed.productTitle)
-  await page.getByTestId("store-search-clear").click()
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(
-    catalog.products.length,
-  )
+  await page.getByRole("main").getByTestId("store-search-clear").click()
+  await expect(
+    page.getByRole("main").getByTestId("product-wrapper"),
+  ).toHaveCount(catalog.products.length)
 })
 test("UI-010 R-ERROR search with no matching product shows empty state", async ({
   page,
 }) => {
   await openPage(page, "/dk/store")
   await page
+    .getByRole("main")
     .getByTestId("store-search-input")
     .fill("cg-impossible-product-98765")
-  await expect(page.getByTestId("no-products")).toBeVisible()
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(0)
+  await expect(page.getByRole("main").getByTestId("no-products")).toBeVisible()
+  await expect(
+    page.getByRole("main").getByTestId("product-wrapper"),
+  ).toHaveCount(0)
 })
 test("UI-011 R-CATALOG category filter restricts the catalog", async ({
   page,
@@ -194,17 +225,21 @@ test("UI-011 R-CATALOG category filter restricts the catalog", async ({
     .map((product) => product.title)
     .sort()
   await openPage(page, "/dk/store")
-  const toggle = page.getByTestId("filters-toggle")
+  const toggle = page.getByRole("main").getByTestId("filters-toggle")
   if (await toggle.isVisible()) await toggle.click()
   const filter = page
+    .getByRole("main")
     .getByTestId("refinement-category")
     .locator("..")
     .filter({ hasText: /^Shirts/ })
   await filter.getByRole("checkbox").check()
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(expected.length)
+  await expect(
+    page.getByRole("main").getByTestId("product-wrapper"),
+  ).toHaveCount(expected.length)
   expect(
     (
       await page
+        .getByRole("main")
         .getByTestId("products-list")
         .getByTestId("product-title")
         .allTextContents()
@@ -218,16 +253,24 @@ test("UI-012 R-AUTH registration creates a usable customer account", async ({
   const data = customerData()
   const account = new AccountPage(page)
   await account.open()
-  await page.getByTestId("register-button").click()
-  await page.getByTestId("first-name-input").fill(data.first_name)
-  await page.getByTestId("last-name-input").fill(data.last_name)
-  await page.getByTestId("email-input").fill(data.email)
-  await page.getByTestId("password-input").fill(data.password)
-  await page.getByTestId("register-button").click()
-  await expect(page.getByTestId("welcome-message")).toContainText(
-    data.first_name,
+  await page.getByRole("main").getByTestId("register-button").click()
+  await page
+    .getByRole("main")
+    .getByTestId("first-name-input")
+    .fill(data.first_name)
+  await page
+    .getByRole("main")
+    .getByTestId("last-name-input")
+    .fill(data.last_name)
+  await page.getByRole("main").getByTestId("email-input").fill(data.email)
+  await page.getByRole("main").getByTestId("password-input").fill(data.password)
+  await page.getByRole("main").getByTestId("register-button").click()
+  await expect(
+    page.getByRole("main").getByTestId("welcome-message"),
+  ).toContainText(data.first_name)
+  await expect(page.getByRole("main").getByTestId("customer-email")).toHaveText(
+    data.email,
   )
-  await expect(page.getByTestId("customer-email")).toHaveText(data.email)
 })
 test("UI-013 R-AUTH invalid login displays a useful error @smoke", async ({
   page,
@@ -235,11 +278,13 @@ test("UI-013 R-AUTH invalid login displays a useful error @smoke", async ({
   const account = new AccountPage(page)
   await account.open()
   await account.login(customerData().email, "wrong-password")
-  await expect(page.getByTestId("login-error-message")).toBeVisible()
-  await expect(page.getByTestId("login-error-message")).toContainText(
-    /invalid|unauthorized/i,
-  )
-  await expect(page.getByTestId("login-page")).toBeVisible()
+  await expect(
+    page.getByRole("main").getByTestId("login-error-message"),
+  ).toBeVisible()
+  await expect(
+    page.getByRole("main").getByTestId("login-error-message"),
+  ).toContainText(/invalid|unauthorized/i)
+  await expect(page.getByRole("main").getByTestId("login-page")).toBeVisible()
 })
 test("UI-014 R-AUTH existing customer can log in and log out", async ({
   page,
@@ -249,15 +294,21 @@ test("UI-014 R-AUTH existing customer can log in and log out", async ({
   const account = new AccountPage(page)
   await account.open()
   await account.login(user.email, user.password)
-  await expect(page.getByTestId("customer-email")).toHaveText(user.email)
-  await page.getByTestId("logout-button").filter({ visible: true }).click()
-  await expect(page.getByTestId("login-page")).toBeVisible()
+  await expect(page.getByRole("main").getByTestId("customer-email")).toHaveText(
+    user.email,
+  )
+  await page
+    .getByRole("main")
+    .getByTestId("logout-button")
+    .filter({ visible: true })
+    .click()
+  await expect(page.getByRole("main").getByTestId("login-page")).toBeVisible()
 })
 test("UI-015 R-ACCESS unauthenticated profile navigation requires login", async ({
   page,
 }) => {
   await openPage(page, "/dk/account/profile")
-  await expect(page.getByTestId("login-page")).toBeVisible()
+  await expect(page.getByRole("main").getByTestId("login-page")).toBeVisible()
   await expect(page.getByTestId("account-name-editor")).toHaveCount(0)
 })
 test("UI-016 R-ACCOUNT name edit persists after reload", async ({
@@ -271,6 +322,7 @@ test("UI-016 R-ACCOUNT name edit persists after reload", async ({
   // Next.js can temporarily retain an extra editor inside a hidden streaming
   // fragment. Require one active editor rather than selecting an arbitrary copy.
   const editor = page
+    .getByRole("main")
     .getByTestId("account-name-editor")
     .filter({ visible: true })
   await expect(editor).toHaveCount(1)
@@ -311,8 +363,10 @@ test("UI-017 R-ORDER customer completes checkout and sees order history @smoke",
   await checkout.deliveryAndPayment()
   await checkout.placeOrder()
   await openPage(page, "/dk/account/orders")
-  await expect(page.getByTestId("order-card")).toHaveCount(1)
-  await expect(page.getByTestId("order-card")).toContainText(seed.productTitle)
+  await expect(page.getByRole("main").getByTestId("order-card")).toHaveCount(1)
+  await expect(page.getByRole("main").getByTestId("order-card")).toContainText(
+    seed.productTitle,
+  )
 })
 
 test("UI-018 R-DESIGN homepage uses working local imagery and real catalog links @smoke", async ({
@@ -324,9 +378,15 @@ test("UI-018 R-DESIGN homepage uses working local imagery and real catalog links
     "Everyday,",
   )
   await expect(
-    page.getByTestId("home-products").getByTestId("product-wrapper"),
+    page
+      .getByRole("main")
+      .getByTestId("home-products")
+      .getByTestId("product-wrapper"),
   ).toHaveCount(4)
-  const images = page.getByTestId("home-products").locator("img")
+  const images = page
+    .getByRole("main")
+    .getByTestId("home-products")
+    .locator("img")
   await images.first().scrollIntoViewIfNeeded()
   await expect
     .poll(() =>
@@ -343,12 +403,16 @@ test("UI-018 R-DESIGN homepage uses working local imagery and real catalog links
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(await page.evaluate(() => innerWidth))
   await page
+    .getByRole("main")
     .getByTestId("home-products")
     .getByRole("link")
     .filter({ hasText: seed.productTitle })
     .click()
   await expect(
-    page.getByTestId("product-container").getByTestId("product-title"),
+    page
+      .getByRole("main")
+      .getByTestId("product-container")
+      .getByTestId("product-title"),
   ).toHaveText(seed.productTitle)
 })
 
@@ -377,16 +441,18 @@ test("UI-019 R-DESIGN keyboard skip link and responsive shopping navigation work
     await menu.click()
     await expect(page.getByTestId("nav-menu-popup")).toBeVisible()
     await page.getByTestId("nav-menu-popup").getByTestId("store-link").click()
-  } else await page.getByTestId("home-shop-button").click()
-  await expect(page.getByTestId("store-page-title")).toHaveText("All products")
-  await expect(page.getByTestId("product-wrapper")).toHaveCount(
-    Math.min(catalog.count, 12),
-  )
+  } else await page.getByRole("main").getByTestId("home-shop-button").click()
+  await expect(
+    page.getByRole("main").getByTestId("store-page-title"),
+  ).toHaveText("All products")
+  await expect(
+    page.getByRole("main").getByTestId("product-wrapper"),
+  ).toHaveCount(Math.min(catalog.count, 12))
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(await page.evaluate(() => innerWidth))
   await page.getByTestId("nav-account-link").click()
-  await expect(page.getByTestId("login-page")).toBeVisible()
+  await expect(page.getByRole("main").getByTestId("login-page")).toBeVisible()
 })
 
 test("UI-020 R-CATALOG selected color displays the matching variant photograph", async ({
