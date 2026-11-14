@@ -1,6 +1,6 @@
 # FORME shopping enhancements — verification record
 
-Campaign: 12–13 November 2026, Asia/Jerusalem. ISO evidence timestamps are UTC.
+Campaign: 12–14 November 2026, Asia/Jerusalem. ISO evidence timestamps are UTC.
 The real Medusa commit remains `0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55`.
 The earlier [redesign campaign](REDESIGN_RESULTS.md) and [original QA baseline](STR.md)
 remain separate; their measurements are not relabelled as new results.
@@ -205,3 +205,37 @@ lifecycle cause without first-match selection, sleeps, retries or weaker money/d
 assertions. The second hosted outcomes are preserved separately; verification of
 this consistent locator correction follows.
 [Second hosted matrix](evidence/enhancements/hosted-regression-second-results.json).
+
+## Final hosted outcome — 14 November
+
+The consistent active-main locator correction passed **112/112 local UI checks**
+in 299.12 seconds. The final hosted matrix then passed **152/153** in **208.85s**:
+34/35 API, 6/6 integration and 28/28 in each of Chromium, Firefox, WebKit and mobile
+Chromium. Only API-013 / CG-B001 failed. There were zero skips, retries or flaky
+outcomes. The post-regression keyboard audit also passed.
+
+[Hosted full outcomes](evidence/enhancements/hosted-regression-results.json),
+[local UI rerun](evidence/enhancements/main-scope-results.json),
+[regression run](https://github.com/EliyahuEden/CommerceGuard/actions/runs/43553741820).
+
+The latest hosted smoke passed **22/22** in **24.02s**, plus keyboard checkout.
+[Smoke run](https://github.com/EliyahuEden/CommerceGuard/actions/runs/43553740024).
+The separate [hosted performance run](https://github.com/EliyahuEden/CommerceGuard/actions/runs/43495882227)
+passed 108 baseline requests. Its backend/performance code predates only the later
+UI/locator corrections. Hardware was not benchmarked; cross-host improvement is not
+claimed. Downloaded artifact digests matched GitHub metadata.
+
+[Hosted verification manifest](evidence/enhancements/hosted-actions.json) records
+revisions, outcomes and artifacts. The push-triggered smoke job was observed; the
+PR trigger and weekly regression schedule are configured but were not separately
+triggered by a PR or the scheduler during this campaign.
+
+Commands executed include AUT prepare/init/seed/production start; three TypeScript
+checks; Playwright full matrix, four-browser UI rerun and three-cycle smoke;
+keyboard audit; five controlled defects; k6 baseline/ramp; production compilation;
+Prettier, actionlint, source review, Git commits and authenticated public push.
+The README gives the reproducible commands and file map.
+
+Remaining work: triage/fix CG-B001, address nine React lint warnings, and perform
+real-device/screen-reader sessions. Distributed stock contention, tax rounding,
+real gateway settlement and merchant deployment remain outside verified scope.

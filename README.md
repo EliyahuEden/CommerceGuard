@@ -14,21 +14,28 @@ and prepared into ignored `.aut/`. The full upstream tree is not vendored. Our
 tracked presentation overlay, assets, and catalog seed are separate under
 [`storefront/`](storefront/) and [`aut/`](aut/).
 
-![FORME homepage — actual local storefront](docs/evidence/redesign/screenshots/home-preview.png)
+![FORME homepage — actual local storefront](docs/evidence/enhancements/screenshots/home-preview.png)
 
 See [shopping enhancements](docs/SHOPPING_ENHANCEMENTS.md),
 [storefront decisions](docs/STOREFRONT.md) and
 [current verification](docs/ENHANCEMENT_RESULTS.md). The original QA baseline remains
 available in Git tag `baseline-medusa-qa` and the evidence below.
 
-## Verified shopping-enhancement results — 13 November 2026
+## Verified shopping-enhancement results — 14 November 2026
 
-The full matrix executed **153 checks from 69 unique scenarios**:
+The local 13 November matrix executed **153 checks from 69 unique scenarios**:
 **152 passed / 1 product failure**, with zero skips, retries or flaky outcomes,
 in **357.81 seconds**. All **112 UI checks** across Chromium, Firefox, WebKit and
 mobile Chromium, and all **six database integration checks**, passed.
 API-013 exposes CG-B001: accepted quantity `1.5` becomes `2`. The failure remains
 visible; it is not skipped or marked as expected failure.
+
+The final **hosted** matrix also measured **152 passed / 1 product failure** in
+208.85 seconds. All 112 browser and six integration checks passed. Hosted smoke
+passed **22/22**, plus the keyboard audit; the separate hosted k6 baseline passed
+108 requests with zero HTTP/business failures. Docker setup and cleanup executed
+on the runner. [Verified hosted runs](docs/evidence/enhancements/hosted-actions.json).
+Full regression remains red while CG-B001 is open; no assertion hides it.
 
 The six enhancements include a varied ten-product catalog, size/fit/care and zoom,
 mobile address validation, guest/account wishlist, order statuses/buy again, and

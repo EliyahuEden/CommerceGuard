@@ -1,36 +1,20 @@
-# Maintainer checkpoint — 13 November 2026
+# Maintainer checkpoint — 14 November 2026
 
-All six shopping enhancements are implemented and locally verified on the pinned
-real Medusa application. Source is separated from the ignored prepared checkout.
-See [the current verification report](ENHANCEMENT_RESULTS.md) and
-[requirements audit](REQUIREMENTS_AUDIT.md) for the maintained release record.
+The six website enhancements, original-brief audit and public GitHub publication
+are implemented. Source: https://github.com/EliyahuEden/CommerceGuard.
 
-- 69 unique scenarios / 153 project executions: 152 pass, one open upstream
-  quantity-coercion failure (API-013 / CG-B001); no skips, retries or flaky outcomes.
-- All 112 browser checks and six SQL integration checks pass; smoke stability 66/66.
-- Five controlled defects have current pass/fail/restored evidence and verified hashes.
-- Final navigation/a11y follow-up 9/9; eight axe routes in each browser project.
-- Keyboard-only checkout/history passes seven stages with zero pointer actions.
-- Local k6: 432 requests across baseline/ramp, all thresholds pass.
-- Final production build, QA/storefront/backend typechecks and actionlint pass.
-  Targeted lint: 0 errors / 9 warnings. Formatting and local source review pass.
-- Twenty-seven route/viewport captures (1440, 393, 320px) have no overflow, broken
-  images or browser errors. Repeated seed preserves catalog, stock and manifest.
+Final local UI rerun: 112/112. Hosted full matrix: 152/153; only API-013 / CG-B001
+fails. Hosted smoke: 22/22 plus keyboard audit. Local smoke stability: 66/66.
+Five seeded defects have pass/fail/restored evidence and restored source hashes.
+Local k6: 432 requests; hosted baseline: 108; all performance thresholds pass.
+Nine React lint warnings and the upstream quantity bug remain explicit issues.
 
-Public GitHub publication to EliyahuEden was explicitly authorized. The public source and baseline tag are uploaded at
-https://github.com/EliyahuEden/CommerceGuard. Initial hosted runs failed during
-first-index activation in aut:seed. The correction uses the public search service
-to activate a pending index; hosted smoke 22/22 and baseline performance passed on 5844f76.
-The first hosted full matrix had one extra hidden-stream profile locator failure
-(151/2); the visible-editor fix and account accessibility improvements passed
-12/12 local repetitions. Final hosted rerun/result recording remain. Do not
-represent local Compose or hosted CI as executed until that evidence exists.
+See ENHANCEMENT_RESULTS and REQUIREMENTS_AUDIT for complete evidence and limits.
+Hosted manifest records code revision 8dddcef and actual workflow URLs. Earlier
+initialization and hidden-stream locator failures remain as dated evidence.
+Public source retains baseline-medusa-qa; no paid deployment was performed.
 
-The local preview uses `aut:start:production`; mutation runs use development mode
-and restore source. Normal setup commands are in the README. On this Windows host,
-real portable PostgreSQL runs on 54329; `.aut/dtc-starter` is linked to a workspace-
-hashed Local AppData cache to avoid OneDrive build overhead. Generated local state,
-process records and secrets remain ignored. No defect recovery record remains.
-
-Historical 11 and 12 November campaigns retain their own dates and evidence in
-STR and REDESIGN_RESULTS. Do not add their repeated runs to unique test/defect counts.
+Local preview uses production mode. Process records and local secrets are ignored.
+PostgreSQL is the real portable instance on 54329; the pinned ignored application
+checkout is linked to a Local AppData cache to avoid OneDrive overhead. Rebuilds
+reapply tracked overlays. No mutation recovery record remains.

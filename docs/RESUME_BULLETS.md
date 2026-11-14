@@ -6,9 +6,9 @@
 - Demonstrated **five controlled defect detections** through baseline → assertion
   failure → restored-pass cycles against a real Medusa storefront, retaining
   screenshots, traces, reports and restored-source hash evidence.
-- Implemented PR smoke, scheduled cross-browser and separate k6 quality gates;
-  measured **66/66 smoke checks** over three cycles and reproduced a real quantity
-  coercion bug through API and SQL while keeping it visible in regression.
+- Implemented GitHub Actions quality gates against disposable Docker/PostgreSQL;
+  verified **22/22 hosted smoke checks** plus keyboard checkout, while retaining an
+  independently reproduced quantity-coercion bug as a normal regression failure.
 
 **Technologies:** TypeScript, Playwright Test, APIRequestContext, PostgreSQL, SQL,
 Docker Compose, GitHub Actions, k6, axe-core, Zod, Node.js, Next.js/Medusa, Git.
@@ -17,6 +17,8 @@ Docker Compose, GitHub Actions, k6, axe-core, Zod, Node.js, Next.js/Medusa, Git.
 
 - Local production-mode matrix: **152 passed / 1 unexpected product failure**, zero
   skips, retries or flaky outcomes, in **357.81 seconds**.
+- Final hosted matrix also passed **152/153**, including all 112 browser and six
+  integration checks; only the documented quantity finding failed.
 - Unique cases: 35 API, 28 UI, 6 integration. Four UI projects produce 112 browser
   executions. Executions are not additional unique scenarios or coverage percentages.
 - Smoke stability: **66/66 passed**, 22 critical cases repeated three times, without
@@ -36,8 +38,10 @@ Docker Compose, GitHub Actions, k6, axe-core, Zod, Node.js, Next.js/Medusa, Git.
 - The storefront adds a varied ten-product catalog, guest/account wishlist, size
   information/zoom, retained checkout validation and ownership-checked order reuse.
   This original overlay is clearly separated from the pinned third-party application.
-- Workflow YAML passed actionlint. Hosted CI claims require observed run evidence;
-  the requirements audit records their publication/verification state.
+- Hosted smoke passed 22/22 plus keyboard checkout; a separate hosted k6 baseline
+  passed 108 requests with zero HTTP/business failures. Docker setup, readiness and
+  cleanup were executed on GitHub-hosted Ubuntu. Workflow YAML passed actionlint.
+  See the requirements audit for the latest broader-regression outcome.
 
 Evidence: [current verification](ENHANCEMENT_RESULTS.md),
 [full regression outcomes](evidence/enhancements/regression-results.json),
@@ -57,3 +61,9 @@ found that accepted quantity 1.5 becomes 2 in the database; I kept that failure
 visible. The enhanced matrix passed all 112 browser checks and six integration
 checks, with that product finding still open. I also verify keyboard checkout,
 repeat the critical smoke selection, and retain CI reports for release decisions.”
+
+A useful engineering example for interviews: a fresh hosted run exposed a search
+index that migrations had created but not activated. Later traces exposed hidden
+streaming fragments in locator matches. I fixed initial index activation and active
+page scoping, retained the failing evidence, and kept all money, persistence and
+privacy assertions intact instead of adding blanket retries.

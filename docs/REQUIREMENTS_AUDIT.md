@@ -2,8 +2,7 @@
 
 Audited against the original project brief supplied by the owner, plus the six
 shopping enhancements requested after the FORME redesign. This distinguishes
-implemented behavior, measured verification and work that still needs an external
-runner. Evidence from earlier campaigns remains dated and separate.
+implemented behavior, measured verification and the remaining product and verification limits. Evidence from earlier campaigns remains dated and separate.
 
 | Original requirement                                                               | Implementation / evidence                                                                | Status                                                                               |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -20,15 +19,15 @@ runner. Evidence from earlier campaigns remains dated and separate.
 | Chromium, Firefox, WebKit and mobile                                               | Four Playwright UI projects, no blanket retries                                          | All 112 UI executions passed across four projects                                    |
 | Screenshots, HTML/JSON/JUnit, traces and diagnostics                               | Native enhanced HTML report and retained failure artifacts                               | Implemented                                                                          |
 | At least five injected defects, each pass → fail → pass                            | Five reversible source patches, screenshots, source hashes and phase summaries           | Five current baseline/fail/restored cycles passed with source hashes verified        |
-| PR environment setup/readiness/seed/smoke gate                                     | Shared GitHub action, health checks, TypeScript checks, critical smoke                   | Authored and linted; hosted execution pending GitHub upload                          |
-| Manual/scheduled broader regression                                                | Weekly Monday 03:15 UTC and workflow dispatch                                            | Authored; hosted execution pending                                                   |
-| Separate performance workflow and dependency caching                               | Manual k6 workflow; Node/npm cache                                                       | Authored; hosted execution pending                                                   |
+| PR environment setup/readiness/seed/smoke gate                                     | Shared GitHub action, health checks, TypeScript checks, critical smoke                   | Observed hosted push smoke: 22/22 plus keyboard audit; PR trigger configured         |
+| Manual/scheduled broader regression                                                | Weekly Monday 03:15 UTC and workflow dispatch                                            | Executed: 152 pass / 1 open product finding; all browser/SQL checks passed           |
+| Separate performance workflow and dependency caching                               | Manual k6 workflow; Node/npm cache                                                       | Hosted baseline passed 108 requests; dependency cache configured                     |
 | No paid service or real payment prerequisite                                       | Local services; manual test payment; generated local assets                              | Implemented                                                                          |
-| Docker Compose setup and cleanup                                                   | Dedicated PostgreSQL service, health check, disposable volumes                           | Authored; Docker unavailable on this Windows host                                    |
-| Installation, startup, seed, suites, reports and cleanup commands                  | `package.json`, README, `docs/AUT.md`                                                    | Implemented; clean-run CI will validate portability                                  |
-| README, diagram, coverage, attribution, actual evidence and limitations            | README and supporting docs                                                               | Measured metrics and real captures recorded; hosted results follow publication       |
+| Docker Compose setup and cleanup                                                   | Dedicated PostgreSQL service, health check, disposable volumes                           | Verified on hosted Ubuntu runner; Docker unavailable locally                         |
+| Installation, startup, seed, suites, reports and cleanup commands                  | `package.json`, README, `docs/AUT.md`                                                    | Clean hosted setup, seed, readiness and cleanup executed successfully                |
+| README, diagram, coverage, attribution, actual evidence and limitations            | README and supporting docs                                                               | Measured metrics and real captures recorded; hosted evidence retained separately     |
 | Three supported resume bullets and interview explanation                           | `docs/RESUME_BULLETS.md`                                                                 | Final resume evidence is updated from measured outcomes                              |
-| Git and GitHub portfolio                                                           | Local baseline commit/tag; public upload authorized to EliyahuEden                       | Release source review and upload pending                                             |
+| Git and GitHub portfolio                                                           | Public EliyahuEden/CommerceGuard repository and baseline tag                             | Published publicly after source/credential-pattern review                            |
 
 ## Additional website requirements
 
@@ -60,3 +59,12 @@ check secrets and ignored runtime paths, verify licenses/assets, run formatting,
 typechecks/build and workflow lint, then commit the reviewed source. After upload:
 run hosted smoke, inspect logs/artifacts, and update this audit with observed results.
 Public repository permission is explicit; no paid deployment is authorized.
+
+## Final observed release state — 14 November
+
+Public source and baseline tag are uploaded. Clean hosted smoke passed 22/22 plus
+keyboard checkout. Hosted regression passed 152/153, with only CG-B001 failing.
+Separate hosted baseline performance passed 108 requests. Reports/artifacts and
+Docker teardown completed. See [the hosted manifest](evidence/enhancements/hosted-actions.json).
+All original implementation/deliverable areas are present; this does not claim a
+fully green merchant release, manual signoff, real-device testing or certification.

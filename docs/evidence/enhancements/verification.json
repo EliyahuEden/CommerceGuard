@@ -95,8 +95,8 @@
     "manifestUnchanged": true
   },
   "productionBuild": {
-    "startedAt": "2026-11-13T19:30:31.930Z",
-    "finishedAt": "2026-11-13T19:31:58.358Z",
+    "startedAt": "2026-11-13T20:07:44.405Z",
+    "finishedAt": "2026-11-13T20:09:05.551Z",
     "status": "passed",
     "commit": "0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55",
     "node": "22.23.4"
@@ -112,6 +112,71 @@
   },
   "format": "passed",
   "actionlint": "passed",
-  "hostedActions": "pending first public push",
-  "dockerCompose": "pending hosted execution; Docker unavailable locally"
+  "hostedActions": {
+    "repository": "https://github.com/EliyahuEden/CommerceGuard",
+    "verifiedDate": "2026-11-14",
+    "codeCommit": "8dddcefa2a6f0e4e26565cebcb87adb89466120a",
+    "environment": "GitHub-hosted ubuntu-24.04, Docker PostgreSQL 18.6, Node 22.23.4, two test workers",
+    "smoke": {
+      "run": 43553740024,
+      "url": "https://github.com/EliyahuEden/CommerceGuard/actions/runs/43553740024",
+      "conclusion": "success",
+      "stats": {
+        "startTime": "2026-11-14T03:54:04.591Z",
+        "duration": 24016.189000000002,
+        "expected": 22,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "keyboard": "passed",
+      "artifactId": 14097840104
+    },
+    "regression": {
+      "run": 43553741820,
+      "url": "https://github.com/EliyahuEden/CommerceGuard/actions/runs/43553741820",
+      "conclusion": "failure",
+      "stats": {
+        "startTime": "2026-11-14T03:54:37.296Z",
+        "duration": 208847.78399999999,
+        "expected": 152,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "soleFailure": "API-013 / CG-B001, normal assertion; no expected-failure annotation",
+      "keyboard": "passed",
+      "artifactId": 14097173675
+    },
+    "performance": {
+      "run": 43495882227,
+      "url": "https://github.com/EliyahuEden/CommerceGuard/actions/runs/43495882227",
+      "commit": "5844f76af6fd84fbb29ab8195cedf79d24e5e096",
+      "conclusion": "success",
+      "profile": "baseline",
+      "requests": 108,
+      "p95_ms": 184.6702508499999,
+      "p99_ms": 303.36879310999996,
+      "httpFailureRate": 0,
+      "businessFailureRate": 0,
+      "artifactId": 14071343914
+    },
+    "artifactIntegrity": "Downloaded artifact SHA-256 digests matched GitHub metadata",
+    "dockerCompose": "setup, migrations, seed, readiness and teardown executed",
+    "prTrigger": "configured; observed smoke runs used the push trigger",
+    "limits": [
+      "No merchant deployment",
+      "No real-device or screen-reader certification",
+      "Local and hosted performance samples are not an improvement comparison"
+    ]
+  },
+  "dockerCompose": "verified on GitHub-hosted Ubuntu; unavailable on local Windows",
+  "latestLocalUiRegression": {
+    "startTime": "2026-11-14T03:49:53.638Z",
+    "duration": 299120.969,
+    "expected": 112,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
 }
