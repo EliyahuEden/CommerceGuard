@@ -1,0 +1,10 @@
+[
+  {
+    "id": "CG-B001",
+    "testId": "API-013",
+    "tag": "@product-bug",
+    "severity": "S2",
+    "summary": "Fractional quantity 1.5 is accepted by the Store API and persisted as 2",
+    "report": "docs/DEFECTS.md"
+  }
+]

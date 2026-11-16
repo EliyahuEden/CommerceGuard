@@ -2,7 +2,7 @@
 
 Campaign: 12–14 November 2026, Asia/Jerusalem. ISO evidence timestamps are UTC.
 The real Medusa commit remains `0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55`.
-The earlier [redesign campaign](REDESIGN_RESULTS.md) and [original QA baseline](STR.md)
+The earlier [redesign campaign](archive/REDESIGN_RESULTS.md) and [original QA baseline](STR.md)
 remain separate; their measurements are not relabelled as new results.
 
 ## Delivered behavior

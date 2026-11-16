@@ -1,8 +1,8 @@
 # FORME redesign — verification record
 
 Campaign: 11–12 November 2026, Asia/Jerusalem. Original Medusa pin and environment
-are described in [AUT](AUT.md). This report separates the redesign from the
-[original 105-execution campaign](STR.md). No hosted CI or deployment is implied.
+are described in [AUT](../AUT.md). This report separates the redesign from the
+[original 105-execution campaign](../STR.md). No hosted CI or deployment is implied.
 
 ## Changes delivered
 
@@ -33,29 +33,29 @@ in **488.10 seconds**: **116 passed, 1 unexpected product failure, 0 skipped,
 | WebKit UI       |     20 |      0 |
 | Mobile Chromium |     20 |      0 |
 
-Source: [complete final case outcomes](evidence/redesign/regression-results.json).
+Source: [complete final case outcomes](../evidence/redesign/regression-results.json).
 The sole failure is API-013 / CG-B001, the independently discovered fractional
 quantity issue. All **80 browser checks** and **6 database integration checks**
 passed. The earlier Firefox readiness timeout did not recur in this full run.
 
 The current PR smoke selection passed **48/48 executions** (16 critical cases ×
 3 cycles), with **0 retries, skips or flaky outcomes**, in **108.08 seconds**.
-[Measured smoke-repeat outcomes](evidence/redesign/stability-results.json).
+[Measured smoke-repeat outcomes](../evidence/redesign/stability-results.json).
 This is the API/integration/Chromium selection used by the PR gate; it is a local
 execution, not a hosted GitHub Actions run.
 
 Five seeded defects completed **pass → assertion failure → pass**, for 10 passing
 phase checks and 5 intentional failing checks. The runner returned success only
-after restoration. [Measured phase results](evidence/redesign/defects/summary.json)
-and [verified source hashes](evidence/redesign/defect-restoration.json) retain the
+after restoration. [Measured phase results](../evidence/redesign/defects/summary.json)
+and [verified source hashes](../evidence/redesign/defect-restoration.json) retain the
 proof. No defect recovery record remained after the campaign.
 
-[Production compilation](evidence/redesign/production-build.json) passed with
+[Production compilation](../evidence/redesign/production-build.json) passed with
 TypeScript checking enabled. QA, storefront and backend typechecks passed; targeted
 overlay lint had 0 errors / 2 inherited React warnings, while seed lint reported
 no issues. All three workflows passed actionlint. The repeated seed preserved all
 four products, image associations and the manifest, as recorded in
-[seed idempotency evidence](evidence/redesign/seed-idempotency.json).
+[seed idempotency evidence](../evidence/redesign/seed-idempotency.json).
 
 The final visual capture covered seven routes at desktop (1440px) and mobile
 (393px) widths: home, catalog, product, cart, account, checkout and about. All
@@ -63,10 +63,10 @@ The final visual capture covered seven routes at desktop (1440px) and mobile
 errors**. The four favicon/social-image endpoints returned HTTP 200. Screenshots
 were inspected after capture, including corrected indexed product imagery and
 mobile product controls. This is a focused visual review, not a full accessibility
-or real-device audit. See the [homepage preview](evidence/redesign/screenshots/home-preview.png),
-[native regression report](evidence/redesign/screenshots/regression-report.png),
-[capture diagnostics](evidence/redesign/screenshots/diagnostics.json), and
-[consolidated verification record](evidence/redesign/verification.json).
+or real-device audit. See the [homepage preview](../evidence/redesign/screenshots/home-preview.png),
+[native regression report](../evidence/redesign/screenshots/regression-report.png),
+[capture diagnostics](../evidence/redesign/screenshots/diagnostics.json), and
+[consolidated verification record](../evidence/redesign/verification.json).
 
 ## Failures found and corrected during implementation
 
@@ -82,7 +82,7 @@ or real-device audit. See the [homepage preview](evidence/redesign/screenshots/h
   to the collection because search-router cleanup wrote the old URL during
   unmount. The supported `cleanUrlOnDispose: false` setting prevents that cleanup
   from overwriting Next.js navigation. The focused navigation campaign passed
-  [12/12](evidence/redesign/navigation-stability-results.json) across four projects
+  [12/12](../evidence/redesign/navigation-stability-results.json) across four projects
   and three repetitions before the final main-landmark refinement.
 - **Cart readiness:** the quantity control stays disabled until its own client
   mount, so an SSR select cannot accept a change before its handler is available.
@@ -97,12 +97,12 @@ or real-device audit. See the [homepage preview](evidence/redesign/screenshots/h
 - **Search-index consistency:** visual review found that the Shorts search hit
   still held its upstream title/image after product metadata had changed. The
   strengthened API-001 assertion compared indexed titles/images with the product
-  API and [failed with the stale values](evidence/redesign/search-drift-before-results.json).
+  API and [failed with the stale values](../evidence/redesign/search-drift-before-results.json).
   Local event delivery can outlive a CLI seed process. The seed now explicitly
   awaits the Search Module's supported ingestion method for each controlled
   product, including on repeat runs, so derived search data is reconciled before
   the CLI exits. This is a CommerceGuard setup fix, separate from CG-B001.
-  The [same assertion passed after ingestion](evidence/redesign/search-drift-after-results.json).
+  The [same assertion passed after ingestion](../evidence/redesign/search-drift-after-results.json).
 - **Cold-start recovery:** on this OneDrive host, a cold backend became healthy
   just after the former 180s startup deadline. Startup now has a bounded 300s
   budget and can resume an owned backend-only partial start. The resumed command
@@ -112,11 +112,11 @@ or real-device audit. See the [homepage preview](evidence/redesign/screenshots/h
   transfer; complete Tab order and assistive-technology behavior remain manual work.
 
 The initial focused campaign recorded
-[8 pass / 5 fail](evidence/redesign/focused-initial-results.json): four color-image
+[8 pass / 5 fail](../evidence/redesign/focused-initial-results.json): four color-image
 failures and one WebKit initial-focus assumption. After those changes, the next
-focused run recorded [12 pass / 1 fail](evidence/redesign/focused-pre-router-results.json),
+focused run recorded [12 pass / 1 fail](../evidence/redesign/focused-pre-router-results.json),
 exposing the navigation integration issue. The first complete redesigned matrix
-recorded [115 pass / 2 fail](evidence/redesign/regression-initial-results.json):
+recorded [115 pass / 2 fail](../evidence/redesign/regression-initial-results.json):
 the known product defect and the Firefox readiness timeout. These results remain
 preserved rather than being overwritten by the final campaign.
 

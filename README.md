@@ -1,5 +1,9 @@
 # CommerceGuard
 
+[![PR release quality gate](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/smoke.yml/badge.svg)](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/smoke.yml)
+[![Cross-browser regression](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/regression.yml/badge.svg)](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/regression.yml)
+[![Performance baseline](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/performance.yml/badge.svg)](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/performance.yml)
+
 **Enterprise-style QA automation and an evidence-driven release quality gate for a
 real e-commerce application.** Built as an SDET portfolio: test important purchase,
 money and customer-isolation rules, verify persisted data, and prove selected tests
@@ -45,8 +49,36 @@ keyboard/axe accessibility checks. Read the
 [requirements audit](docs/REQUIREMENTS_AUDIT.md).
 The critical smoke selection passed **66/66** across three explicit cycles without
 retries. [Measured smoke outcomes](docs/evidence/enhancements/stability-results.json).
-The [12 November redesign report](docs/REDESIGN_RESULTS.md) preserves the earlier
+The [12 November redesign report](docs/archive/REDESIGN_RESULTS.md) preserves the earlier
 117-execution campaign separately.
+
+## Release gate and open product bugs
+
+A permanently red pipeline hides new regressions, so the open upstream bug is tracked
+instead of ignored:
+
+| Command                   | Purpose                                                                                   | Passes when                                                                                      |
+| ------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `npm run test:gate`       | Release gate: every `@regression` test except `@product-bug`                              | No test fails (expected 152 of 152 on the 14 November matrix)                                    |
+| `npm run test:known-bugs` | Runs only the tagged tests listed in [`defects/known-bugs.json`](defects/known-bugs.json) | Each registered bug **still fails**; a bug that starts passing, or a missing test, fails the job |
+| `npm test`                | Everything, unfiltered                                                                    | Red while CG-B001 is open; nothing is skipped or marked as an expected failure                   |
+
+CG-B001 (quantity `1.5` stored as `2`) is therefore visible in every run and in the
+job summary, a new regression turns the gate red, and a fix upstream forces cleanup of
+the tag, register entry and defect report. The register check was verified offline
+against the saved 14 November report in both directions (still failing → exit 0,
+simulated pass → exit 1). The new gate split has been linted (actionlint) but has
+**not yet run on hosted Actions**.
+
+## Reliability history with FlakeGuard
+
+The scheduled regression uploads its Playwright JSON as an artifact named
+`playwright-json-results`. [FlakeGuard](https://github.com/EliyahuEden/FlakeGuard) can
+import it with `flakeguard sync EliyahuEden/CommerceGuard --artifact-pattern
+'*playwright-json*'` (read-only token with Actions access), which turns weekly runs into
+flaky-test and recurring-failure evidence. FlakeGuard's integration with this
+repository's three archived reports is tested; live artifact sync from hosted runs has
+not been exercised yet.
 
 ## Original QA baseline — 11 November 2026
 

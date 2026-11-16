@@ -3,7 +3,7 @@
 The table below records the original real pinned local AUT campaign on 2026-11-11.
 Current results are under [enhancements](enhancements/) and documented in
 [the enhancement verification report](../ENHANCEMENT_RESULTS.md). The separate
-[redesign campaign](../REDESIGN_RESULTS.md) records 12 November results. No report image or
+[redesign campaign](../archive/REDESIGN_RESULTS.md) records 12 November results. No report image or
 pass/fail count is fabricated. Manual scenarios are designed, not signed off.
 
 | Artifact | Meaning |

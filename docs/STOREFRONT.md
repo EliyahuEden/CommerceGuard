@@ -86,7 +86,7 @@ storefront and prepared backend TypeScript projects.
 The original working QA baseline is retained in local Git tag `baseline-medusa-qa`.
 The earlier campaign remains under `docs/evidence/`; redesigned-storefront results
 and screenshots are kept separately in `docs/evidence/redesign/` and described in
-[the redesign verification report](REDESIGN_RESULTS.md).
+[the redesign verification report](archive/REDESIGN_RESULTS.md).
 
 The framework now defines 69 unique scenarios: 35 API, 6 integration, and 28 UI; the UI cases
 run in four projects (153 total project executions). UI-018 checks homepage imagery

@@ -18,11 +18,22 @@ jobs:
       - run: npm run typecheck
       - run: npm run storefront:typecheck
       - run: npm run backend:typecheck
-      - run: npm run test:regression
+      - name: Release gate (open product bugs excluded)
+        run: npm run test:gate
+      - name: Open product bugs must keep reproducing
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        run: npm run test:known-bugs
       - run: npm run test:keyboard
         if: ${{ always() && steps.prepare.outcome == 'success' }}
         env:
           CG_KEYBOARD_EVIDENCE_DIR: test-results/keyboard
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          # Consumed by FlakeGuard: `flakeguard sync EliyahuEden/CommerceGuard --artifact-pattern '*playwright-json*'`
+          name: playwright-json-results
+          path: test-results/results.json
+          retention-days: 30
       - uses: actions/upload-artifact@v6
         if: always()
         with:
