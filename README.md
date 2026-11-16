@@ -70,8 +70,8 @@ besides CG-B001, UI-019 on mobile Chromium. Its trace showed the closing menu pa
 visually gone, still intercepting clicks for the whole timeout. It passed 3 of 3 when
 re-run alone, so it was intermittent. The panel now ignores pointer events while it
 leaves. Two full matrices since then were clean (156/157 and the 156/156 gate), which
-is encouraging but cannot prove an intermittent defect is gone. These runs are
-local; hosted Actions has not run on this revision.
+is encouraging but cannot prove an intermittent defect is gone. These matrix runs are
+local; hosted smoke passed on this revision, hosted regression has not been run.
 
 ## Release gate and open product bugs
 
@@ -88,8 +88,11 @@ CG-B001 (quantity `1.5` stored as `2`) is therefore visible in every run and in 
 job summary, a new regression turns the gate red, and a fix upstream forces cleanup of
 the tag, register entry and defect report. The register check was verified offline
 against the saved 14 November report in both directions (still failing → exit 0,
-simulated pass → exit 1). The new gate split has been linted (actionlint) but has
-**not yet run on hosted Actions**.
+simulated pass → exit 1). The gate split has been linted (actionlint) and executed locally.
+The push-triggered smoke workflow passed on hosted Actions for this revision
+([run 43835270151](https://github.com/EliyahuEden/CommerceGuard/actions/runs/43835270151)),
+but the manually dispatched regression workflow that uses `test:gate` and
+`test:known-bugs` **has not yet run on hosted Actions**.
 
 ## Reliability history with FlakeGuard
 
