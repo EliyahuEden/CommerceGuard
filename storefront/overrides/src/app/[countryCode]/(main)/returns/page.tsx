@@ -4,7 +4,6 @@ export const metadata: Metadata = { title: "Returns" }
 export default function Page() {
   return (
     <section className="content-container forme-policy">
-      <span className="forme-eyebrow">YOUR ORDER</span>
       <h1>Returns, considered.</h1>
       <div>
         <p>

@@ -48,9 +48,6 @@ export default async function Home({
           />
         </div>
         <div className="forme-hero-copy">
-          <span className="forme-eyebrow">
-            <span /> THE EVERYDAY EDIT / 01
-          </span>
           <h1 id="hero-heading">
             Everyday,
             <br />
@@ -88,9 +85,6 @@ export default async function Home({
       >
         <div className="forme-section-heading">
           <div>
-            <span className="forme-eyebrow">
-              THE FOUNDATION OF YOUR WARDROBE
-            </span>
             <h2 id="collection-heading">The everyday essentials.</h2>
           </div>
           <LocalizedClientLink href="/store" className="forme-text-link">
@@ -134,7 +128,6 @@ export default async function Home({
           />
         </div>
         <div className="forme-editorial-copy">
-          <span className="forme-eyebrow">A WARDROBE, SIMPLIFIED.</span>
           <h2 id="approach-heading">
             Fewer decisions.
             <br />
@@ -153,7 +146,6 @@ export default async function Home({
         </div>
       </section>
       <section className="forme-bottom-note content-container">
-        <span className="forme-eyebrow">FIND YOUR EVERYDAY</span>
         <h2>Wear it your way.</h2>
         <LocalizedClientLink
           href="/store"

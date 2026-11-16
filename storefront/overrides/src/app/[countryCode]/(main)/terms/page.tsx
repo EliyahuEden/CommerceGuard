@@ -4,7 +4,6 @@ export const metadata: Metadata = { title: "Terms" }
 export default function Page() {
   return (
     <section className="content-container forme-policy">
-      <span className="forme-eyebrow">TERMS OF USE</span>
       <h1>A considered demonstration.</h1>
       <div>
         <p>

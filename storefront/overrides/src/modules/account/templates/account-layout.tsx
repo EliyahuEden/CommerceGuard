@@ -18,7 +18,6 @@ export default function AccountLayout({
       {customer ? (
         <>
           <div className="forme-page-heading">
-            <span className="forme-eyebrow">YOUR CORNER OF FORME</span>
             <h1>Good to see you.</h1>
           </div>
           <div className="forme-account-grid">
@@ -29,7 +28,6 @@ export default function AccountLayout({
       ) : (
         <div className="forme-account-welcome">
           <div className="forme-account-intro">
-            <span className="forme-eyebrow">A PLACE FOR YOUR EVERYDAY</span>
             <h2>
               Make yourself
               <br />

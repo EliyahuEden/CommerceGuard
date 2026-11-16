@@ -30,7 +30,6 @@ export default async function ProductPreview({
               size="full"
               isFeatured={isFeatured}
             />
-            <span className="forme-card-tag">THE EVERYDAY EDIT</span>
             <span className="forme-card-arrow" aria-hidden="true">
               ↗
             </span>

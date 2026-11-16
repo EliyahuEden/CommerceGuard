@@ -157,7 +157,7 @@ body.forme-theme {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   background: var(--forme-ink);
   color: #f7f6ef;
@@ -165,7 +165,7 @@ body.forme-theme {
 .forme-announcement a {
   padding: 4px 0;
   border-bottom: 1px solid #829076;
-  font-size: 10px;
+  font-size: 11px;
 }
 .forme-header {
   display: grid;
@@ -257,7 +257,7 @@ body.forme-theme {
   display: none;
 }
 .forme-eyebrow {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -378,7 +378,7 @@ body.forme-theme {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   margin-top: 50px;
   color: #5a6053;
@@ -392,7 +392,7 @@ body.forme-theme {
   position: absolute;
   bottom: 26px;
   right: 4%;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: #fff;
   text-shadow: 0 1px 5px #0005;
@@ -404,7 +404,7 @@ body.forme-theme {
   justify-content: center;
   gap: 60px;
   border-bottom: 1px solid var(--forme-line);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.04em;
 }
 .forme-values-strip > span:nth-child(even) {
@@ -517,7 +517,7 @@ body.forme-theme {
   margin: 0 0 4px;
 }
 .forme-card-information p {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
   color: var(--forme-muted);
   margin: 0;
@@ -614,7 +614,7 @@ body.forme-theme {
   gap: 60px;
 }
 .forme-footer-links h2 {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.055em;
   font-weight: 650;
   margin: 4px 0 22px;
@@ -638,7 +638,7 @@ body.forme-theme {
   gap: 24px;
   border-top: 1px solid #cfd5c4;
   padding: 23px 0;
-  font-size: 9px;
+  font-size: 11px;
   color: #646c5b;
   line-height: 1.8;
 }
@@ -689,7 +689,7 @@ body.forme-theme {
   margin-top: 28px;
 }
 .forme-filter-label {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 650;
@@ -727,7 +727,7 @@ body.forme-theme {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--forme-muted);
   padding: 24px 0 30px;
 }
@@ -784,7 +784,7 @@ body.forme-theme {
   margin: 15px 0 10px;
 }
 .forme-product-details [data-testid="product-availability"] {
-  font-size: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -809,7 +809,7 @@ body.forme-theme {
   padding: 22px 0;
   border-top: 1px solid var(--forme-line);
   border-bottom: 1px solid var(--forme-line);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--forme-muted);
   margin: 0 0 18px;
 }
@@ -894,7 +894,7 @@ body.forme-theme {
   background: transparent;
 }
 .forme-cart-layout th {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   padding: 16px 8px;
   color: var(--forme-muted);
@@ -914,7 +914,7 @@ body.forme-theme {
   line-height: 1.5;
 }
 .forme-cart-layout [data-testid="product-variant"] {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 5px;
 }
 .forme-cart-layout select {
@@ -964,13 +964,13 @@ body.forme-theme {
   background: var(--forme-white);
 }
 .forme-small-note {
-  font-size: 9px;
+  font-size: 11px;
   text-align: center;
   color: var(--forme-muted);
   margin: -10px 0 0;
 }
 .forme-demo-note {
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.6;
   color: var(--forme-muted);
   border-top: 1px solid #d3d8c9;
@@ -1033,12 +1033,12 @@ body.forme-theme {
 }
 .forme-checkout-header > .forme-text-link {
   border: 0;
-  font-size: 10px;
+  font-size: 11px;
   gap: 10px;
 }
 .forme-checkout-assurance {
   text-align: right;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--forme-muted);
 }
@@ -1080,7 +1080,7 @@ body.forme-theme {
   min-height: 54px;
 }
 .forme-checkout-footnote {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--forme-muted);
   padding-top: 26px;
   padding-bottom: 30px;
@@ -1157,7 +1157,7 @@ body.forme-theme {
   border-right: 1px solid var(--forme-line);
 }
 .forme-account-grid [data-testid="account-nav"] h3 {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1361,7 +1361,7 @@ body.forme-theme {
   }
   .forme-values-strip {
     gap: 26px;
-    font-size: 9px;
+    font-size: 11px;
   }
   .forme-section-heading h2 {
     font-size: 34px;
@@ -1492,11 +1492,11 @@ body.forme-theme {
 @media (max-width: 767px) {
   .forme-announcement {
     height: 30px;
-    font-size: 8px;
+    font-size: 11px;
     gap: 10px;
   }
   .forme-announcement a {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-header {
     height: 70px;
@@ -1509,7 +1509,7 @@ body.forme-theme {
     gap: 13px;
   }
   .forme-header-actions [data-testid="nav-cart-link"] {
-    font-size: 10px;
+    font-size: 11px;
     gap: 5px;
   }
   .forme-header-actions [data-testid="nav-cart-link"]:before {
@@ -1542,7 +1542,7 @@ body.forme-theme {
     margin-bottom: 23px;
   }
   .forme-hero .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 0.12em;
   }
   .forme-hero .forme-button {
@@ -1578,7 +1578,7 @@ body.forme-theme {
     padding: 0 18px;
     justify-content: space-between;
     white-space: nowrap;
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-values-strip > span:nth-child(4),
   .forme-values-strip > span:nth-child(5) {
@@ -1596,7 +1596,7 @@ body.forme-theme {
     margin-bottom: 25px;
   }
   .forme-section-heading .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-section-heading h2 {
     font-size: 32px;
@@ -1605,7 +1605,7 @@ body.forme-theme {
   }
   .forme-section-heading > .forme-text-link {
     margin-top: 16px;
-    font-size: 10px;
+    font-size: 11px;
     gap: 18px;
   }
   .forme-home-products {
@@ -1635,14 +1635,14 @@ body.forme-theme {
     margin-bottom: 2px;
   }
   .forme-card-information p {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-card-information > div:last-child:not(:first-child) {
     margin-top: 5px;
   }
   .forme-card-information > div:last-child p,
   .forme-card-information [data-testid="price"] {
-    font-size: 10px;
+    font-size: 11px;
   }
   .forme-editorial {
     display: block;
@@ -1657,7 +1657,7 @@ body.forme-theme {
     max-width: none;
   }
   .forme-editorial-copy > .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-editorial-copy h2 {
     font-size: 44px;
@@ -1676,13 +1676,13 @@ body.forme-theme {
     margin: 14px 0 23px;
   }
   .forme-bottom-note .forme-button {
-    font-size: 10px;
+    font-size: 11px;
     gap: 24px;
     min-height: 48px;
     padding: 0 18px;
   }
   .forme-bottom-note > .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-footer-top {
     padding-top: 42px;
@@ -1696,7 +1696,7 @@ body.forme-theme {
     margin-bottom: 38px;
   }
   .forme-footer-top > div:first-child > p {
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 0;
   }
   .forme-footer-links {
@@ -1707,18 +1707,18 @@ body.forme-theme {
     margin-top: 18px;
   }
   .forme-footer-links h2 {
-    font-size: 9px;
+    font-size: 11px;
     margin: 0 0 16px;
   }
   .forme-footer-links a {
-    font-size: 10px;
+    font-size: 11px;
     margin: 11px 0;
     min-height: 20px;
   }
   .forme-footer-bottom {
     display: block;
     padding: 20px 0;
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-footer-bottom > span {
     display: block;
@@ -1732,7 +1732,7 @@ body.forme-theme {
     margin-bottom: 28px;
   }
   .forme-store-heading .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-store-heading h1 {
     font-size: 48px;
@@ -1750,7 +1750,7 @@ body.forme-theme {
   }
   .forme-breadcrumb {
     padding: 22px 0;
-    font-size: 9px;
+    font-size: 11px;
     gap: 8px;
   }
   .forme-product-layout {
@@ -1770,7 +1770,7 @@ body.forme-theme {
     width: 100%;
   }
   .forme-product-details > .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-product-details [data-testid="product-title"] {
     font-size: 40px;
@@ -1786,7 +1786,7 @@ body.forme-theme {
     font-size: 24px;
   }
   .forme-product-reassurance {
-    font-size: 9px;
+    font-size: 11px;
     gap: 10px;
   }
   .forme-related {
@@ -1800,18 +1800,18 @@ body.forme-theme {
     padding: 35px 0 27px;
   }
   .forme-page-heading .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-page-heading h1 {
     font-size: 48px;
   }
   .forme-page-heading > .forme-text-link {
     position: static;
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 20px;
   }
   .forme-count {
-    font-size: 9px;
+    font-size: 11px;
     width: 22px;
     height: 22px;
     line-height: 21px;
@@ -1884,7 +1884,7 @@ body.forme-theme {
     font-size: 12px;
   }
   .forme-cart-layout [data-testid="product-variant"] {
-    font-size: 9px;
+    font-size: 11px;
   }
   .forme-cart-layout select {
     width: 58px;
@@ -1903,7 +1903,7 @@ body.forme-theme {
     font-size: 11px !important;
   }
   .forme-cart-signin p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .forme-cart-summary {
     position: static;
@@ -1914,7 +1914,7 @@ body.forme-theme {
     font-size: 27px;
   }
   .forme-small-note {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-empty-cart {
     padding: 35px 0 60px;
@@ -1935,7 +1935,7 @@ body.forme-theme {
     gap: 10px;
   }
   .forme-checkout-header .forme-text-link {
-    font-size: 9px;
+    font-size: 11px;
     gap: 5px;
   }
   .forme-checkout-header .forme-wordmark {
@@ -1951,7 +1951,7 @@ body.forme-theme {
     padding-top: 32px;
   }
   .forme-checkout-title .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-checkout-title h1 {
     font-size: 44px;
@@ -1971,7 +1971,7 @@ body.forme-theme {
     padding: 20px 18px;
   }
   .forme-checkout-footnote {
-    font-size: 8px;
+    font-size: 11px;
     line-height: 1.8;
     margin-top: 0;
   }
@@ -1984,7 +1984,7 @@ body.forme-theme {
     padding: 0 0 30px;
   }
   .forme-account-intro > .forme-eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .forme-account-intro h2 {
     font-size: 52px;
@@ -1995,7 +1995,7 @@ body.forme-theme {
     line-height: 1.8;
   }
   .forme-account-intro .forme-text-link {
-    font-size: 10px;
+    font-size: 11px;
   }
   .forme-account-form {
     max-width: none;
@@ -2008,7 +2008,7 @@ body.forme-theme {
     font-size: 11px;
   }
   .forme-account-form .text-small-regular {
-    font-size: 10px;
+    font-size: 11px;
   }
   .forme-account-help {
     display: block;
@@ -2016,7 +2016,7 @@ body.forme-theme {
     padding-top: 23px;
   }
   .forme-account-help .forme-text-link {
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 12px;
   }
   .forme-account-grid {
@@ -2639,4 +2639,17 @@ body.forme-theme {
   min-width: 0;
   margin: 0;
   padding: 0;
+}
+
+/* Money and quantities align in columns; headings avoid orphans. */
+.forme-theme [data-testid$="price"],
+.forme-theme [data-testid*="total"],
+.forme-theme [data-testid*="subtotal"],
+.forme-theme [data-testid*="quantity"] {
+  font-variant-numeric: tabular-nums;
+}
+.forme-theme h1,
+.forme-theme h2,
+.forme-theme h3 {
+  text-wrap: balance;
 }

@@ -1,7 +1,7 @@
 # CommerceGuard — E-commerce QA Automation & Release Quality Gate
 
-- Built a TypeScript/Playwright QA framework with **69 risk-based scenarios** across
-  UI, API and PostgreSQL; executed **153 checks**, including **112 passing browser
+- Built a TypeScript/Playwright QA framework with **73 risk-based scenarios** across
+  UI, API and PostgreSQL; executed **157 checks** (156 passing), including **112 passing browser
   checks** across Chromium, Firefox, WebKit and mobile Chromium emulation.
 - Demonstrated **five controlled defect detections** through baseline → assertion
   failure → restored-pass cycles against a real Medusa storefront, retaining

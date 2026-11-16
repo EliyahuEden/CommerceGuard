@@ -93,7 +93,6 @@ const StoreHits = ({ hitsPerPage, currencyCode }: StoreHitsProps) => {
                         alt={hit.title ?? "Product"}
                         size="full"
                       />
-                      <span className="forme-card-tag">THE EVERYDAY EDIT</span>
                       <span className="forme-card-arrow" aria-hidden="true">
                         ↗
                       </span>

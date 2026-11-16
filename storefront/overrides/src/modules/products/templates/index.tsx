@@ -38,7 +38,6 @@ export default function ProductTemplate({
             <VariantImageGallery product={product} />
           </div>
           <div className="forme-product-details">
-            <span className="forme-eyebrow">THE EVERYDAY EDIT / 01</span>
             <ProductInfo product={product} />
             <ProductActions product={product} region={region} />
             <WishlistButton id={product.id} title={product.title} />

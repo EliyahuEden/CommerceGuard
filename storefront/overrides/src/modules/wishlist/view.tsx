@@ -44,7 +44,6 @@ export default function WishlistView() {
       className="content-container forme-wishlist"
       aria-labelledby="wishlist-heading"
     >
-      <span className="forme-eyebrow">A LITTLE ROOM FOR LATER</span>
       <h1 id="wishlist-heading">Your wishlist.</h1>
       <p>
         {customerId

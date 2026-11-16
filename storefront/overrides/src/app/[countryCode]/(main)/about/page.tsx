@@ -5,7 +5,6 @@ export const metadata: Metadata = { title: "Our approach" }
 export default function About() {
   return (
     <div className="content-container forme-about">
-      <span className="forme-eyebrow">THE FORME APPROACH</span>
       <h1>
         A little less.
         <br />

@@ -19,7 +19,6 @@ export default function CartTemplate({
       data-testid="cart-container"
     >
       <div className="forme-page-heading">
-        <span className="forme-eyebrow">YOUR EVERYDAY EDIT</span>
         <h1>
           Your bag<span className="forme-count">{quantity}</span>
         </h1>

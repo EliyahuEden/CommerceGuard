@@ -25,7 +25,6 @@ export default function StoreTemplate({
       data-testid="category-container"
     >
       <div className="forme-store-heading">
-        <span className="forme-eyebrow">THE FORME COLLECTION</span>
         <h1 data-testid="store-page-title">All products</h1>
         <p>A small edit. Everyday possibilities.</p>
         <CollectionLinks />

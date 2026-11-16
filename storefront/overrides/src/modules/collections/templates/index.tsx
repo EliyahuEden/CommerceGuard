@@ -26,7 +26,6 @@ export default function CollectionTemplate({
   return (
     <div className="content-container forme-store">
       <header className="forme-store-heading">
-        <span className="forme-eyebrow">THE FORME COLLECTION</span>
         <h1>{collection.title}</h1>
         <p>{edit?.description || "A considered edit for your everyday."}</p>
         <CollectionLinks current={collection.handle} />

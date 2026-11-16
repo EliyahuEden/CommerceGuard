@@ -52,6 +52,27 @@ retries. [Measured smoke outcomes](docs/evidence/enhancements/stability-results.
 The [12 November redesign report](docs/archive/REDESIGN_RESULTS.md) preserves the earlier
 117-execution campaign separately.
 
+## Re-verified 16 November 2026 (local, Node 22.23.4)
+
+After adding four API contract scenarios (API-036 to API-039: completed-order schema
+and money invariants, one JSON error envelope, typed shipping prices, no credential
+fields in customer responses) and a storefront polish pass, the full matrix executed
+**157 checks from 73 unique scenarios** (39 API, 28 UI, 6 integration): **156 passed /
+1 failed**, and the one failure is the tracked CG-B001 (API-013). A fresh baseline
+smoke run on the rebuilt stack passed **22/22** before the polish. `npm run test:gate`
+passed **156/156** (exit 0) and `npm run test:known-bugs` reported CG-B001 still
+reproducing (exit 0), both run live.
+
+The storefront polish removed decorative all-caps labels above headings and the
+repeated card tag, raised text declared at 8-10px to 11px, and aligned money with
+tabular numerals. **Honest note:** the first matrix after the polish had one failure
+besides CG-B001, UI-019 on mobile Chromium. Its trace showed the closing menu panel,
+visually gone, still intercepting clicks for the whole timeout. It passed 3 of 3 when
+re-run alone, so it was intermittent. The panel now ignores pointer events while it
+leaves. Two full matrices since then were clean (156/157 and the 156/156 gate), which
+is encouraging but cannot prove an intermittent defect is gone. These runs are
+local; hosted Actions has not run on this revision.
+
 ## Release gate and open product bugs
 
 A permanently red pipeline hides new regressions, so the open upstream bug is tracked
@@ -59,7 +80,7 @@ instead of ignored:
 
 | Command                   | Purpose                                                                                   | Passes when                                                                                      |
 | ------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `npm run test:gate`       | Release gate: every `@regression` test except `@product-bug`                              | No test fails (expected 152 of 152 on the 14 November matrix)                                    |
+| `npm run test:gate`       | Release gate: every `@regression` test except `@product-bug`                              | No test fails (156 of 156 on the 16 November local run)                                          |
 | `npm run test:known-bugs` | Runs only the tagged tests listed in [`defects/known-bugs.json`](defects/known-bugs.json) | Each registered bug **still fails**; a bug that starts passing, or a missing test, fails the job |
 | `npm test`                | Everything, unfiltered                                                                    | Red while CG-B001 is open; nothing is skipped or marked as an expected failure                   |
 
@@ -109,7 +130,7 @@ The measured report keeps the independently discovered API failure visible:
 
 ## What this project demonstrates
 
-- 69 substantial scenarios: 35 API, 28 UI, 6 database/integration; four UI projects.
+- 73 substantial scenarios: 39 API, 28 UI, 6 database/integration; four UI projects.
 - Real product search/filtering, cart/stock boundaries, promotions, customer accounts,
   authorization, manual-payment checkout, order history and repeated completion.
 - UI → API → PostgreSQL validation using parameterized read-only queries.

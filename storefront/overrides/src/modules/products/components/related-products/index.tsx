@@ -49,7 +49,6 @@ export default async function RelatedProducts({
   return (
     <section className="forme-related-section">
       <div className="forme-section-heading">
-        <span className="forme-eyebrow">COMPLETE YOUR EVERYDAY</span>
         <h2>Good together.</h2>
       </div>
 

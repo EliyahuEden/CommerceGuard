@@ -28,7 +28,6 @@ export default function CheckoutLayout({
       </header>
       <main id="main-content" tabIndex={-1}>
         <div className="forme-checkout-title content-container">
-          <span className="forme-eyebrow">THE FINAL DETAILS</span>
           <h1>Make it yours.</h1>
         </div>
         <div data-testid="checkout-container">{children}</div>

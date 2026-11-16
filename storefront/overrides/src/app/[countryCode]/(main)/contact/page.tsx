@@ -4,7 +4,6 @@ export const metadata: Metadata = { title: "Contact" }
 export default function Page() {
   return (
     <section className="content-container forme-policy">
-      <span className="forme-eyebrow">GET IN TOUCH</span>
       <h1>Here to help.</h1>
       <div>
         <p>

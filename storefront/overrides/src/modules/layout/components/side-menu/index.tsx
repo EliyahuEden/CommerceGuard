@@ -58,8 +58,9 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                 enterFrom="opacity-0"
                 enterTo="opacity-100 backdrop-blur-2xl"
                 leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 backdrop-blur-2xl"
-                leaveTo="opacity-0"
+                // A closing panel must not swallow clicks aimed at the header beneath it.
+                leaveFrom="opacity-100 backdrop-blur-2xl pointer-events-none"
+                leaveTo="opacity-0 pointer-events-none"
               >
                 <PopoverPanel
                   data-testid="nav-menu-panel"
