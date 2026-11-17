@@ -70,8 +70,9 @@ besides CG-B001, UI-019 on mobile Chromium. Its trace showed the closing menu pa
 visually gone, still intercepting clicks for the whole timeout. It passed 3 of 3 when
 re-run alone, so it was intermittent. The panel now ignores pointer events while it
 leaves. Two full matrices since then were clean (156/157 and the 156/156 gate), which
-is encouraging but cannot prove an intermittent defect is gone. These matrix runs are
-local; hosted smoke passed on this revision, hosted regression has not been run.
+is encouraging but cannot prove an intermittent defect is gone. The full 157-check
+matrix above is a local run; the hosted gate run executed the same 156 tests with the
+known bug excluded.
 
 ## Release gate and open product bugs
 
@@ -88,11 +89,11 @@ CG-B001 (quantity `1.5` stored as `2`) is therefore visible in every run and in 
 job summary, a new regression turns the gate red, and a fix upstream forces cleanup of
 the tag, register entry and defect report. The register check was verified offline
 against the saved 14 November report in both directions (still failing → exit 0,
-simulated pass → exit 1). The gate split has been linted (actionlint) and executed locally.
-The push-triggered smoke workflow passed on hosted Actions for this revision
-([run 43835270151](https://github.com/EliyahuEden/CommerceGuard/actions/runs/43835270151)),
-but the manually dispatched regression workflow that uses `test:gate` and
-`test:known-bugs` **has not yet run on hosted Actions**.
+simulated pass → exit 1). The gate split is linted (actionlint), ran locally, and ran on hosted Actions: the
+manually dispatched [regression run 44030780120](https://github.com/EliyahuEden/CommerceGuard/actions/runs/44030780120)
+passed the release gate, the known-bug check and the keyboard audit, and uploaded the
+`playwright-json-results` artifact. The push-triggered smoke workflow also passed on
+the same revision ([run 44028885938](https://github.com/EliyahuEden/CommerceGuard/actions/runs/44028885938)).
 
 ## Reliability history with FlakeGuard
 
@@ -101,8 +102,10 @@ The scheduled regression uploads its Playwright JSON as an artifact named
 import it with `flakeguard sync EliyahuEden/CommerceGuard --artifact-pattern
 '*playwright-json*'` (read-only token with Actions access), which turns weekly runs into
 flaky-test and recurring-failure evidence. FlakeGuard's integration with this
-repository's three archived reports is tested; live artifact sync from hosted runs has
-not been exercised yet.
+repository's three archived reports is tested, and on 17 November a live
+`flakeguard sync` against this repository's hosted runs imported 156 executions from
+each of two regression runs (a third run without the artifact was recorded as a
+retryable error, as designed).
 
 ## Original QA baseline — 11 November 2026
 
