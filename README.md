@@ -4,153 +4,53 @@
 [![Cross-browser regression](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/regression.yml/badge.svg)](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/regression.yml)
 [![Performance baseline](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/performance.yml/badge.svg)](https://github.com/EliyahuEden/CommerceGuard/actions/workflows/performance.yml)
 
-**Enterprise-style QA automation and an evidence-driven release quality gate for a
-real e-commerce application.** Built as an SDET portfolio: test important purchase,
-money and customer-isolation rules, verify persisted data, and prove selected tests
-can catch deliberately introduced defects.
+**An end-to-end QA automation framework and release quality gate for a real e-commerce
+application.** It checks purchase, money and customer-isolation rules through the
+browser, the API and the database, and proves the tests work by injecting known bugs
+and confirming they are caught.
 
-CommerceGuard is the original TypeScript QA framework. **FORME** is its custom
-apparel-storefront design: editorial photography, warm ivory surfaces, expressive
-typography, and responsive shopping, account and checkout pages. The real commerce
-system remains the MIT-licensed [Medusa DTC Starter](https://github.com/medusajs/dtc-starter), pinned
-to [`0a84b2a`](https://github.com/medusajs/dtc-starter/tree/0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55)
-and prepared into ignored `.aut/`. The full upstream tree is not vendored. Our
-tracked presentation overlay, assets, and catalog seed are separate under
-[`storefront/`](storefront/) and [`aut/`](aut/).
+![FORME storefront, the application under test](docs/evidence/enhancements/screenshots/home-preview.png)
 
-![FORME homepage — actual local storefront](docs/evidence/enhancements/screenshots/home-preview.png)
+## Why this project exists
 
-See [shopping enhancements](docs/SHOPPING_ENHANCEMENTS.md),
-[storefront decisions](docs/STOREFRONT.md) and
-[current verification](docs/ENHANCEMENT_RESULTS.md). The original QA baseline remains
-available in Git tag `baseline-medusa-qa` and the evidence below.
+Most test demos run against toy pages with mocked backends, so they never meet the
+failures real systems produce. CommerceGuard tests a real open-source commerce stack
+(Medusa and Next.js, pinned to an exact commit) backed by a real PostgreSQL database.
 
-## Verified shopping-enhancement results — 14 November 2026
+A release of a shop has to prove a few things: customers are charged the right amount,
+carts survive edge cases, one account can never see another's data, and the browser,
+the API and the database all agree. The framework tests exactly those rules, and then
+turns the results into a release decision: a gate that goes red on new failures while
+tracking open product bugs separately, so a known issue cannot hide a new one.
 
-The local 13 November matrix executed **153 checks from 69 unique scenarios**:
-**152 passed / 1 product failure**, with zero skips, retries or flaky outcomes,
-in **357.81 seconds**. All **112 UI checks** across Chromium, Firefox, WebKit and
-mobile Chromium, and all **six database integration checks**, passed.
-API-013 exposes CG-B001: accepted quantity `1.5` becomes `2`. The failure remains
-visible; it is not skipped or marked as expected failure.
+## What it demonstrates
 
-The final **hosted** matrix also measured **152 passed / 1 product failure** in
-208.85 seconds. All 112 browser and six integration checks passed. Hosted smoke
-passed **22/22**, plus the keyboard audit; the separate hosted k6 baseline passed
-108 requests with zero HTTP/business failures. Docker setup and cleanup executed
-on the runner. [Verified hosted runs](docs/evidence/enhancements/hosted-actions.json).
-Full regression remains red while CG-B001 is open; no assertion hides it.
+- **Risk-based test design:** 73 scenarios (39 API, 28 UI, 6 database) mapped to
+  requirements and risks, plus 19 documented manual scenarios and exploratory charters.
+- **Three-layer verification:** a UI action is checked against the API response and the
+  persisted rows, using parameterized read-only SQL.
+- **Cross-browser coverage:** Chromium, Firefox, WebKit and a mobile viewport, with no
+  blanket retries and each test owning its own cart and customer.
+- **Proof that tests catch bugs:** five reversible defects injected into the real
+  storefront source, each with a pass, fail, pass cycle and restored-source hash.
+- **A real bug found and tracked:** the API accepts quantity `1.5` and stores `2`
+  (CG-B001), reported with severity, priority and reproduction steps.
+- **Release gating:** a pull-request smoke gate, a weekly cross-browser regression, a
+  known-bug register, and separate k6 performance budgets, all in GitHub Actions.
+- **Accessibility:** axe A/AA scans on eight routes in four browsers, plus a
+  keyboard-only purchase audit. No accessibility certification is claimed.
+- **Evidence:** HTML, JSON and JUnit reports with screenshots, video and traces on
+  failure.
 
-The six enhancements include a varied ten-product catalog, size/fit/care and zoom,
-mobile address validation, guest/account wishlist, order statuses/buy again, and
-keyboard/axe accessibility checks. Read the
-[current verification report](docs/ENHANCEMENT_RESULTS.md),
-[full case outcomes](docs/evidence/enhancements/regression-results.json), and
-[requirements audit](docs/REQUIREMENTS_AUDIT.md).
-The critical smoke selection passed **66/66** across three explicit cycles without
-retries. [Measured smoke outcomes](docs/evidence/enhancements/stability-results.json).
-The [12 November redesign report](docs/archive/REDESIGN_RESULTS.md) preserves the earlier
-117-execution campaign separately.
+## The application under test
 
-## Re-verified 16 November 2026 (local, Node 22.23.4)
-
-After adding four API contract scenarios (API-036 to API-039: completed-order schema
-and money invariants, one JSON error envelope, typed shipping prices, no credential
-fields in customer responses) and a storefront polish pass, the full matrix executed
-**157 checks from 73 unique scenarios** (39 API, 28 UI, 6 integration): **156 passed /
-1 failed**, and the one failure is the tracked CG-B001 (API-013). A fresh baseline
-smoke run on the rebuilt stack passed **22/22** before the polish. `npm run test:gate`
-passed **156/156** (exit 0) and `npm run test:known-bugs` reported CG-B001 still
-reproducing (exit 0), both run live.
-
-The storefront polish removed decorative all-caps labels above headings and the
-repeated card tag, raised text declared at 8-10px to 11px, and aligned money with
-tabular numerals. **Honest note:** the first matrix after the polish had one failure
-besides CG-B001, UI-019 on mobile Chromium. Its trace showed the closing menu panel,
-visually gone, still intercepting clicks for the whole timeout. It passed 3 of 3 when
-re-run alone, so it was intermittent. The panel now ignores pointer events while it
-leaves. Two full matrices since then were clean (156/157 and the 156/156 gate), which
-is encouraging but cannot prove an intermittent defect is gone. The full 157-check
-matrix above is a local run; the hosted gate run executed the same 156 tests with the
-known bug excluded.
-
-## Release gate and open product bugs
-
-A permanently red pipeline hides new regressions, so the open upstream bug is tracked
-instead of ignored:
-
-| Command                   | Purpose                                                                                   | Passes when                                                                                      |
-| ------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `npm run test:gate`       | Release gate: every `@regression` test except `@product-bug`                              | No test fails (156 of 156 on the 16 November local run)                                          |
-| `npm run test:known-bugs` | Runs only the tagged tests listed in [`defects/known-bugs.json`](defects/known-bugs.json) | Each registered bug **still fails**; a bug that starts passing, or a missing test, fails the job |
-| `npm test`                | Everything, unfiltered                                                                    | Red while CG-B001 is open; nothing is skipped or marked as an expected failure                   |
-
-CG-B001 (quantity `1.5` stored as `2`) is therefore visible in every run and in the
-job summary, a new regression turns the gate red, and a fix upstream forces cleanup of
-the tag, register entry and defect report. The register check was verified offline
-against the saved 14 November report in both directions (still failing → exit 0,
-simulated pass → exit 1). The gate split is linted (actionlint), ran locally, and ran on hosted Actions: the
-manually dispatched [regression run 44030780120](https://github.com/EliyahuEden/CommerceGuard/actions/runs/44030780120)
-passed the release gate, the known-bug check and the keyboard audit, and uploaded the
-`playwright-json-results` artifact. The push-triggered smoke workflow also passed on
-the same revision ([run 44028885938](https://github.com/EliyahuEden/CommerceGuard/actions/runs/44028885938)).
-
-## Reliability history with FlakeGuard
-
-The scheduled regression uploads its Playwright JSON as an artifact named
-`playwright-json-results`. [FlakeGuard](https://github.com/EliyahuEden/FlakeGuard) can
-import it with `flakeguard sync EliyahuEden/CommerceGuard --artifact-pattern
-'*playwright-json*'` (read-only token with Actions access), which turns weekly runs into
-flaky-test and recurring-failure evidence. FlakeGuard's integration with this
-repository's three archived reports is tested, and on 17 November a live
-`flakeguard sync` against this repository's hosted runs imported 156 executions from
-each of two regression runs (a third run without the artifact was recorded as a
-retryable error, as designed).
-
-## Original QA baseline — 11 November 2026
-
-| Campaign        | Measured outcome                                                                              |
-| --------------- | --------------------------------------------------------------------------------------------- |
-| Full matrix     | **104 passed / 1 product failure**, 105 executions, zero skips/retries                        |
-| Smoke stability | **45/45 passed** — 15 critical cases repeated three times                                     |
-| Seeded defects  | **5/5 detected and restored**, each with pass → fail → pass evidence                          |
-| Local k6        | Baseline: 102 requests, p95 305.93ms; ramp: 327 requests, p95 246.91ms; all thresholds passed |
-
-The open finding is accepted quantity `1.5` becoming `2` in both API and SQL. It stays
-visible in full regression. Earlier compilation and transport failures, their fixes,
-and the final repeat are preserved in the [test summary](docs/STR.md). At the time of that original campaign, Docker and hosted Actions had not
-been executed. Later verification is recorded in the current requirements audit.
-
-<details>
-<summary>Current FORME storefront and regression-report screenshots</summary>
-
-Three EUR 10 items with CG10 produce EUR 3 discount and EUR 27 total:
-
-![Actual FORME cart with the controlled promotion](docs/evidence/enhancements/screenshots/cart-promotion.png)
-
-The measured report keeps the independently discovered API failure visible:
-
-![Actual 153-case regression report](docs/evidence/enhancements/screenshots/regression-report.png)
-
-</details>
-
-## What this project demonstrates
-
-- 73 substantial scenarios: 39 API, 28 UI, 6 database/integration; four UI projects.
-- Real product search/filtering, cart/stock boundaries, promotions, customer accounts,
-  authorization, manual-payment checkout, order history and repeated completion.
-- UI → API → PostgreSQL validation using parameterized read-only queries.
-- Five reversible storefront defects with automated baseline/failure/restoration
-  evidence; an independently discovered quantity-coercion issue is tracked separately.
-- PR smoke gate, weekly/manual cross-browser regression and separate local k6 budgets.
-- HTML/JSON/JUnit reporting with failure screenshots, video, traces and DOM context.
-- Original storefront design, 13 optimized local photographs, real color-specific
-  galleries, size/fit/care information, modal zoom, guest/account wishlist, retained
-  checkout validation and current-status order details with buy again.
-- Axe A/AA checks on eight routes in four browser projects, plus a separate full
-  keyboard purchase audit. No accessibility certification is claimed.
-- Risk-based STP, 19 manual scenarios, traceability, exploratory charters and honest
-  measured results. No blanket retries, paid services or fabricated coverage metrics.
+The commerce system is the MIT-licensed
+[Medusa DTC Starter](https://github.com/medusajs/dtc-starter), pinned to commit
+[`0a84b2a`](https://github.com/medusajs/dtc-starter/tree/0a84b2ac13dbf5091a84af4b54ce0b19f6c9ad55)
+and prepared into an ignored `.aut/` folder; the upstream tree is not vendored. On top
+of it sits **FORME**, an original apparel storefront design (editorial photography, a
+ten-product catalog, size and fit guidance, wishlist, order history and buy again) that
+lives separately in [`storefront/`](storefront/) and [`aut/`](aut/).
 
 ## Architecture
 
@@ -169,20 +69,79 @@ flowchart LR
   Reports --> Gate[CI quality gate]
 ```
 
-See [design decisions](docs/ARCHITECTURE.md) and [AUT inspection/setup](docs/AUT.md).
+- **Setup layer:** scripts pin the upstream commit, apply the FORME overlay, migrate a
+  dedicated test database and seed a controlled catalog and promotion.
+- **Test layer:** typed API clients with Zod contracts, page objects for the browser,
+  per-test fixtures, and a restricted read-only SQL helper.
+- **Evidence layer:** reports and traces feed the CI gate; the defect runner and k6
+  workloads run as separate, labelled campaigns.
 
-## Stack
+Design decisions are in [ARCHITECTURE](docs/ARCHITECTURE.md) and the application setup
+in [AUT](docs/AUT.md).
 
-TypeScript 7.0.2 · Playwright Test 1.65.0 / APIRequestContext · PostgreSQL 18.6 ·
-Node 22.23.4 · Medusa 2.22.6 · Next.js 16.3.8 · Zod · pg · Docker Compose ·
-GitHub Actions · k6 2.3.0. npm locks the QA repository; upstream uses its frozen
-pnpm lockfile; the reviewed runner is pnpm 10.34.9. Playwright's enhanced native report avoids a Java dependency.
+## How releases are decided
 
-## Run locally
+An open upstream bug should not keep the pipeline permanently red, because a red
+pipeline hides new regressions. So it is tracked instead of ignored:
 
-Prerequisites: **Node 22.23.4**, npm, Git and Docker Compose v2. Use a dedicated
-workspace and keep the application on local ports 8000/9000 and PostgreSQL 54329.
-No admin account, payment credential or secret service is required.
+| Command                   | Purpose                                                                           | Passes when                                                                                      |
+| ------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `npm run test:gate`       | Release gate: every `@regression` test except `@product-bug`                      | No test fails                                                                                    |
+| `npm run test:known-bugs` | Runs only the bugs listed in [`defects/known-bugs.json`](defects/known-bugs.json) | Each registered bug **still fails**; a bug that starts passing, or a missing test, fails the job |
+| `npm test`                | Everything, unfiltered                                                            | Red while CG-B001 is open; nothing is skipped or marked as an expected failure                   |
+
+A new regression turns the gate red, CG-B001 stays visible in every run and job
+summary, and a fix upstream forces cleanup of the tag, register entry and defect report.
+
+### Injected defects
+
+| Defect | Detecting test | Intended failure                                  |
+| ------ | -------------- | ------------------------------------------------- |
+| CG-D01 | UI-004         | Customer sees cart total EUR 31 instead of EUR 30 |
+| CG-D02 | UI-007         | Customer sees EUR 6 discount instead of EUR 3     |
+| CG-D03 | UI-003         | One add action submits two units                  |
+| CG-D04 | UI-004         | Quantity 3 submits quantity 4                     |
+| CG-D05 | UI-013         | Invalid credentials produce no visible error      |
+
+The [patch manifest](defects/scenarios.json) edits actual storefront source, one change
+at a time. The runner needs a passing baseline, one assertion failure, restores the
+original bytes in `finally`, and requires the detecting test to pass again. No defect
+is a mock server or an always-failing demonstration assertion.
+
+## Current results
+
+| Check                         | Outcome                                                                                         |
+| ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| Full matrix (local, 16 Nov)   | 157 executions, **156 passed**, 1 failed: the tracked CG-B001                                   |
+| Release gate (hosted, 17 Nov) | Passed across all browser projects, plus the known-bug check and keyboard audit                 |
+| Smoke gate (hosted)           | 22 of 22 critical tests passed                                                                  |
+| Injected defects              | 5 of 5 detected and restored                                                                    |
+| Performance (k6)              | Local baseline and ramp thresholds passed; hosted baseline passed 108 requests with no failures |
+
+Every run, including failures and what was done about them, is recorded in
+[docs/RESULTS.md](docs/RESULTS.md). Counts are executions, not coverage percentages.
+
+## What is tested
+
+| Area                            | API                                                                                                         | UI                                                                    | SQL integration                             |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------- |
+| Catalog, regional price, search | Contract, query, paging, 404                                                                                | Browse, details, options, search, category                            | —                                           |
+| Cart and inventory              | Create/update/delete, invalid and overflow, repeated add                                                    | Add, edit, delete, quantity limits                                    | Units, price arithmetic, no invalid write   |
+| Promotions                      | Ten percent, repeated code, unknown code                                                                    | Apply, remove, displayed money                                        | Persisted adjustment                        |
+| Customer, auth, access          | Register, duplicate, login, forged token, foreign address, admin denial, no credential leakage              | Register, login, logout, profile, anonymous gate                      | —                                           |
+| Wishlist, sizing, accessibility | Session-scoped reads, account isolation                                                                     | Guest merge, size guide and zoom focus, axe routes, keyboard checkout | —                                           |
+| Orders and contracts            | Shipping, payment, completion, duplicates, owner history, order schema and money invariants, error envelope | Full checkout and order history                                       | Order lines, completed cart, one order link |
+
+[Traceability](docs/TRACEABILITY.md) maps test IDs to requirements, risks and manual
+cases. The QA process is described in [STP](docs/STP.md), [STD](docs/STD.md),
+[risks](docs/RISKS.md), [exploratory charters](docs/EXPLORATORY.md) and the
+[severity and priority definitions](docs/SEVERITY_PRIORITY.md).
+
+## Run it locally
+
+Prerequisites: **Node 22.23.4**, npm, Git and Docker Compose v2. The application uses
+local ports 8000 and 9000 and PostgreSQL on 54329. No admin account, payment credential
+or secret service is needed.
 
 ```sh
 git clone https://github.com/EliyahuEden/CommerceGuard.git
@@ -197,154 +156,77 @@ npm run aut:start:production
 npm run test:smoke
 ```
 
-On Windows, `npx playwright install chromium firefox webkit` installs the browser
-binaries; `--with-deps` mainly installs Linux packages. If Docker is unavailable,
-run `npm run db:portable` in a separate terminal instead of `docker compose up`,
-keep it open, then continue with `aut:prepare`. This starts real PostgreSQL, using
-the optional packaged binary distribution; see [Windows notes](docs/AUT.md).
+On Windows without Docker, run `npm run db:portable` in a separate terminal instead of
+the `docker compose` line and keep it open; see the [Windows notes](docs/AUT.md).
+Defaults work without an environment file, and `.env.example` documents every override.
+Open the [storefront](http://localhost:8000/dk) once it is running.
 
-Defaults work without copying an environment file. `.env.example` documents every
-optional override. Setup creates ignored local secrets and the public seed manifest.
-The controlled dataset is ten products with varied prices, collections and stock,
-including a EUR 10 T-Shirt fixture, EUR 10 standard shipping and
-CG10 (10% item discount). Tests generate their own carts and `@example.test` accounts.
+| Command                   | Purpose                                              |
+| ------------------------- | ---------------------------------------------------- |
+| `npm run test:smoke`      | Critical API, integration and Chromium tests         |
+| `npm run test:gate`       | Release gate, all browsers, known bugs excluded      |
+| `npm run test:known-bugs` | Confirm tracked bugs still reproduce                 |
+| `npm test`                | Every test; red while CG-B001 is open                |
+| `npm run test:keyboard`   | Keyboard-only purchase audit with axe scans          |
+| `npm run test:defects`    | Inject, detect, restore and re-pass all five defects |
+| `npm run test:perf`       | Local k6 baseline (needs the k6 executable)          |
+| `npm run report`          | Open the latest HTML report                          |
+| `npm run aut:stop`        | Stop the processes this workspace started            |
 
-Open the running [storefront](http://localhost:8000/dk). Startup logs are in
-`.runtime/backend.log` and `.runtime/storefront.log`.
-
-| Command                    | Purpose                                                         |
-| -------------------------- | --------------------------------------------------------------- |
-| `npm run aut:ready`        | Poll actual API and storefront readiness                        |
-| `npm run aut:seed`         | Create CG10 if absent and export actual public fixture IDs      |
-| `npm run typecheck`        | Strict TypeScript checks                                        |
-| `npm run test:smoke`       | Critical API + integration + Chromium release gate              |
-| `npm run test:regression`  | All 153 project executions; exposes known product findings      |
-| `npm run test:api`         | 35 independent API cases                                        |
-| `npm run test:integration` | Six persistence/cross-layer cases                               |
-| `npm run test:ui`          | 20 scenarios × Chromium, Firefox, WebKit, Pixel 7 viewport      |
-| `npm run test:stability`   | Repeat every smoke check three times, without retries           |
-| `npm run test:keyboard`    | Keyboard-only purchase/history and checkout-state axe scans     |
-| `npm run test:defects`     | Sequential baseline → inject → detect → restore → pass campaign |
-| `npm run test:perf`        | Local read-only k6 baseline; requires k6 executable             |
-| `npm run report`           | Open the latest interactive HTML report                         |
-| `npm run report:summary`   | Persist compact measured results under docs/evidence            |
-| `npm run aut:stop`         | Stop only application processes owned by this workspace         |
-
-For a single test: `npx playwright test --project=chromium --grep UI-007`.
-For the ramp workload and performance budgets, see [performance design](docs/PERFORMANCE.md).
-
-Storefront development (with services running):
-
-```sh
-npm run storefront:apply   # Reapply tracked source/assets after an edit
-npm run aut:restart        # Restart and warm the local storefront
-npm run storefront:build   # Verify production compilation; restores the local preview
-```
-
-Cleanup:
-
-```sh
-npm run aut:stop
-docker compose down --volumes
-```
-
-The second command removes this Compose project's disposable data. With the portable
-runner, stop its terminal with Ctrl+C; its data location is recorded in
-`.runtime/portable-db-location.txt`. Retained test records support failure diagnosis;
-use a fresh dedicated database for a fresh campaign. Never reuse it for production.
-
-## Coverage and release decisions
-
-| Area                                   | API                                                                                   | UI                                                           | SQL integration                                        |
-| -------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
-| Catalog, regional price, search/filter | Contract, query, paging, 404                                                          | Browse, details, options, search, category                   | —                                                      |
-| Cart and inventory                     | Create/update/delete, invalid/missing/overflow, repeated add                          | Add, edit, delete, 1–10 limit                                | Units, price arithmetic, no invalid write              |
-| Promotions                             | Ten percent, repeated code, unknown code                                              | Apply/remove and displayed money                             | Persisted adjustment                                   |
-| Customer/auth/access                   | Register, duplicate, login, forged/missing token, foreign address, admin denial       | Register/login/logout, profile, anonymous gate               | —                                                      |
-| Wishlist, sizing and accessibility     | Session-scoped reads, account persistence/isolation                                   | Guest merge, guide/zoom focus, axe routes, keyboard checkout | —                                                      |
-| Orders                                 | Shipping/payment/completion, duplicate completion, incomplete checkout, owner history | Full checkout and order history                              | Order lines, completed cart, exactly one/no order link |
-
-[Traceability](docs/TRACEABILITY.md) maps test IDs to requirements, risks and manual
-cases. [STP](docs/STP.md), [STD](docs/STD.md), [risk strategy](docs/RISKS.md),
-[exploratory charters](docs/EXPLORATORY.md), and
-[severity/priority definitions](docs/SEVERITY_PRIORITY.md) describe the QA process.
-
-The smoke gate passes only when every selected critical test passes. Full regression
-also includes the visible `@product-bug` quantity check; it is not skipped, retried or
-marked as expected failure. An open product defect is a release-triage input.
+Run one test with `npx playwright test --project=chromium --grep UI-007`. Performance
+budgets are in [PERFORMANCE](docs/PERFORMANCE.md). To clean up, run `npm run aut:stop`
+and `docker compose down --volumes`.
 
 ## CI/CD
 
-`.github/workflows/smoke.yml` runs on pull requests, pushes to main and manually. The shared action
-installs Node/dependencies/browsers, starts Compose PostgreSQL with health checks,
-prepares the pinned AUT, migrates/seeds, and polls HTTP readiness. It typechecks and
-runs 22 smoke tests plus a separate keyboard-only checkout audit. Test failure exits nonzero; HTML/JSON/JUnit, traces and logs are
-uploaded even after failure. Configure **PR release quality gate / smoke** as a
-required check in repository branch protection.
+Three GitHub Actions workflows share one setup action that installs dependencies,
+starts PostgreSQL, prepares and seeds the pinned application and waits for readiness:
 
-Test code is versioned under `tests/` and `src/` alongside the application overlay.
-Actions executes the committed revision on each trigger. Runtime reports are uploaded
-as artifacts; selected dated summaries/screenshots are deliberately committed as
-portfolio evidence. Running a test does not automatically create a Git commit.
+- **`smoke.yml`:** on pull requests and pushes, typechecks and runs 22 critical tests
+  plus the keyboard audit. Make _PR release quality gate / smoke_ a required check.
+- **`regression.yml`:** weekly and on demand across all browsers; runs the release
+  gate, the known-bug check and the keyboard audit, then uploads the Playwright JSON.
+- **`performance.yml`:** on demand, baseline or ramp k6 workload.
 
-`regression.yml` runs manually and Mondays at 03:15 UTC across all browser projects.
-`performance.yml` runs manually with baseline/ramp choice. Both retain results and
-tear down the disposable environment. npm dependency caching is configured.
-See the [requirements audit](docs/REQUIREMENTS_AUDIT.md) for observed hosted results.
-A local smoke run is distinct from a completed GitHub Actions workflow.
+Reports, traces and logs are uploaded as artifacts even when a test fails. The weekly
+JSON artifact can feed [FlakeGuard](https://github.com/EliyahuEden/FlakeGuard), the
+companion project that turns test history into flaky-test and recurring-failure
+evidence.
 
-## Defects and evidence
-
-| Seeded defect | Detecting case | Intended failure                                  |
-| ------------- | -------------- | ------------------------------------------------- |
-| CG-D01        | UI-004         | Customer sees cart total EUR 31 instead of EUR 30 |
-| CG-D02        | UI-007         | Customer sees EUR 6 discount instead of EUR 3     |
-| CG-D03        | UI-003         | One add action submits two units                  |
-| CG-D04        | UI-004         | Quantity 3 submits quantity 4                     |
-| CG-D05        | UI-013         | Invalid credentials produce no visible error      |
-
-The [patch manifest](defects/scenarios.json) edits actual storefront source, one
-change at a time. The runner requires a passing baseline, one assertion failure,
-restores the original bytes in `finally`, and requires the detecting case to pass.
-An interrupted hard kill can be recovered using `node scripts/defects.mjs --restore`.
-No mutation is a mock server or an always-failing demonstration assertion.
-
-See [defect reports](docs/DEFECTS.md), [test summary](docs/STR.md) and
-[resume/interview notes](docs/RESUME_BULLETS.md). Evidence links and measured campaign
-counts are recorded in the summary after execution.
-
-## Structure
+## Project structure
 
 ```text
-aut/                   Real Medusa catalog/promotion seed and hydration probe
-storefront/            Tracked FORME design, assets, exact patches and attribution
-config/aut.json        Upstream commit/toolchain pin
-src/api/               Real HTTP client, contracts, checkout/auth helpers
+aut/                   Medusa catalog and promotion seed, hydration probe
+storefront/            FORME design, assets, exact patches and attribution
+config/aut.json        Upstream commit and toolchain pin
+src/api/               HTTP client, Zod contracts, checkout and auth helpers
 src/data/              Unique test-data factories
-src/db/                Restricted read-only PostgreSQL utility
+src/db/                Restricted read-only PostgreSQL helper
 src/fixtures/          Per-test request and database lifetimes
-src/pages/             Encapsulated browser interactions
-tests/api/             Independent contract/business/authorization tests
+src/pages/             Browser page objects
+tests/api/             Contract, business-rule and authorization tests
 tests/ui/              Browser commerce workflows
-tests/integration/     UI/API/SQL persistence checks
-performance/           Local k6 workload and thresholds
-defects/               Five controlled source patch definitions
-scripts/               AUT lifecycle, portable DB, mutation/evidence runners
-.github/               Shared setup and three quality-gate workflows
-docs/                  QA artifacts, decisions, measured evidence and resume bullets
-.aut/ .runtime/        Ignored third-party checkout and disposable local state
+tests/integration/     UI, API and SQL persistence checks
+performance/           k6 workload and thresholds
+defects/               Injected-defect patches and the known-bug register
+scripts/               Application lifecycle, portable database, defect and evidence runners
+docs/                  QA documents, decisions and measured evidence (start at docs/README.md)
 ```
 
-## Limitations and next improvements
+## Limitations and next steps
 
-The small seeded dataset and local in-memory event/lock/cache adapters do not prove
-distributed behavior or production performance. Mobile is viewport emulation. Real
-gateway settlement/refunds, email delivery, multi-region tax rounding, concurrent
-order completion races, low-stock contention and comprehensive accessibility remain
-future work. SQL assertions intentionally couple to the pinned schema. Targeted
-local image and color-association checks do not constitute a full visual/accessibility audit.
+The small seeded dataset and in-memory event, lock and cache adapters do not prove
+distributed behavior or production performance. Mobile coverage is viewport emulation.
+Real payment settlement and refunds, email delivery, multi-region tax rounding,
+concurrent order completion, low-stock contention and a full accessibility audit are
+future work. SQL assertions intentionally couple to the pinned schema.
 
-Next: triage/fix the quantity-coercion finding upstream, resolve the React lint warnings,
-add Redis-backed concurrency/low-stock scenarios, test tax rounding across currencies,
-and extend keyboard/accessibility coverage. Add coverage where it protects a stated
-risk, rather than increasing counts without additional evidence.
+Next: report the quantity-coercion finding upstream, add Redis-backed concurrency and
+low-stock scenarios, test tax rounding across currencies and extend accessibility
+coverage, adding tests where they protect a stated risk rather than to raise counts.
+
+## License
+
+MIT. The upstream Medusa DTC Starter keeps its own MIT license; see
+[`storefront/UPSTREAM_LICENSE`](storefront/UPSTREAM_LICENSE) and
+[`storefront/ASSET_PROVENANCE.md`](storefront/ASSET_PROVENANCE.md).
